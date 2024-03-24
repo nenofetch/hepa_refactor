@@ -7,9 +7,37 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class HepaAuthentication implements Authentication {
   @override
-  Future? getLoggedInUser() {
-    // TODO: implement getLoggedInUser
-    throw UnimplementedError();
+  Future? getLoggedInUser() async {
+    try {
+      Dio dio = Dio();
+      dio.interceptors.add(PrettyDioLogger(
+          responseBody: true,
+          responseHeader: false,
+          error: true,
+          compact: true,
+          maxWidth: 90));
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      var token = prefs.getString('token');
+
+      if (token != null) {
+        final responses = await dio.post(
+          '$baseUrl/profile',
+          options: Options(
+            headers: {
+              'Authorization': 'Bearer $token',
+            },
+          ),
+        );
+
+        if (responses.statusCode == 200) {
+          return responses.data['data'];
+        }
+      } else {
+        return null;
+      }
+    } catch (e) {
+      return Result.failed('$e.message');
+    }
   }
 
   @override
@@ -45,9 +73,33 @@ class HepaAuthentication implements Authentication {
   }
 
   @override
-  Future<Result<void>> logout() {
-    // TODO: implement logout
-    throw UnimplementedError();
+  Future<Result<void>> logout() async {
+    Dio dio = Dio()
+      ..interceptors.add(PrettyDioLogger(
+          responseBody: true,
+          responseHeader: false,
+          error: true,
+          compact: true,
+          maxWidth: 90));
+
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      var token = prefs.getString('token');
+
+      final responses = await dio.post(
+        '$baseUrl/logout',
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+      );
+      if (responses.statusCode == 200) {
+        return Result.success(null);
+      } else {
+        return Result.failed('Failed');
+      }
+    } catch (e) {
+      return Result.failed('$e.message');
+    }
   }
 
   @override
