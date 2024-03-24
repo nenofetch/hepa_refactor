@@ -2,25 +2,29 @@ import 'package:hepa/data/misc/constants.dart';
 import 'package:hepa/data/repositories/authentication.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:dio/dio.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HepaAuthentication implements Authentication {
+  final Dio? _dio;
+
+  HepaAuthentication({Dio? dio})
+      : _dio = dio ?? Dio()
+          ..interceptors.add(PrettyDioLogger(
+            responseBody: true,
+            responseHeader: false,
+            error: true,
+            compact: true,
+            maxWidth: 90,
+          ));
   @override
   Future? getLoggedInUser() async {
     try {
-      Dio dio = Dio();
-      dio.interceptors.add(PrettyDioLogger(
-          responseBody: true,
-          responseHeader: false,
-          error: true,
-          compact: true,
-          maxWidth: 90));
       SharedPreferences prefs = await SharedPreferences.getInstance();
       var token = prefs.getString('token');
 
       if (token != null) {
-        final responses = await dio.post(
+        final responses = await _dio!.post(
           '$baseUrl/profile',
           options: Options(
             headers: {
@@ -35,7 +39,7 @@ class HepaAuthentication implements Authentication {
       } else {
         return null;
       }
-    } catch (e) {
+    } on DioException catch (e) {
       return Result.failed('$e.message');
     }
   }
@@ -44,14 +48,7 @@ class HepaAuthentication implements Authentication {
   Future<Result<String>> login(
       {required String email, required String password}) async {
     try {
-      Dio dio = Dio();
-      dio.interceptors.add(PrettyDioLogger(
-          responseBody: true,
-          responseHeader: false,
-          error: true,
-          compact: true,
-          maxWidth: 90));
-      final response = await dio.post('$baseUrl/login', data: {
+      final response = await _dio!.post('$baseUrl/login', data: {
         'email': email,
         'password': password,
       });
@@ -74,19 +71,11 @@ class HepaAuthentication implements Authentication {
 
   @override
   Future<Result<void>> logout() async {
-    Dio dio = Dio()
-      ..interceptors.add(PrettyDioLogger(
-          responseBody: true,
-          responseHeader: false,
-          error: true,
-          compact: true,
-          maxWidth: 90));
-
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       var token = prefs.getString('token');
 
-      final responses = await dio.post(
+      final responses = await _dio!.post(
         '$baseUrl/logout',
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
@@ -97,7 +86,7 @@ class HepaAuthentication implements Authentication {
       } else {
         return Result.failed('Failed');
       }
-    } catch (e) {
+    } on DioException catch (e) {
       return Result.failed('$e.message');
     }
   }
@@ -112,15 +101,7 @@ class HepaAuthentication implements Authentication {
       required String dateOfBirth,
       required String work}) async {
     try {
-      // TODO: implement register
-      Dio dio = Dio();
-      dio.interceptors.add(PrettyDioLogger(
-          responseBody: true,
-          responseHeader: false,
-          error: true,
-          compact: true,
-          maxWidth: 90));
-      final response = await dio.post('$baseUrl/register', data: {
+      final response = await _dio!.post('$baseUrl/register', data: {
         'email': email,
         'password': password,
         'retype_password': retypePassword,
