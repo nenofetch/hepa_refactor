@@ -1,0 +1,155 @@
+{
+  "project_info": {
+    "project_number": "538614402782",
+    "project_id": "healthplanner-50981",
+    "storage_bucket": "healthplanner-50981.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538614402782:android:ee51ae11eee0b1b9f63c4f",
+        "android_client_info": {
+          "package_name": "com.example.helathplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjX2a_mef1hHA9bdthxuwDvwLyn9wrPKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538614402782:android:0811594e50cef013f63c4f",
+        "android_client_info": {
+          "package_name": "com.example.hepa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjX2a_mef1hHA9bdthxuwDvwLyn9wrPKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538614402782:android:f90212f90d2dede1f63c4f",
+        "android_client_info": {
+          "package_name": "com.fkom.healthplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjX2a_mef1hHA9bdthxuwDvwLyn9wrPKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538614402782:android:548db33b9ab266aef63c4f",
+        "android_client_info": {
+          "package_name": "com.fkom.healthplanner.dietappgetx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjX2a_mef1hHA9bdthxuwDvwLyn9wrPKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538614402782:android:182a37b1159381d6f63c4f",
+        "android_client_info": {
+          "package_name": "com.fkom.uniku.hepa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjX2a_mef1hHA9bdthxuwDvwLyn9wrPKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538614402782-qbvtvfk10j5solln4qd3h413eim4ne8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
