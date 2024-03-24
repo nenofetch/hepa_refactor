@@ -8,21 +8,25 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 
 class HepaUserRepository implements UserRepository {
+  final Dio? _dio;
+
+  HepaUserRepository({Dio? dio})
+      : _dio = dio ?? Dio()
+          ..interceptors.add(PrettyDioLogger(
+            responseBody: true,
+            responseHeader: false,
+            error: true,
+            compact: true,
+            maxWidth: 90,
+          ));
   @override
   Future<Result<User>> getUser({required String token}) async {
-    Dio dio = Dio();
-    dio.interceptors.add(PrettyDioLogger(
-        responseBody: true,
-        responseHeader: false,
-        error: true,
-        compact: true,
-        maxWidth: 90));
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var userToken = prefs.getString('token');
     debugPrint('User $userToken');
 
     if (userToken != null) {
-      var result = await dio.get(
+      var result = await _dio!.get(
         '$baseUrl/profile',
         options: Options(
           headers: {
@@ -42,8 +46,41 @@ class HepaUserRepository implements UserRepository {
   }
 
   @override
-  Future<Result<User>> updateUser() {
-    // TODO: implement updateUser
-    throw UnimplementedError();
+  Future<Result<User>> updateUser(
+      {required String name,
+      required String email,
+      required String password,
+      required String passwordConfirmation,
+      required String gender,
+      required String dateOfBirth,
+      required String work}) async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      var token = prefs.getString('token');
+
+      final responses = await _dio!.put(
+        '$baseUrl/profile',
+        queryParameters: {
+          'name': name,
+          'email': email,
+          'password': password,
+          'password_confirmation': passwordConfirmation,
+          'date_of_birth': dateOfBirth,
+          'work': work,
+          'gender': gender
+        },
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+      );
+
+      if (responses.statusCode == 200) {
+        return Result.success(User.fromJson(responses.data['data']['profile']));
+      } else {
+        return Result.failed('Failed to update user');
+      }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 }
