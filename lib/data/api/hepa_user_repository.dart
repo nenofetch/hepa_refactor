@@ -20,7 +20,7 @@ class HepaUserRepository implements UserRepository {
             maxWidth: 90,
           ));
   @override
-  Future<Result<User>> getUser({required String token}) async {
+  Future<Result<User>> getUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var userToken = prefs.getString('token');
     debugPrint('User $userToken');
