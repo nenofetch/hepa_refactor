@@ -2,6 +2,7 @@ import 'package:hepa/data/misc/constants.dart';
 import 'package:hepa/data/repositories/authentication.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:dio/dio.dart';
+import 'package:hepa/domain/entities/user.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -18,13 +19,13 @@ class HepaAuthentication implements Authentication {
             maxWidth: 90,
           ));
   @override
-  Future? getLoggedInUser() async {
+  Future<Result<User>> getLoggedInUser() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       var token = prefs.getString('token');
 
       if (token != null) {
-        final responses = await _dio!.post(
+        final responses = await _dio!.get(
           '$baseUrl/profile',
           options: Options(
             headers: {
@@ -34,10 +35,13 @@ class HepaAuthentication implements Authentication {
         );
 
         if (responses.statusCode == 200) {
-          return responses.data['data'];
+          return Result.success(
+              User.fromJson(responses.data!['data']['profile']));
+        } else {
+          return Result.failed('Failed');
         }
       } else {
-        return null;
+        return Result.failed('Stoppp');
       }
     } on DioException catch (e) {
       return Result.failed('$e.message');
@@ -65,7 +69,8 @@ class HepaAuthentication implements Authentication {
 
       // return Result.success(response.data['token']);
     } on DioException catch (e) {
-      return Result.failed(e.response?.data['message'] ?? 'Proses Login Gagal');
+      // return Result.failed(e.response?.data['message'] ?? 'Proses Login Gagal');
+      return Result.failed('${e.response!.data['data'] ?? 'Login Gagal'}');
     }
   }
 
@@ -102,9 +107,10 @@ class HepaAuthentication implements Authentication {
       required String work}) async {
     try {
       final response = await _dio!.post('$baseUrl/register', data: {
+        'name': name,
         'email': email,
         'password': password,
-        'retype_password': retypePassword,
+        'password_confirmation': retypePassword,
         'work': work,
         'date_of_birth': dateOfBirth,
         'gender': gender,
@@ -122,7 +128,7 @@ class HepaAuthentication implements Authentication {
 
       // return Result.success(response.data['token']);
     } on DioException catch (e) {
-      return Result.failed(e.response?.data['message'] ?? 'Failed to login');
+      return Result.failed(e.response?.data['message'] ?? 'Gagal mendaftar');
     }
   }
 }
