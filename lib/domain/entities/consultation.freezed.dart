@@ -20,14 +20,15 @@ Consultation _$ConsultationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Consultation {
-  @JsonKey(name: 'receipent_id')
-  List<User>? get receipentId => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   String? get attachment => throw _privateConstructorUsedError;
-  @JsonKey(name: 'sender_id')
-  int? get senderId => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'receipent_id')
+  int get receipentId => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  String get createdAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'updated_at')
+  String get updatedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,11 +43,12 @@ abstract class $ConsultationCopyWith<$Res> {
       _$ConsultationCopyWithImpl<$Res, Consultation>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'receipent_id') List<User>? receipentId,
-      String? message,
+      {String? message,
       String? attachment,
-      @JsonKey(name: 'sender_id') int? senderId,
-      @JsonKey(name: 'created_at') DateTime createdAt});
+      String? status,
+      @JsonKey(name: 'receipent_id') int receipentId,
+      @JsonKey(name: 'created_at') String createdAt,
+      @JsonKey(name: 'updated_at') String updatedAt});
 }
 
 /// @nodoc
@@ -62,17 +64,14 @@ class _$ConsultationCopyWithImpl<$Res, $Val extends Consultation>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? receipentId = freezed,
     Object? message = freezed,
     Object? attachment = freezed,
-    Object? senderId = freezed,
+    Object? status = freezed,
+    Object? receipentId = null,
     Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      receipentId: freezed == receipentId
-          ? _value.receipentId
-          : receipentId // ignore: cast_nullable_to_non_nullable
-              as List<User>?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -81,14 +80,22 @@ class _$ConsultationCopyWithImpl<$Res, $Val extends Consultation>
           ? _value.attachment
           : attachment // ignore: cast_nullable_to_non_nullable
               as String?,
-      senderId: freezed == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receipentId: null == receipentId
+          ? _value.receipentId
+          : receipentId // ignore: cast_nullable_to_non_nullable
+              as int,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -102,11 +109,12 @@ abstract class _$$ConsultationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'receipent_id') List<User>? receipentId,
-      String? message,
+      {String? message,
       String? attachment,
-      @JsonKey(name: 'sender_id') int? senderId,
-      @JsonKey(name: 'created_at') DateTime createdAt});
+      String? status,
+      @JsonKey(name: 'receipent_id') int receipentId,
+      @JsonKey(name: 'created_at') String createdAt,
+      @JsonKey(name: 'updated_at') String updatedAt});
 }
 
 /// @nodoc
@@ -120,17 +128,14 @@ class __$$ConsultationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? receipentId = freezed,
     Object? message = freezed,
     Object? attachment = freezed,
-    Object? senderId = freezed,
+    Object? status = freezed,
+    Object? receipentId = null,
     Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(_$ConsultationImpl(
-      receipentId: freezed == receipentId
-          ? _value._receipentId
-          : receipentId // ignore: cast_nullable_to_non_nullable
-              as List<User>?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -139,14 +144,22 @@ class __$$ConsultationImplCopyWithImpl<$Res>
           ? _value.attachment
           : attachment // ignore: cast_nullable_to_non_nullable
               as String?,
-      senderId: freezed == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receipentId: null == receipentId
+          ? _value.receipentId
+          : receipentId // ignore: cast_nullable_to_non_nullable
+              as int,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -155,41 +168,35 @@ class __$$ConsultationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConsultationImpl implements _Consultation {
   const _$ConsultationImpl(
-      {@JsonKey(name: 'receipent_id') final List<User>? receipentId,
-      this.message,
+      {this.message,
       this.attachment,
-      @JsonKey(name: 'sender_id') this.senderId,
-      @JsonKey(name: 'created_at') required this.createdAt})
-      : _receipentId = receipentId;
+      this.status,
+      @JsonKey(name: 'receipent_id') required this.receipentId,
+      @JsonKey(name: 'created_at') required this.createdAt,
+      @JsonKey(name: 'updated_at') required this.updatedAt});
 
   factory _$ConsultationImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConsultationImplFromJson(json);
-
-  final List<User>? _receipentId;
-  @override
-  @JsonKey(name: 'receipent_id')
-  List<User>? get receipentId {
-    final value = _receipentId;
-    if (value == null) return null;
-    if (_receipentId is EqualUnmodifiableListView) return _receipentId;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
 
   @override
   final String? message;
   @override
   final String? attachment;
   @override
-  @JsonKey(name: 'sender_id')
-  final int? senderId;
+  final String? status;
+  @override
+  @JsonKey(name: 'receipent_id')
+  final int receipentId;
   @override
   @JsonKey(name: 'created_at')
-  final DateTime createdAt;
+  final String createdAt;
+  @override
+  @JsonKey(name: 'updated_at')
+  final String updatedAt;
 
   @override
   String toString() {
-    return 'Consultation(receipentId: $receipentId, message: $message, attachment: $attachment, senderId: $senderId, createdAt: $createdAt)';
+    return 'Consultation(message: $message, attachment: $attachment, status: $status, receipentId: $receipentId, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -197,26 +204,22 @@ class _$ConsultationImpl implements _Consultation {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConsultationImpl &&
-            const DeepCollectionEquality()
-                .equals(other._receipentId, _receipentId) &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.attachment, attachment) ||
                 other.attachment == attachment) &&
-            (identical(other.senderId, senderId) ||
-                other.senderId == senderId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.receipentId, receipentId) ||
+                other.receipentId == receipentId) &&
             (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_receipentId),
-      message,
-      attachment,
-      senderId,
-      createdAt);
+  int get hashCode => Object.hash(runtimeType, message, attachment, status,
+      receipentId, createdAt, updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -234,29 +237,32 @@ class _$ConsultationImpl implements _Consultation {
 
 abstract class _Consultation implements Consultation {
   const factory _Consultation(
-          {@JsonKey(name: 'receipent_id') final List<User>? receipentId,
-          final String? message,
+          {final String? message,
           final String? attachment,
-          @JsonKey(name: 'sender_id') final int? senderId,
-          @JsonKey(name: 'created_at') required final DateTime createdAt}) =
+          final String? status,
+          @JsonKey(name: 'receipent_id') required final int receipentId,
+          @JsonKey(name: 'created_at') required final String createdAt,
+          @JsonKey(name: 'updated_at') required final String updatedAt}) =
       _$ConsultationImpl;
 
   factory _Consultation.fromJson(Map<String, dynamic> json) =
       _$ConsultationImpl.fromJson;
 
   @override
-  @JsonKey(name: 'receipent_id')
-  List<User>? get receipentId;
-  @override
   String? get message;
   @override
   String? get attachment;
   @override
-  @JsonKey(name: 'sender_id')
-  int? get senderId;
+  String? get status;
+  @override
+  @JsonKey(name: 'receipent_id')
+  int get receipentId;
   @override
   @JsonKey(name: 'created_at')
-  DateTime get createdAt;
+  String get createdAt;
+  @override
+  @JsonKey(name: 'updated_at')
+  String get updatedAt;
   @override
   @JsonKey(ignore: true)
   _$$ConsultationImplCopyWith<_$ConsultationImpl> get copyWith =>
