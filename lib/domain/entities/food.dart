@@ -8,7 +8,6 @@ class Food with _$Food {
   const factory Food({
     required int id,
     String? name,
-    String? category,
     String? portion,
     String? calories,
     String? proteins,

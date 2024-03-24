@@ -9,7 +9,6 @@ part of 'food.dart';
 _$FoodImpl _$$FoodImplFromJson(Map<String, dynamic> json) => _$FoodImpl(
       id: json['id'] as int,
       name: json['name'] as String?,
-      category: json['category'] as String?,
       portion: json['portion'] as String?,
       calories: json['calories'] as String?,
       proteins: json['proteins'] as String?,
@@ -24,7 +23,6 @@ Map<String, dynamic> _$$FoodImplToJson(_$FoodImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'category': instance.category,
       'portion': instance.portion,
       'calories': instance.calories,
       'proteins': instance.proteins,

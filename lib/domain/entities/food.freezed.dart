@@ -22,7 +22,6 @@ Food _$FoodFromJson(Map<String, dynamic> json) {
 mixin _$Food {
   int get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get category => throw _privateConstructorUsedError;
   String? get portion => throw _privateConstructorUsedError;
   String? get calories => throw _privateConstructorUsedError;
   String? get proteins => throw _privateConstructorUsedError;
@@ -45,7 +44,6 @@ abstract class $FoodCopyWith<$Res> {
   $Res call(
       {int id,
       String? name,
-      String? category,
       String? portion,
       String? calories,
       String? proteins,
@@ -71,7 +69,6 @@ class _$FoodCopyWithImpl<$Res, $Val extends Food>
   $Res call({
     Object? id = null,
     Object? name = freezed,
-    Object? category = freezed,
     Object? portion = freezed,
     Object? calories = freezed,
     Object? proteins = freezed,
@@ -89,10 +86,6 @@ class _$FoodCopyWithImpl<$Res, $Val extends Food>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
               as String?,
       portion: freezed == portion
           ? _value.portion
@@ -140,7 +133,6 @@ abstract class _$$FoodImplCopyWith<$Res> implements $FoodCopyWith<$Res> {
   $Res call(
       {int id,
       String? name,
-      String? category,
       String? portion,
       String? calories,
       String? proteins,
@@ -163,7 +155,6 @@ class __$$FoodImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = freezed,
-    Object? category = freezed,
     Object? portion = freezed,
     Object? calories = freezed,
     Object? proteins = freezed,
@@ -181,10 +172,6 @@ class __$$FoodImplCopyWithImpl<$Res>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
               as String?,
       portion: freezed == portion
           ? _value.portion
@@ -228,7 +215,6 @@ class _$FoodImpl implements _Food {
   const _$FoodImpl(
       {required this.id,
       this.name,
-      this.category,
       this.portion,
       this.calories,
       this.proteins,
@@ -246,8 +232,6 @@ class _$FoodImpl implements _Food {
   final int id;
   @override
   final String? name;
-  @override
-  final String? category;
   @override
   final String? portion;
   @override
@@ -274,7 +258,7 @@ class _$FoodImpl implements _Food {
 
   @override
   String toString() {
-    return 'Food(id: $id, name: $name, category: $category, portion: $portion, calories: $calories, proteins: $proteins, carbohydrate: $carbohydrate, fat: $fat, fiber: $fiber, sugar: $sugar, foods: $foods)';
+    return 'Food(id: $id, name: $name, portion: $portion, calories: $calories, proteins: $proteins, carbohydrate: $carbohydrate, fat: $fat, fiber: $fiber, sugar: $sugar, foods: $foods)';
   }
 
   @override
@@ -284,8 +268,6 @@ class _$FoodImpl implements _Food {
             other is _$FoodImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
             (identical(other.portion, portion) || other.portion == portion) &&
             (identical(other.calories, calories) ||
                 other.calories == calories) &&
@@ -305,7 +287,6 @@ class _$FoodImpl implements _Food {
       runtimeType,
       id,
       name,
-      category,
       portion,
       calories,
       proteins,
@@ -333,7 +314,6 @@ abstract class _Food implements Food {
   const factory _Food(
       {required final int id,
       final String? name,
-      final String? category,
       final String? portion,
       final String? calories,
       final String? proteins,
@@ -349,8 +329,6 @@ abstract class _Food implements Food {
   int get id;
   @override
   String? get name;
-  @override
-  String? get category;
   @override
   String? get portion;
   @override
