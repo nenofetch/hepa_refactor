@@ -5,7 +5,7 @@ import 'package:hepa/presentation/providers/user_data/user_data_provider.dart';
 import 'package:hepa/presentation/router/router_provider.dart';
 import 'package:hepa/presentation/widgets/hepa_text_field.dart';
 import 'package:flutter/material.dart';
-
+x
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LoginPage extends ConsumerWidget {
@@ -54,12 +54,14 @@ class LoginPage extends ConsumerWidget {
               children: [
                 // Email Text Field
                 HepaTextField(
+                  autofillHints: [AutofillHints.email],
                   controller: emailController,
                   hintText: 'Email',
                   suffixIcon: Icon(Icons.email),
                 ),
                 verticalSpace(20),
                 HepaTextField(
+                  autofillHints: [AutofillHints.password],
                   controller: passwordController,
                   hintText: 'Password',
                   obscureText: true,
