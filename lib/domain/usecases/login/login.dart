@@ -16,7 +16,6 @@ class Login implements UseCase<Result<User>, LoginParams> {
   Future<Result<User>> call(LoginParams params) async {
     var userId = await authentication.login(
         email: params.email, password: params.password);
-    print('anuu ${userId.resultValue}');
 
     if (userId is Success) {
       var userResult = await userRepository.getUser();
