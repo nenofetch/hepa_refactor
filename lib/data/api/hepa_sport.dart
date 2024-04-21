@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:hepa/data/misc/constants.dart';
-import 'package:hepa/data/repositories/education_repository.dart';
-import 'package:hepa/domain/entities/education.dart';
+import 'package:hepa/data/repositories/sport_repository.dart';
 import 'package:hepa/domain/entities/result.dart';
+import 'package:hepa/domain/entities/sport.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class HepaEducation implements EducationRepository {
+class HepaSport implements SportRepository {
   final Dio? _dio;
 
-  HepaEducation({Dio? dio})
+  HepaSport({Dio? dio})
       : _dio = dio ?? Dio()
           ..interceptors.add(PrettyDioLogger(
             responseBody: true,
@@ -19,21 +19,19 @@ class HepaEducation implements EducationRepository {
             maxWidth: 90,
           ));
   @override
-  Future<Result<List<Education>>> getEducations() async {
+  Future<Result<List<Sport>>> getSports() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
-      final responses = await _dio!.get('$baseUrl/educations',
-          options: Options(headers: {
-            'Authorization': 'Bearer $token',
-          }));
+      final responses = await _dio!.get('$baseUrl/sports',
+          options: Options(headers: {'Authorization': 'Bearer $token'}));
 
       final results =
-          List<Map<String, dynamic>>.from(responses.data['data']['educations']);
+          List<Map<String, dynamic>>.from(responses.data['data']['sports']);
 
-      return Result.success(results.map((e) => Education.fromJson(e)).toList());
+      return Result.success(results.map((e) => Sport.fromJson(e)).toList());
     } on DioException catch (e) {
-      return Result.failed('${e.message}');
+      return Result.failed(' ${e.message}');
     }
   }
 }

@@ -20,15 +20,36 @@ class HepaSnack implements SnackRepository {
             maxWidth: 90,
           ));
   @override
-  Future<Result<Snack>> addFood({
-    required List<int> id,
+  Future<Result<Snack>> addSnack({
+    required List<int> snacks,
     String category = "Cemilan",
   }) async {
-    throw UnimplementedError();
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+
+      final responses = await _dio!.post(
+        '$baseUrl/snacks',
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+        data: {
+          'category': category,
+          'snacks': snacks,
+        },
+      );
+      if (responses.statusCode == 200) {
+        return Result.success(Snack.fromJson(responses.data));
+      } else {
+        return Result.failed('Failed to add snacks');
+      }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 
   @override
-  Future<Result<List<Snack>>> getFoods() async {
+  Future<Result<List<Snack>>> getSnacks() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
@@ -41,9 +62,14 @@ class HepaSnack implements SnackRepository {
         ),
       );
 
-      final results = List<Map<String, dynamic>>.from(responses.data['data']);
+      if (responses.statusCode == 200) {
+        final results =
+            List<Map<String, dynamic>>.from(responses.data['data']['snacks']);
 
-      return Result.success(results.map((e) => Snack.fromJson(e)).toList());
+        return Result.success(results.map((e) => Snack.fromJson(e)).toList());
+      } else {
+        return Result.failed('Failed to get snacks');
+      }
     } on DioException catch (e) {
       return Result.failed('${e.message}');
     }

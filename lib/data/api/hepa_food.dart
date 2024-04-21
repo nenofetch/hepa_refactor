@@ -21,9 +21,29 @@ class HepaFood implements FoodRepository {
 
   @override
   Future<Result<Food>> addFood(
-      {required List<int> id, required String category}) {
-    // TODO: implement addFood
-    throw UnimplementedError();
+      {required List<int> foods, required String category}) async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+
+      final responses = await _dio!.post(
+        '$baseUrl/foods',
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+        data: {
+          'category': category,
+          'foods': foods,
+        },
+      );
+      if (responses.statusCode == 200) {
+        return Result.success(Food.fromJson(responses.data));
+      } else {
+        return Result.failed('Failed to add food');
+      }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 
   @override
@@ -41,9 +61,14 @@ class HepaFood implements FoodRepository {
       );
 
       if (responses.statusCode == 200) {
-        final results = List<Map<String, dynamic>>.from(responses.data['data']);
+        final results =
+            List<Map<String, dynamic>>.from(responses.data['data']['foods']);
+        
 
         return Result.success(results.map((e) => Food.fromJson(e)).toList());
+        // final foodList = responses.data['data']['foods'] as List;
+        // final results = foodList.map((e) => Food.fromJson(e)).toList();
+        // return Result.success(results);
       } else {
         return Result.failed('Failed');
       }

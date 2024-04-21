@@ -18,6 +18,7 @@ class HepaAnthropometry implements AnthropometryRepository {
             compact: true,
             maxWidth: 90,
           ));
+
   @override
   Future<Result<Anthropometry>> checkAnthropometry(
       {required double weight, required double height}) async {
@@ -39,6 +40,24 @@ class HepaAnthropometry implements AnthropometryRepository {
       } else {
         return Result.failed('Failed to check anthropometry');
       }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
+  }
+
+  @override
+  Future<Result<Anthropometry>> getAnthropometry() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+      final responses = await _dio!.get('$baseUrl/educations',
+          options: Options(headers: {
+            'Authorization': 'Bearer $token',
+          }));
+
+      final results = responses.data['data'];
+
+      return Result.success(results);
     } on DioException catch (e) {
       return Result.failed('${e.message}');
     }

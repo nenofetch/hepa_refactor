@@ -21,11 +21,31 @@ class HepaDrink implements DrinkRepository {
 
   @override
   Future<Result<Drink>> addDrink({
-    required List<int> id,
+    required List<int> drinks,
     String category = "Minuman",
-  }) {
-    // TODO: implement addDrink
-    throw UnimplementedError();
+  }) async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+
+      final responses = await _dio!.post(
+        '$baseUrl/drinks',
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+        data: {
+          'category': category,
+          'drinks': drinks,
+        },
+      );
+      if (responses.statusCode == 200) {
+        return Result.success(Drink.fromJson(responses.data));
+      } else {
+        return Result.failed('Failed to add food');
+      }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 
   @override
@@ -42,7 +62,8 @@ class HepaDrink implements DrinkRepository {
         ),
       );
 
-      final results = List<Map<String, dynamic>>.from(responses.data['data']);
+      final results =
+          List<Map<String, dynamic>>.from(responses.data['data']['drinks']);
 
       return Result.success(results.map((e) => Drink.fromJson(e)).toList());
     } on DioException catch (e) {

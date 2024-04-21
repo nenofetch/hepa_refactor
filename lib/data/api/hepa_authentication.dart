@@ -34,17 +34,13 @@ class HepaAuthentication implements Authentication {
           ),
         );
 
-        if (responses.statusCode == 200) {
-          return Result.success(
-              User.fromJson(responses.data!['data']['profile']));
-        } else {
-          return Result.failed('Failed');
-        }
+        return Result.success(
+            User.fromJson(responses.data!['data']['profile']));
       } else {
         return Result.failed('Stoppp');
       }
     } on DioException catch (e) {
-      return Result.failed('$e.message');
+      return Result.failed('${e.response!.data['data'] ?? 'Login Gagal'}');
     }
   }
 
