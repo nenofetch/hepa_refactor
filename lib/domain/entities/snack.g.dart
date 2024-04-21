@@ -7,7 +7,7 @@ part of 'snack.dart';
 // **************************************************************************
 
 _$SnackImpl _$$SnackImplFromJson(Map<String, dynamic> json) => _$SnackImpl(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       name: json['name'] as String?,
       category: json['category'] as String?,
       portion: json['portion'] as String?,

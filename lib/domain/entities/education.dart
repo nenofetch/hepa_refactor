@@ -10,6 +10,7 @@ class Education with _$Education {
     String? thumbnail,
     required String title,
     required String description,
+    required String link,
   }) = _Education;
 
   factory Education.fromJson(Map<String, dynamic> json) =>

@@ -24,6 +24,7 @@ mixin _$Education {
   String? get thumbnail => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
+  String get link => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,12 @@ abstract class $EducationCopyWith<$Res> {
   factory $EducationCopyWith(Education value, $Res Function(Education) then) =
       _$EducationCopyWithImpl<$Res, Education>;
   @useResult
-  $Res call({int id, String? thumbnail, String title, String description});
+  $Res call(
+      {int id,
+      String? thumbnail,
+      String title,
+      String description,
+      String link});
 }
 
 /// @nodoc
@@ -56,6 +62,7 @@ class _$EducationCopyWithImpl<$Res, $Val extends Education>
     Object? thumbnail = freezed,
     Object? title = null,
     Object? description = null,
+    Object? link = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -74,6 +81,10 @@ class _$EducationCopyWithImpl<$Res, $Val extends Education>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      link: null == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -86,7 +97,12 @@ abstract class _$$EducationImplCopyWith<$Res>
       __$$EducationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String? thumbnail, String title, String description});
+  $Res call(
+      {int id,
+      String? thumbnail,
+      String title,
+      String description,
+      String link});
 }
 
 /// @nodoc
@@ -104,6 +120,7 @@ class __$$EducationImplCopyWithImpl<$Res>
     Object? thumbnail = freezed,
     Object? title = null,
     Object? description = null,
+    Object? link = null,
   }) {
     return _then(_$EducationImpl(
       id: null == id
@@ -122,6 +139,10 @@ class __$$EducationImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      link: null == link
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -133,7 +154,8 @@ class _$EducationImpl implements _Education {
       {required this.id,
       this.thumbnail,
       required this.title,
-      required this.description});
+      required this.description,
+      required this.link});
 
   factory _$EducationImpl.fromJson(Map<String, dynamic> json) =>
       _$$EducationImplFromJson(json);
@@ -146,10 +168,12 @@ class _$EducationImpl implements _Education {
   final String title;
   @override
   final String description;
+  @override
+  final String link;
 
   @override
   String toString() {
-    return 'Education(id: $id, thumbnail: $thumbnail, title: $title, description: $description)';
+    return 'Education(id: $id, thumbnail: $thumbnail, title: $title, description: $description, link: $link)';
   }
 
   @override
@@ -162,13 +186,14 @@ class _$EducationImpl implements _Education {
                 other.thumbnail == thumbnail) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
-                other.description == description));
+                other.description == description) &&
+            (identical(other.link, link) || other.link == link));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, thumbnail, title, description);
+      Object.hash(runtimeType, id, thumbnail, title, description, link);
 
   @JsonKey(ignore: true)
   @override
@@ -189,7 +214,8 @@ abstract class _Education implements Education {
       {required final int id,
       final String? thumbnail,
       required final String title,
-      required final String description}) = _$EducationImpl;
+      required final String description,
+      required final String link}) = _$EducationImpl;
 
   factory _Education.fromJson(Map<String, dynamic> json) =
       _$EducationImpl.fromJson;
@@ -202,6 +228,8 @@ abstract class _Education implements Education {
   String get title;
   @override
   String get description;
+  @override
+  String get link;
   @override
   @JsonKey(ignore: true)
   _$$EducationImplCopyWith<_$EducationImpl> get copyWith =>

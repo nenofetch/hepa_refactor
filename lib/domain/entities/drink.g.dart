@@ -7,7 +7,7 @@ part of 'drink.dart';
 // **************************************************************************
 
 _$DrinkImpl _$$DrinkImplFromJson(Map<String, dynamic> json) => _$DrinkImpl(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       name: json['name'] as String?,
       category: json['category'] as String?,
       calories: json['calories'] as String?,

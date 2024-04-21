@@ -20,7 +20,7 @@ Drink _$DrinkFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Drink {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
   String? get calories => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $DrinkCopyWith<$Res> {
       _$DrinkCopyWithImpl<$Res, Drink>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
       String? category,
       String? calories,
@@ -65,7 +65,7 @@ class _$DrinkCopyWithImpl<$Res, $Val extends Drink>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
     Object? category = freezed,
     Object? calories = freezed,
@@ -76,10 +76,10 @@ class _$DrinkCopyWithImpl<$Res, $Val extends Drink>
     Object? drinks = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -124,7 +124,7 @@ abstract class _$$DrinkImplCopyWith<$Res> implements $DrinkCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
       String? category,
       String? calories,
@@ -146,7 +146,7 @@ class __$$DrinkImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
     Object? category = freezed,
     Object? calories = freezed,
@@ -157,10 +157,10 @@ class __$$DrinkImplCopyWithImpl<$Res>
     Object? drinks = freezed,
   }) {
     return _then(_$DrinkImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -201,7 +201,7 @@ class __$$DrinkImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DrinkImpl implements _Drink {
   const _$DrinkImpl(
-      {required this.id,
+      {this.id,
       this.name,
       this.category,
       this.calories,
@@ -216,7 +216,7 @@ class _$DrinkImpl implements _Drink {
       _$$DrinkImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String? name;
   @override
@@ -296,7 +296,7 @@ class _$DrinkImpl implements _Drink {
 
 abstract class _Drink implements Drink {
   const factory _Drink(
-      {required final int id,
+      {final int? id,
       final String? name,
       final String? category,
       final String? calories,
@@ -309,7 +309,7 @@ abstract class _Drink implements Drink {
   factory _Drink.fromJson(Map<String, dynamic> json) = _$DrinkImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String? get name;
   @override

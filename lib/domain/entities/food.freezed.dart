@@ -20,8 +20,9 @@ Food _$FoodFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Food {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  String? get categories => throw _privateConstructorUsedError;
   String? get portion => throw _privateConstructorUsedError;
   String? get calories => throw _privateConstructorUsedError;
   String? get proteins => throw _privateConstructorUsedError;
@@ -42,8 +43,9 @@ abstract class $FoodCopyWith<$Res> {
       _$FoodCopyWithImpl<$Res, Food>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
+      String? categories,
       String? portion,
       String? calories,
       String? proteins,
@@ -67,8 +69,9 @@ class _$FoodCopyWithImpl<$Res, $Val extends Food>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
+    Object? categories = freezed,
     Object? portion = freezed,
     Object? calories = freezed,
     Object? proteins = freezed,
@@ -79,13 +82,17 @@ class _$FoodCopyWithImpl<$Res, $Val extends Food>
     Object? foods = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      categories: freezed == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
               as String?,
       portion: freezed == portion
           ? _value.portion
@@ -131,8 +138,9 @@ abstract class _$$FoodImplCopyWith<$Res> implements $FoodCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
+      String? categories,
       String? portion,
       String? calories,
       String? proteins,
@@ -153,8 +161,9 @@ class __$$FoodImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
+    Object? categories = freezed,
     Object? portion = freezed,
     Object? calories = freezed,
     Object? proteins = freezed,
@@ -165,13 +174,17 @@ class __$$FoodImplCopyWithImpl<$Res>
     Object? foods = freezed,
   }) {
     return _then(_$FoodImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      categories: freezed == categories
+          ? _value.categories
+          : categories // ignore: cast_nullable_to_non_nullable
               as String?,
       portion: freezed == portion
           ? _value.portion
@@ -213,8 +226,9 @@ class __$$FoodImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$FoodImpl implements _Food {
   const _$FoodImpl(
-      {required this.id,
+      {this.id,
       this.name,
+      this.categories,
       this.portion,
       this.calories,
       this.proteins,
@@ -229,9 +243,11 @@ class _$FoodImpl implements _Food {
       _$$FoodImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String? name;
+  @override
+  final String? categories;
   @override
   final String? portion;
   @override
@@ -258,7 +274,7 @@ class _$FoodImpl implements _Food {
 
   @override
   String toString() {
-    return 'Food(id: $id, name: $name, portion: $portion, calories: $calories, proteins: $proteins, carbohydrate: $carbohydrate, fat: $fat, fiber: $fiber, sugar: $sugar, foods: $foods)';
+    return 'Food(id: $id, name: $name, categories: $categories, portion: $portion, calories: $calories, proteins: $proteins, carbohydrate: $carbohydrate, fat: $fat, fiber: $fiber, sugar: $sugar, foods: $foods)';
   }
 
   @override
@@ -268,6 +284,8 @@ class _$FoodImpl implements _Food {
             other is _$FoodImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.categories, categories) ||
+                other.categories == categories) &&
             (identical(other.portion, portion) || other.portion == portion) &&
             (identical(other.calories, calories) ||
                 other.calories == calories) &&
@@ -287,6 +305,7 @@ class _$FoodImpl implements _Food {
       runtimeType,
       id,
       name,
+      categories,
       portion,
       calories,
       proteins,
@@ -312,8 +331,9 @@ class _$FoodImpl implements _Food {
 
 abstract class _Food implements Food {
   const factory _Food(
-      {required final int id,
+      {final int? id,
       final String? name,
+      final String? categories,
       final String? portion,
       final String? calories,
       final String? proteins,
@@ -326,9 +346,11 @@ abstract class _Food implements Food {
   factory _Food.fromJson(Map<String, dynamic> json) = _$FoodImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String? get name;
+  @override
+  String? get categories;
   @override
   String? get portion;
   @override

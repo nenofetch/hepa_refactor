@@ -20,7 +20,7 @@ Snack _$SnackFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Snack {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get category => throw _privateConstructorUsedError;
   String? get portion => throw _privateConstructorUsedError;
@@ -42,7 +42,7 @@ abstract class $SnackCopyWith<$Res> {
       _$SnackCopyWithImpl<$Res, Snack>;
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
       String? category,
       String? portion,
@@ -67,7 +67,7 @@ class _$SnackCopyWithImpl<$Res, $Val extends Snack>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
     Object? category = freezed,
     Object? portion = freezed,
@@ -79,10 +79,10 @@ class _$SnackCopyWithImpl<$Res, $Val extends Snack>
     Object? snacks = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -131,7 +131,7 @@ abstract class _$$SnackImplCopyWith<$Res> implements $SnackCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {int? id,
       String? name,
       String? category,
       String? portion,
@@ -154,7 +154,7 @@ class __$$SnackImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? name = freezed,
     Object? category = freezed,
     Object? portion = freezed,
@@ -166,10 +166,10 @@ class __$$SnackImplCopyWithImpl<$Res>
     Object? snacks = freezed,
   }) {
     return _then(_$SnackImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -214,7 +214,7 @@ class __$$SnackImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SnackImpl implements _Snack {
   const _$SnackImpl(
-      {required this.id,
+      {this.id,
       this.name,
       this.category,
       this.portion,
@@ -230,7 +230,7 @@ class _$SnackImpl implements _Snack {
       _$$SnackImplFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String? name;
   @override
@@ -314,7 +314,7 @@ class _$SnackImpl implements _Snack {
 
 abstract class _Snack implements Snack {
   const factory _Snack(
-      {required final int id,
+      {final int? id,
       final String? name,
       final String? category,
       final String? portion,
@@ -328,7 +328,7 @@ abstract class _Snack implements Snack {
   factory _Snack.fromJson(Map<String, dynamic> json) = _$SnackImpl.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String? get name;
   @override

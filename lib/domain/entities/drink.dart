@@ -7,7 +7,7 @@ part 'drink.g.dart';
 @freezed
 class Drink with _$Drink {
   const factory Drink({
-    required int id,
+     int? id,
     String? name,
     String? category,
     String? calories,

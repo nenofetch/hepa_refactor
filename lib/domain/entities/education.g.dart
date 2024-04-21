@@ -12,6 +12,7 @@ _$EducationImpl _$$EducationImplFromJson(Map<String, dynamic> json) =>
       thumbnail: json['thumbnail'] as String?,
       title: json['title'] as String,
       description: json['description'] as String,
+      link: json['link'] as String,
     );
 
 Map<String, dynamic> _$$EducationImplToJson(_$EducationImpl instance) =>
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$EducationImplToJson(_$EducationImpl instance) =>
       'thumbnail': instance.thumbnail,
       'title': instance.title,
       'description': instance.description,
+      'link': instance.link,
     };
