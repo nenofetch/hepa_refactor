@@ -2,7 +2,7 @@ import 'package:hepa/presentation/extensions/build_context_extension.dart';
 import 'package:hepa/presentation/pages/dashboard_page/dashboard_page.dart';
 import 'package:hepa/presentation/pages/food_page/food_page.dart';
 import 'package:hepa/presentation/pages/profile_page/profile_page.dart';
-import 'package:hepa/presentation/pages/sport_page/sport_page.dart';
+
 import 'package:hepa/presentation/providers/user_data/user_data_provider.dart';
 import 'package:hepa/presentation/router/router_provider.dart';
 import 'package:hepa/presentation/widgets/bottom_nav_bar.dart';
@@ -22,13 +22,6 @@ class MainPage extends ConsumerStatefulWidget {
 class _MainPageState extends ConsumerState<MainPage> {
   PageController pageController = PageController();
   int selectedPage = 0;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     ref.listen(userDataProvider, (previous, next) {
@@ -67,9 +60,6 @@ class _MainPageState extends ConsumerState<MainPage> {
                 child: DashboardPage(),
               ),
               Center(
-                child: SportPage(),
-              ),
-              Center(
                 child: FoodPage(),
               ),
               Center(
@@ -89,20 +79,13 @@ class _MainPageState extends ConsumerState<MainPage> {
                 BottomNavBarItem(
                   index: 1,
                   isSelected: selectedPage == 1,
-                  title: 'Olahraga',
-                  icon: Icons.run_circle,
-                  selectedIcon: Icons.run_circle,
-                ),
-                BottomNavBarItem(
-                  index: 2,
-                  isSelected: selectedPage == 2,
                   title: 'Makanan',
                   icon: Icons.fastfood,
                   selectedIcon: Icons.fastfood,
                 ),
                 BottomNavBarItem(
-                  index: 3,
-                  isSelected: selectedPage == 3,
+                  index: 2,
+                  isSelected: selectedPage == 2,
                   title: 'Profil',
                   icon: Icons.person,
                   selectedIcon: Icons.person,

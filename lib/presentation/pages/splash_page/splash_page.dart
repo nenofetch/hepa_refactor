@@ -16,7 +16,7 @@ class _SplashPageState extends ConsumerState<SplashPage> {
   @override
   void initState() {
     Timer(Duration(seconds: 2), () {
-      ref.read(routerProvider).pushNamed('main');
+      ref.read(routerProvider).goNamed('login');
     });
     super.initState();
   }
