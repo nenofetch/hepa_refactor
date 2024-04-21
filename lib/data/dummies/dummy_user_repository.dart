@@ -4,20 +4,21 @@ import 'package:hepa/domain/entities/user.dart';
 
 class DummyUserRepository implements UserRepository {
   @override
-  Future<Result<User>> getUser({required String token}) async {
-    await Future.delayed(const Duration(seconds: 3));
-    return Result.success(
-      User(
-        id: 1,
-        name: 'John Doe',
-        email: 'johndoe@gmail',
-      ),
-    );
+  Future<Result<User>> updateUser(
+      {required String name,
+      required String email,
+      required String password,
+      required String passwordConfirmation,
+      required String gender,
+      required String dateOfBirth,
+      required String work}) {
+    // TODO: implement updateUser
+    throw UnimplementedError();
   }
 
   @override
-  Future<Result<User>> updateUser() {
-    // TODO: implement updateUser
+  Future<Result<User>> getUser() {
+    // TODO: implement getUser
     throw UnimplementedError();
   }
 }
