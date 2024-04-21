@@ -1,4 +1,3 @@
-import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/widgets/bottom_nav_bar_item.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +21,7 @@ class BottomNavBar extends StatelessWidget {
         width: double.infinity,
         height: 70,
         decoration: BoxDecoration(
-            color: blackColor,
+            color: Colors.blue.shade900,
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)),
             boxShadow: [
