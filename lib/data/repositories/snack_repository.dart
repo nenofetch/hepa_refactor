@@ -3,11 +3,11 @@ import 'package:hepa/domain/entities/snack.dart';
 
 abstract interface class SnackRepository {
   // Get all foods
-  Future<Result<List<Snack>>> getFoods();
+  Future<Result<List<Snack>>> getSnacks();
 
   // Add food
-  Future<Result<Snack>> addFood({
-    required List<int> id,
+  Future<Result<Snack>> addSnack({
+    required List<int> snacks,
     String category = "Cemilan",
   });
 }

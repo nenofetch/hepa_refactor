@@ -7,7 +7,7 @@ abstract interface class DrinkRepository {
 
   // Add drink
   Future<Result<Drink>> addDrink({
-    required List<int> id,
+    required List<int> drinks,
     String category = "Minuman",
   });
 }
