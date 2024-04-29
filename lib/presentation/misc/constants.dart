@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const String assetsUrl = 'http://34.68.89.81:8000';
+const String assetsUrl = 'https://flutter.justnear.my.id';
 // Color
 const Color primaryColor = Color(0xff173430);
 const Color greyColor = Color(0xff617D79);
