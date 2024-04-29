@@ -4,11 +4,9 @@ import 'package:hepa/domain/entities/user.dart';
 import 'package:hepa/domain/usecases/get_logged_in_user/get_logged_in_user.dart';
 import 'package:hepa/domain/usecases/login/login.dart';
 import 'package:hepa/domain/usecases/register/register.dart';
-import 'package:hepa/presentation/providers/repositories/drink_repository/drink_repository_provider.dart';
-import 'package:hepa/presentation/providers/repositories/food_repository/food_repository_provider.dart';
-import 'package:hepa/presentation/providers/repositories/snack_repository/snack_repository_provider.dart';
 import 'package:hepa/presentation/providers/usecases/get_logged_in_user_provider.dart';
 import 'package:hepa/presentation/providers/usecases/login_provider.dart';
+import 'package:hepa/presentation/providers/usecases/logout_provider.dart';
 import 'package:hepa/presentation/providers/usecases/register_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -24,7 +22,6 @@ class UserData extends _$UserData {
 
     switch (userResult) {
       case Success(value: final user):
-        _displayAll();
         return user;
       case Failed(message: _):
         return null;
@@ -40,7 +37,6 @@ class UserData extends _$UserData {
 
     switch (result) {
       case Success(value: final user):
-        _displayAll();
         state = AsyncData(user);
       case Failed(:final message):
         state = AsyncError(FlutterError(message), StackTrace.current);
@@ -71,7 +67,6 @@ class UserData extends _$UserData {
 
     switch (result) {
       case Success(value: final user):
-        _displayAll();
         state = AsyncData(user);
 
       case Failed(:final message):
@@ -80,9 +75,17 @@ class UserData extends _$UserData {
     }
   }
 
-  void _displayAll() {
-    ref.read(foodRepositoryProvider);
-    ref.read(drinkRepositoryProvider);
-    ref.read(snackRepositoryProvider);
+  Future<void> logout() async {
+    var logout = ref.read(logoutProvider);
+
+    var result = await logout(null);
+
+    switch (result) {
+      case Success(value: _):
+        state = const AsyncData(null);
+      case Failed(:final message):
+        state = AsyncError(FlutterError(message), StackTrace.current);
+        state = AsyncData(state.valueOrNull);
+    }
   }
 }
