@@ -1,11 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:hepa/domain/models/user.dart';
+
+import 'package:hepa/utils/sessions.dart';
+import 'package:hepa/features/auth/login/page/login_page.dart';
+import 'package:hepa/features/home/page/home_page.dart';
+import 'package:hepa/routes/routes.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import 'package:refreshed/refreshed.dart';
 
-import 'app/routes/app_pages.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -17,9 +22,17 @@ void main() async {
   requestNotification();
   runApp(
     GetMaterialApp(
-      title: "Application",
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.routes,
+      debugShowCheckedModeBanner: false,
+      getPages: Routes.routes,
+      home: FutureBuilder(
+        future: Sessions.getUser(),
+        builder: (context, AsyncSnapshot<User> snapshot) {
+          if (snapshot.data != null && snapshot.data!.id != null) {
+            return const HomePage();
+          }
+          return const LoginPage();
+        },
+      ),
     ),
   );
 }
