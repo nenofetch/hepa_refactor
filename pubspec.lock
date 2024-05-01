@@ -33,14 +33,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.4.1"
-  analyzer_plugin:
-    dependency: transitive
-    description:
-      name: analyzer_plugin
-      sha256: "9661b30b13a685efaee9f02e5d01ed9f2b423bd889d28a304d02d704aee69161"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.11.3"
   args:
     dependency: transitive
     description:
@@ -185,22 +177,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.1"
-  ci:
-    dependency: transitive
-    description:
-      name: ci
-      sha256: "145d095ce05cddac4d797a158bc4cf3b6016d1fe63d8c3d2fbd7212590adca13"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.0"
-  cli_util:
-    dependency: transitive
-    description:
-      name: cli_util
-      sha256: c05b7406fdabc7a49a3929d4af76bcaccbbffcbcdcf185b082e1ae07da323d19
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.1"
   clock:
     dependency: transitive
     description:
@@ -257,22 +233,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
-  custom_lint:
-    dependency: "direct dev"
+  d_method:
+    dependency: "direct main"
     description:
-      name: custom_lint
-      sha256: "7c0aec12df22f9082146c354692056677f1e70bc43471644d1fdb36c6fdda799"
+      name: d_method
+      sha256: "49226beb6705fc7157788bdea5be5abc1534391ea2b521707bcb3ca59e300847"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.4"
-  custom_lint_core:
-    dependency: transitive
-    description:
-      name: custom_lint_core
-      sha256: a85e8f78f4c52f6c63cdaf8c872eb573db0231dcdf3c3a5906d493c1f8bc20e6
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.3"
+    version: "0.2.6"
   dart_style:
     dependency: transitive
     description:
@@ -298,7 +266,7 @@ packages:
     source: hosted
     version: "3.0.0"
   dio:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dio
       sha256: "11e40df547d418cc0c4900a9318b26304e665da6fa4755399a9ff9efd09034b5"
@@ -681,7 +649,7 @@ packages:
     source: hosted
     version: "0.15.4"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       sha256: "761a297c042deedc1ffbb156d6e2af13886bb305c2a343a4d972504cd67dd938"
@@ -1084,10 +1052,10 @@ packages:
     dependency: "direct main"
     description:
       name: refreshed
-      sha256: "9e4aa61f6678b6e8a2cf4e837d87f7c7726161c41abeed530acc55ceee56ff00"
+      sha256: "1e6da694d1c63f0163b46a3c7f1773e190b4502c2c227a314947b36f1cd583a3"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.8"
+    version: "2.6.0"
   rxdart:
     dependency: transitive
     description:
