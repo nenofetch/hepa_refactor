@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:hepa/data/utils/constants.dart';
 import 'package:hepa/data/repositories/consultation_repository.dart';
 import 'package:hepa/domain/entities/consultation.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HepaConsultation implements ConsultationRepository {
   final Dio? _dio;
@@ -18,22 +20,42 @@ class HepaConsultation implements ConsultationRepository {
           ));
 
   @override
-  Future<Result<List<Consultation>>> getConsultations() {
-    // TODO: implement getConsultations
-    throw UnimplementedError();
+  Future<Result<List<Consultation>>> getConsultations() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+      final responses = await _dio!.get(
+        '$baseUrl/consultations',
+        options: Options(headers: {'Authorization': 'Bearer $token'}),
+      );
+      if (responses.data['meta']['code'] == 200) {
+        final results =
+            List<Map<String, dynamic>>.from(responses.data['data']['1']);
+
+        return Result.success(
+            results.map((e) => Consultation.fromJson(e)).toList());
+      } else {
+        return Result.failed('Failed to get consultation');
+      }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 
   @override
-  Future<Result<String>> sendConsultation({required int receipentId}) async{
+  Future<Result<String>> sendConsultation(
+      {required int receipentId, required String message}) async {
     try {
-      final responses = await _dio!.post(
-        'https://hepa-api.herokuapp.com/consultations',
-        data: {
-          'receipent_id': receipentId,
-        },
-      );
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+      final responses = await _dio!.post('$baseUrl/consultations',
+          data: {
+            'receipent_id': receipentId,
+            'message': message,
+          },
+          options: Options(headers: {'Authorization': 'Bearer $token'}));
 
-      if (responses.statusCode == 200) {
+      if (responses.data['meta']['code'] == 200) {
         return Result.success('Success');
       } else {
         return Result.failed('Failed');

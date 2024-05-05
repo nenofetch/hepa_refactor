@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/misc/constants.dart';
+import 'package:hepa/data/utils/constants.dart';
 import 'package:hepa/data/repositories/food_repository.dart';
 import 'package:hepa/domain/entities/food.dart';
 import 'package:hepa/domain/entities/result.dart';
