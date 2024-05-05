@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/misc/methods.dart';
-import 'package:hepa/presentation/providers/hepa/get_anthropometies.dart';
+import 'package:hepa/presentation/providers/hepa/anthopometries_provider.dart';
 import 'package:hepa/presentation/widgets/hepa_text_field.dart';
 
 class AnthropometriPage extends ConsumerWidget {
@@ -12,7 +12,6 @@ class AnthropometriPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    var anthroData= ref.watch(getAnthropometriesProvider.notifier).getAnthro();
     return Scaffold(
       body: ListView(
         children: [
@@ -23,11 +22,13 @@ class AnthropometriPage extends ConsumerWidget {
                 verticalSpace(50),
                 HepaTextField(
                     textInputType: TextInputType.number,
-                    controller: weightController, hintText: 'Berat Badan/kg'),
+                    controller: weightController,
+                    hintText: 'Berat Badan/kg'),
                 verticalSpace(20),
                 HepaTextField(
-                  textInputType: TextInputType.number,
-                    controller: heightController, hintText: 'Tinggi Badan/m'),
+                    textInputType: TextInputType.number,
+                    controller: heightController,
+                    hintText: 'Tinggi Badan/m'),
                 verticalSpace(20),
                 SizedBox(
                   width: double.infinity,
@@ -35,7 +36,7 @@ class AnthropometriPage extends ConsumerWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       ref
-                          .read(getAnthropometriesProvider.notifier)
+                          .read(anthropometriesProvider.notifier)
                           .checkAnthropometry(
                               weight: double.parse(weightController.text),
                               height: double.parse(heightController.text));
@@ -58,7 +59,30 @@ class AnthropometriPage extends ConsumerWidget {
                     ),
                   ),
                 ),
-
+                verticalSpace(100),
+                Text(
+                  'Indeks Massa Tubuh',
+                  style: TextStyle(
+                      fontSize: 24, fontWeight: bold, color: blackColor),
+                ),
+                verticalSpace(10),
+                Text(
+                  ' ${ref.watch(anthropometriesProvider).valueOrNull?.imt.toStringAsFixed(2) ?? ''}',
+                  style: TextStyle(
+                      fontSize: 24, fontWeight: bold, color: blackColor),
+                ),
+                verticalSpace(10),
+                Text(
+                  'Kategori IMT',
+                  style: TextStyle(
+                      fontSize: 24, fontWeight: bold, color: blackColor),
+                ),
+                verticalSpace(10),
+                Text(
+                  ' ${ref.watch(anthropometriesProvider).valueOrNull?.result ?? ''}',
+                  style: TextStyle(
+                      fontSize: 24, fontWeight: bold, color: blackColor),
+                ),
               ],
             ),
           ),
