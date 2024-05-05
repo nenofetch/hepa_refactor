@@ -1,4 +1,4 @@
-import 'package:hepa/domain/entities/nutrition.dart';
+import 'package:hepa/domain/entities/report.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:hepa/domain/usecases/get_report/get_report.dart';
 import 'package:hepa/presentation/providers/usecases/get_report.dart';
@@ -9,7 +9,7 @@ part 'reports_provider.g.dart';
 @Riverpod()
 class GetReports extends _$GetReports {
   @override
-  FutureOr<List<Nutrition>> build() {
+  FutureOr<List<Report>> build() {
     // TODO: implement build
     throw UnimplementedError();
   }

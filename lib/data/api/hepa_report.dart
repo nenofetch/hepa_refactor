@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/report_repository.dart';
-import 'package:hepa/domain/entities/nutrition.dart';
+import 'package:hepa/domain/entities/report.dart';
 
 import 'package:hepa/domain/entities/result.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -20,13 +20,13 @@ class HepaReport implements ReportRepository {
             maxWidth: 90,
           ));
   @override
-  Future<Result<Nutrition>> detailReport() {
+  Future<Result<Report>> detailReport() {
     // TODO: implement detailReport
     throw UnimplementedError();
   }
 
   @override
-  Future<Result<Nutrition>> getReports() async {
+  Future<Result<Report>> getReports() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
@@ -37,7 +37,7 @@ class HepaReport implements ReportRepository {
         ),
       );
 
-      return Result.success(Nutrition.fromJson(responses.data['data']));
+      return Result.success(Report.fromJson(responses.data['data']));
     } on DioException catch (e) {
       return Result.failed('${e.message}');
     }
