@@ -1,8 +1,7 @@
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/authentication.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:dio/dio.dart';
-import 'package:hepa/domain/entities/user.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -19,23 +18,26 @@ class HepaAuthentication implements Authentication {
             maxWidth: 90,
           ));
   @override
-  Future<Result<User>> getLoggedInUser() async {
+  Future<Result<String>> getLoggedInUser() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
-      var token = prefs.getString('token');
+      var email = prefs.getString('email');
+      var password = prefs.getString('password');
 
-      if (token != null) {
-        final responses = await _dio!.get(
-          '$baseUrl/profile',
-          options: Options(
-            headers: {
-              'Authorization': 'Bearer $token',
-            },
-          ),
-        );
+      if (email != null && password != null) {
+        final responses = await _dio!.post(ApiUrl.login, data: {
+          'email': email,
+          'password': password,
+        });
+        if (responses.data['meta']['code'] == 200) {
+          var token = responses.data['data']['token'];
+          prefs.setString('token', token);
+          final userId = responses.data['data'].toString();
 
-        return Result.success(
-            User.fromJson(responses.data!['data']['profile']));
+          return Result.success(userId);
+        } else {
+          return Result.failed('Failed');
+        }
       } else {
         return Result.failed('Stoppp');
       }
@@ -48,12 +50,15 @@ class HepaAuthentication implements Authentication {
   Future<Result<String>> login(
       {required String email, required String password}) async {
     try {
-      final response = await _dio!.post('$baseUrl/login', data: {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final response = await _dio!.post(ApiUrl.login, data: {
         'email': email,
         'password': password,
       });
-      if (response.statusCode == 200) {
-        SharedPreferences prefs = await SharedPreferences.getInstance();
+
+      prefs.setString('email', email);
+      prefs.setString('password', password);
+      if (response.data['meta']['code'] == 200) {
         var token = response.data['data']['token'];
         prefs.setString('token', token);
         final userId = response.data['data'].toString();
@@ -77,12 +82,12 @@ class HepaAuthentication implements Authentication {
       var token = prefs.getString('token');
 
       final responses = await _dio!.post(
-        '$baseUrl/logout',
+        ApiUrl.logout,
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
         ),
       );
-      if (responses.statusCode == 200) {
+      if (responses.data['meta']['code'] == 200) {
         return Result.success(null);
       } else {
         return Result.failed('Failed');
@@ -102,7 +107,10 @@ class HepaAuthentication implements Authentication {
       required String dateOfBirth,
       required String work}) async {
     try {
-      final response = await _dio!.post('$baseUrl/register', data: {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setString('email', email);
+      prefs.setString('password', password);
+      final response = await _dio!.post(ApiUrl.register, data: {
         'name': name,
         'email': email,
         'password': password,
@@ -111,8 +119,7 @@ class HepaAuthentication implements Authentication {
         'date_of_birth': dateOfBirth,
         'gender': gender,
       });
-      if (response.statusCode == 200) {
-        SharedPreferences prefs = await SharedPreferences.getInstance();
+      if (response.data['meta']['code'] == 200) {
         var token = response.data['data']['token'];
         prefs.setString('token', token);
         final userId = response.data['data'].toString();

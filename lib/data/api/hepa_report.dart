@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/report_repository.dart';
 import 'package:hepa/domain/entities/nutrition.dart';
 
@@ -31,7 +31,7 @@ class HepaReport implements ReportRepository {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       final responses = await _dio!.get(
-        '$baseUrl/report',
+        ApiUrl.report,
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
         ),

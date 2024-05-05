@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/drink_repository.dart';
 import 'package:hepa/domain/entities/drink.dart';
 import 'package:hepa/domain/entities/result.dart';
@@ -29,7 +29,7 @@ class HepaDrink implements DrinkRepository {
       final token = prefs.getString('token');
 
       final responses = await _dio!.post(
-        '$baseUrl/drinks',
+        ApiUrl.drinks,
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
         ),
@@ -54,7 +54,7 @@ class HepaDrink implements DrinkRepository {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       final responses = await _dio!.get(
-        '$baseUrl/drinks',
+        ApiUrl.drinks,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

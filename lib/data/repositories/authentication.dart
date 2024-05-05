@@ -1,5 +1,4 @@
 import 'package:hepa/domain/entities/result.dart';
-import 'package:hepa/domain/entities/user.dart';
 
 abstract interface class Authentication {
   // Login function
@@ -22,5 +21,5 @@ abstract interface class Authentication {
   // Logout function
   Future<Result<void>> logout();
 
-  Future<Result<User>> getLoggedInUser();
+  Future<Result<String>> getLoggedInUser();
 }

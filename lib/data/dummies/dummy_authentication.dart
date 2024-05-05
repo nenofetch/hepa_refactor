@@ -1,6 +1,5 @@
 import 'package:hepa/data/repositories/authentication.dart';
 import 'package:hepa/domain/entities/result.dart';
-import 'package:hepa/domain/entities/user.dart';
 
 class DummyAuthentication implements Authentication {
   @override
@@ -32,7 +31,7 @@ class DummyAuthentication implements Authentication {
   }
 
   @override
-  Future<Result<User>> getLoggedInUser() {
+  Future<Result<String>> getLoggedInUser() {
     // TODO: implement getLoggedInUser
     throw UnimplementedError();
   }

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/anthropometry_repository.dart';
 import 'package:hepa/domain/entities/anthropometry.dart';
 import 'package:hepa/domain/entities/result.dart';
@@ -27,7 +27,7 @@ class HepaAnthropometry implements AnthropometryRepository {
       final token = prefs.getString('token');
 
       final responses = await _dio!.get(
-        '$baseUrl/anthropometry',
+        ApiUrl.imt,
         queryParameters: {'weight': weight, 'height': height},
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
@@ -47,19 +47,20 @@ class HepaAnthropometry implements AnthropometryRepository {
 
   @override
   Future<Result<Anthropometry>> getAnthropometry() async {
-    try {
-      SharedPreferences prefs = await SharedPreferences.getInstance();
-      final token = prefs.getString('token');
-      final responses = await _dio!.get('$baseUrl/educations',
-          options: Options(headers: {
-            'Authorization': 'Bearer $token',
-          }));
+    // try {
+    //   SharedPreferences prefs = await SharedPreferences.getInstance();
+    //   final token = prefs.getString('token');
+    //   final responses = await _dio!.get('$baseUrl/educations',
+    //       options: Options(headers: {
+    //         'Authorization': 'Bearer $token',
+    //       }));
 
-      final results = responses.data['data'];
+    //   final results = responses.data['data'];
 
-      return Result.success(results);
-    } on DioException catch (e) {
-      return Result.failed('${e.message}');
-    }
+    //   return Result.success(results);
+    // } on DioException catch (e) {
+    //   return Result.failed('${e.message}');
+    // }
+    throw UnimplementedError();
   }
 }

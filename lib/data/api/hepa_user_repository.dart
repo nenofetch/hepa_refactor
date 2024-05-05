@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/user_repository.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:hepa/domain/entities/user.dart';
@@ -27,7 +27,7 @@ class HepaUserRepository implements UserRepository {
 
     if (userToken != null) {
       var result = await _dio!.get(
-        '$baseUrl/profile',
+        ApiUrl.profile,
         options: Options(
           headers: {
             'Authorization': 'Bearer $userToken',
@@ -59,7 +59,7 @@ class HepaUserRepository implements UserRepository {
       var token = prefs.getString('token');
 
       final responses = await _dio!.put(
-        '$baseUrl/profile',
+        ApiUrl.profile,
         queryParameters: {
           'name': name,
           'email': email,

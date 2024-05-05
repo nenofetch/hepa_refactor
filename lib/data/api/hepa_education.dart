@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/education_repository.dart';
 import 'package:hepa/domain/entities/education.dart';
 import 'package:hepa/domain/entities/result.dart';
@@ -23,7 +23,7 @@ class HepaEducation implements EducationRepository {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
-      final responses = await _dio!.get('$baseUrl/educations',
+      final responses = await _dio!.get(ApiUrl.educations,
           options: Options(headers: {
             'Authorization': 'Bearer $token',
           }));

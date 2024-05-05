@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/food_repository.dart';
 import 'package:hepa/domain/entities/food.dart';
 import 'package:hepa/domain/entities/result.dart';
@@ -27,7 +27,7 @@ class HepaFood implements FoodRepository {
       final token = prefs.getString('token');
 
       final responses = await _dio!.post(
-        '$baseUrl/foods',
+        ApiUrl.foods,
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
         ),
@@ -52,7 +52,7 @@ class HepaFood implements FoodRepository {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       final responses = await _dio!.get(
-        '$baseUrl/foods',
+        ApiUrl.foods,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',
@@ -63,7 +63,6 @@ class HepaFood implements FoodRepository {
       if (responses.statusCode == 200) {
         final results =
             List<Map<String, dynamic>>.from(responses.data['data']['foods']);
-        
 
         return Result.success(results.map((e) => Food.fromJson(e)).toList());
         // final foodList = responses.data['data']['foods'] as List;

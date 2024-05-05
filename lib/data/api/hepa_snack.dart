@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/snack_repository.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:hepa/domain/entities/snack.dart';
@@ -29,7 +29,7 @@ class HepaSnack implements SnackRepository {
       final token = prefs.getString('token');
 
       final responses = await _dio!.post(
-        '$baseUrl/snacks',
+        ApiUrl.snacks,
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
         ),
@@ -54,7 +54,7 @@ class HepaSnack implements SnackRepository {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       final responses = await _dio!.get(
-        '$baseUrl/snacks',
+        ApiUrl.snacks,
         options: Options(
           headers: {
             'Authorization': 'Bearer $token',

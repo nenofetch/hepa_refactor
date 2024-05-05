@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/consultation_repository.dart';
 import 'package:hepa/domain/entities/consultation.dart';
 import 'package:hepa/domain/entities/result.dart';
@@ -25,7 +25,7 @@ class HepaConsultation implements ConsultationRepository {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       final responses = await _dio!.get(
-        '$baseUrl/consultations',
+        ApiUrl.consultations,
         options: Options(headers: {'Authorization': 'Bearer $token'}),
       );
       if (responses.data['meta']['code'] == 200) {
@@ -48,7 +48,7 @@ class HepaConsultation implements ConsultationRepository {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
-      final responses = await _dio!.post('$baseUrl/consultations',
+      final responses = await _dio!.post(ApiUrl.consultations,
           data: {
             'receipent_id': receipentId,
             'message': message,

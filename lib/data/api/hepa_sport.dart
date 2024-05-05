@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:hepa/data/utils/constants.dart';
+import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/sport_repository.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:hepa/domain/entities/sport.dart';
@@ -23,7 +23,7 @@ class HepaSport implements SportRepository {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
-      final responses = await _dio!.get('$baseUrl/sports',
+      final responses = await _dio!.get(ApiUrl.sports,
           options: Options(headers: {'Authorization': 'Bearer $token'}));
 
       final results =
