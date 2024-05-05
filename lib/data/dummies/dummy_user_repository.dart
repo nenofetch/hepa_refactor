@@ -12,13 +12,11 @@ class DummyUserRepository implements UserRepository {
       required String gender,
       required String dateOfBirth,
       required String work}) {
-    // TODO: implement updateUser
     throw UnimplementedError();
   }
 
   @override
   Future<Result<User>> getUser() {
-    // TODO: implement getUser
     throw UnimplementedError();
   }
 }

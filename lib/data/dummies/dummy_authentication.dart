@@ -13,7 +13,7 @@ class DummyAuthentication implements Authentication {
 
   @override
   Future<Result<void>> logout() {
-    // TODO: implement logout
+    
     throw UnimplementedError();
   }
 
@@ -26,13 +26,13 @@ class DummyAuthentication implements Authentication {
       required String gender,
       required String dateOfBirth,
       required String work}) {
-    // TODO: implement register
+    
     throw UnimplementedError();
   }
 
   @override
   Future<Result<String>> getLoggedInUser() {
-    // TODO: implement getLoggedInUser
+    
     throw UnimplementedError();
   }
 }
