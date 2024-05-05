@@ -1,16 +1,55 @@
-# hepa
 
-A new Flutter project.
+# Health Planner Application
 
-## Getting Started
+This Application are crafted using with this Tech Stack
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Authors of this project
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [@nenofetch (Flutter)](https://www.github.com/nenofetch)
+- [@aliabdurohman16 (Laravel/API)](https://www.github.com/aliabdurohman16)
+
+
+## Tech Stack
+
+**Client:** Flutter
+
+**Server:** Laravel, Firebase
+
+## Features
+
+- Light/dark mode toggle
+- Live previews
+- Fullscreen mode
+- Cross platform
+
+
+## Directory Structure
+
+This project are following Clean Architecture (Separation of Concern) directory. For more detail
+```
+|-- lib
+    |-- firebase_options.dart
+    |-- main.dart
+    |-- data
+    |   |-- api
+    |   |-- dummies
+    |   |-- repositories
+    |   |-- utils
+    |-- domain
+    |   |-- entities
+    |   |-- models
+    |   |-- usecases
+    |-- presentation
+        |-- extensions
+        |-- misc
+        |-- pages
+        |-- providers
+        |   |-- hepa
+        |   |-- repositories
+        |   |-- usecases
+        |   |-- user_data
+        |-- router
+        |-- widgets
+```
