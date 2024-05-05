@@ -16,25 +16,3 @@ Future<List<Sport>> getSportList(GetSportListRef ref) async {
     Failed(message: _) => const []
   };
 }
-
-
-
-// class SportProvider extends _$SportProvider {
-//   @override
-//   FutureOr<List<Sport>> build() => const [];
-
-//   Future<void> getSports() async {
-//     state = const AsyncLoading();
-
-//     GetSports getSports = ref.read(getSportsProvider);
-
-//     var result = await getSports(null);
-
-//     switch (result) {
-//       case Success(value: final sports):
-//         state = AsyncData(sports);
-//       case Failed(message: _):
-//         state = const AsyncData([]);
-//     }
-//   }
-// }
