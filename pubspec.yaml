@@ -31,6 +31,7 @@ dependencies:
   adaptive_theme: ^3.6.0
   cupertino_icons: ^1.0.6
   d_chart: ^2.6.9
+  d_method: ^0.2.6
   dio: ^5.4.1
   firebase_core: ^2.15.1
   firebase_messaging: ^14.6.7

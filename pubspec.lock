@@ -305,6 +305,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.6.9"
+  d_method:
+    dependency: "direct main"
+    description:
+      name: d_method
+      sha256: "49226beb6705fc7157788bdea5be5abc1534391ea2b521707bcb3ca59e300847"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.6"
   dart_style:
     dependency: transitive
     description:
