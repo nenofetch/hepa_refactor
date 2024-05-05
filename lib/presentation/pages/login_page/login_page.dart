@@ -124,11 +124,57 @@ class LoginPage extends ConsumerWidget {
                             ),
                           ),
                         )
-                      : const Center(
-                          child: CircularProgressIndicator(),
+                      : SizedBox(
+                          width: double.infinity,
+                          height: 60,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              ref.read(userDataProvider.notifier).login(
+                                  email: emailController.text,
+                                  password: passwordController.text);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: blackColor,
+                              foregroundColor: backgroundColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Text(
+                              'Login',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: medium,
+                                color: ghostWhite,
+                              ),
+                            ),
+                          ),
                         ),
-                  _ => const Center(
-                      child: CircularProgressIndicator(),
+                  _ => SizedBox(
+                      width: double.infinity,
+                      height: 60,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          ref.read(userDataProvider.notifier).login(
+                              email: emailController.text,
+                              password: passwordController.text);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: blackColor,
+                          foregroundColor: backgroundColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: medium,
+                            color: ghostWhite,
+                          ),
+                        ),
+                      ),
                     )
                 }
               ],
