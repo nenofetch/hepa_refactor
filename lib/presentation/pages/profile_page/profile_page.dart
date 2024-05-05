@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hepa/presentation/misc/methods.dart';
-import 'package:hepa/presentation/pages/profile_page/methods/profie_page.dart';
+import 'package:hepa/presentation/pages/profile_page/methods/profile_item.dart';
 import 'package:hepa/presentation/providers/user_data/user_data_provider.dart';
+import 'package:hepa/presentation/router/router_provider.dart';
 
 class ProfilePage extends ConsumerWidget {
   const ProfilePage({super.key});
@@ -25,6 +26,7 @@ class ProfilePage extends ConsumerWidget {
               child: ElevatedButton(
                 onPressed: () {
                   ref.read(userDataProvider.notifier).logout();
+                  ref.read(routerProvider).pushNamed('login');
                 },
                 child: const Text('Logout'),
               ),
