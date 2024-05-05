@@ -9,15 +9,16 @@ class HepaTextField extends StatelessWidget {
   final Iterable<String>? autofillHints;
   final TextInputType? textInputType;
 
-  const HepaTextField(
-      {super.key,
-      this.textInputType = TextInputType.text,
-      required this.controller,
-      this.obscureText = false,
-      required this.hintText,
-      this.suffixIcon,
-      this.onTap,
-      this.autofillHints});
+  const HepaTextField({
+    super.key,
+    this.textInputType = TextInputType.text,
+    required this.controller,
+    this.obscureText = false,
+    required this.hintText,
+    this.suffixIcon,
+    this.onTap,
+    this.autofillHints,
+  });
 
   @override
   Widget build(BuildContext context) {
