@@ -87,10 +87,10 @@ class HepaAuthentication implements Authentication {
           headers: {'Authorization': 'Bearer $token'},
         ),
       );
+      prefs.remove('token');
+      prefs.remove('email');
+      prefs.remove('password');
       if (responses.data['meta']['code'] == 200) {
-        prefs.remove('token');
-        prefs.remove('email');
-        prefs.remove('password');
         return Result.success(null);
       } else {
         return Result.failed('Failed');
