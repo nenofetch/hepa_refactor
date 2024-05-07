@@ -43,7 +43,7 @@ class HepaConsultation implements ConsultationRepository {
   }
 
   @override
-  Future<Result<String>> sendConsultation(
+  Future<Result<Consultation>> sendConsultation(
       {required int receipentId, required String message}) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -56,7 +56,8 @@ class HepaConsultation implements ConsultationRepository {
           options: Options(headers: {'Authorization': 'Bearer $token'}));
 
       if (responses.data['meta']['code'] == 200) {
-        return Result.success('Success');
+        final data = responses.data['data'];
+        return Result.success(Consultation.fromJson(data));
       } else {
         return Result.failed('Failed');
       }
