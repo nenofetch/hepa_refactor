@@ -1,5 +1,5 @@
 class ApiUrl {
-  static const baseurl = 'http://192.168.127.60:8000/api';
+  static const baseurl = 'http://192.168.88.41:8000/api';
   static const login = '$baseurl/login';
   static const register = '$baseurl/register';
   static const logout = '$baseurl/logout';
@@ -11,5 +11,6 @@ class ApiUrl {
   static const consultations = '$baseurl/consultations';
   static const profile = '$baseurl/profile';
   static const report = '$baseurl/report';
+  static const detailReport = '$baseurl/report/show';
   static const imt = '$baseurl/anthropometry';
 }
