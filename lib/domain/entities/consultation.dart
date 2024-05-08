@@ -8,12 +8,14 @@ part 'consultation.g.dart';
 @freezed
 class Consultation with _$Consultation {
   const factory Consultation({
-    String? message,
-    String? attachment,
-    String? status,
-    @JsonKey(name: 'receipent_id') required int receipentId,
-    @JsonKey(name: 'created_at') required String createdAt,
-    @JsonKey(name: 'updated_at') required String updatedAt,
+    @JsonKey(name: "id") required int id,
+    @JsonKey(name: "sender_id") required int senderId,
+    @JsonKey(name: "recipient_id") required int recipientId,
+    @JsonKey(name: "message") required String message,
+    @JsonKey(name: "attachment") required dynamic attachment,
+    @JsonKey(name: "status") required String status,
+    @JsonKey(name: "created_at") required DateTime createdAt,
+    @JsonKey(name: "updated_at") required DateTime updatedAt,
   }) = _Consultation;
 
   factory Consultation.fromJson(Map<String, dynamic> json) =>
