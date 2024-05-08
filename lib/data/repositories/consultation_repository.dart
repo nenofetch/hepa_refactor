@@ -4,5 +4,5 @@ import 'package:hepa/domain/entities/result.dart';
 abstract interface class ConsultationRepository {
   Future<Result<List<Consultation>>> getConsultations();
   Future<Result<Consultation>> sendConsultation(
-      {required int receipentId, required String message});
+      {required int recipientId, required String message});
 }
