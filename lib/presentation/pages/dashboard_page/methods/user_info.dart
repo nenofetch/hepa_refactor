@@ -5,7 +5,6 @@ import 'package:hepa/presentation/router/router_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-List? data;
 Widget userInfo(WidgetRef ref) => Padding(
       padding: const EdgeInsets.fromLTRB(24, 24, 24, 0),
       child: Column(
