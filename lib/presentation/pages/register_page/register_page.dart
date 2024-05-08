@@ -200,11 +200,68 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                             ),
                           ),
                         )
-                      : const Center(
-                          child: CircularProgressIndicator(),
+                      : SizedBox(
+                          width: double.infinity,
+                          height: 60,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              ref.read(userDataProvider.notifier).register(
+                                    email: emailController.text,
+                                    password: passwordController.text,
+                                    name: nameController.text,
+                                    retypedPassword:
+                                        retypePasswordController.text,
+                                    work: workController.text,
+                                    dateOfBirth: dateOfBirthController.text,
+                                    gender: genderController.value.toString(),
+                                  );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: blackColor,
+                              foregroundColor: backgroundColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: medium,
+                                  color: ghostWhite),
+                            ),
+                          ),
                         ),
-                  _ => const Center(
-                      child: CircularProgressIndicator(),
+                  _ => SizedBox(
+                      width: double.infinity,
+                      height: 60,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          ref.read(userDataProvider.notifier).register(
+                                email: emailController.text,
+                                password: passwordController.text,
+                                name: nameController.text,
+                                retypedPassword: retypePasswordController.text,
+                                work: workController.text,
+                                dateOfBirth: dateOfBirthController.text,
+                                gender: genderController.value.toString(),
+                              );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: blackColor,
+                          foregroundColor: backgroundColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          'Register',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: medium,
+                              color: ghostWhite),
+                        ),
+                      ),
                     ),
                 },
                 verticalSpace(20),
