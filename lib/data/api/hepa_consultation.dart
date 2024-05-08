@@ -1,3 +1,4 @@
+import 'dart:core';
 import 'package:dio/dio.dart';
 import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/consultation_repository.dart';
@@ -32,6 +33,9 @@ class HepaConsultation implements ConsultationRepository {
         final results =
             List<Map<String, dynamic>>.from(responses.data['data']['1']);
 
+        // Sort the results in ascending order based on a specific key
+        results.sort((a, b) => a['id'].compareTo(b['id']));
+
         return Result.success(
             results.map((e) => Consultation.fromJson(e)).toList());
       } else {
@@ -44,13 +48,13 @@ class HepaConsultation implements ConsultationRepository {
 
   @override
   Future<Result<Consultation>> sendConsultation(
-      {required int receipentId, required String message}) async {
+      {required int recipientId, required String message}) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       final responses = await _dio!.post(ApiUrl.consultations,
           data: {
-            'receipent_id': receipentId,
+            'recipient_id': recipientId,
             'message': message,
           },
           options: Options(headers: {'Authorization': 'Bearer $token'}));
