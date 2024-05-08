@@ -20,9 +20,21 @@ class HepaReport implements ReportRepository {
             maxWidth: 90,
           ));
   @override
-  Future<Result<Report>> detailReport() {
-    // TODO: implement detailReport
-    throw UnimplementedError();
+  Future<Result<Report>> detailReport() async{
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+      final responses = await _dio!.get(
+        ApiUrl.report,
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+      );
+
+      return Result.success(Report.fromJson(responses.data['data']));
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 
   @override
