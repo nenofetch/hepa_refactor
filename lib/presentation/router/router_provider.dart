@@ -1,13 +1,13 @@
-import 'package:hepa/domain/entities/education.dart';
 import 'package:hepa/presentation/pages/anthropometri_page/anthropometri_page.dart';
 import 'package:hepa/presentation/pages/consultation_page/consultation_page.dart';
 import 'package:hepa/presentation/pages/detail_drink_page/detail_drink_page.dart';
 import 'package:hepa/presentation/pages/detail_food_page/detail_food_page.dart';
+import 'package:hepa/presentation/pages/detail_report/detail_report_page.dart';
 import 'package:hepa/presentation/pages/detail_snack_page/detail_snack_page.dart';
-import 'package:hepa/presentation/pages/detail_video/detail_video_page.dart';
+
 import 'package:hepa/presentation/pages/education_page/education_page.dart';
 import 'package:hepa/presentation/pages/food_page/food_page.dart';
-import 'package:hepa/presentation/pages/history_page/history_page.dart';
+import 'package:hepa/presentation/pages/report_page/report_page.dart';
 import 'package:hepa/presentation/pages/login_page/login_page.dart';
 import 'package:hepa/presentation/pages/main_page/main_page.dart';
 import 'package:hepa/presentation/pages/profile_page/profile_page.dart';
@@ -60,7 +60,7 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
         GoRoute(
           path: '/history',
           name: 'history',
-          builder: (context, state) => HistoryPage(),
+          builder: (context, state) => ReportPage(),
         ),
         GoRoute(
           path: '/sport',
@@ -99,11 +99,9 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
           builder: (context, state) => EducationPage(),
         ),
         GoRoute(
-          path: '/detail-video',
-          name: 'detail-video',
-          builder: (context, state) => DetailVideoPage(
-            education: state.extra as Education,
-          ),
-        )
+          path: '/detail-report',
+          name: 'detail-report',
+          builder: (context, state) => DetailReportPage(),
+        ),
       ],
     );
