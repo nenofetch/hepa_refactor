@@ -73,6 +73,7 @@ class _DetailDrinkPageState extends ConsumerState<DetailDrinkPage> {
         ),
         floatingActionButton: _isChecked.isNotEmpty
             ? FloatingActionButton(
+                child: Icon(Icons.save),
                 onPressed: () {
                   List<int> checkedIds = _isChecked.entries
                       .where((entry) => entry.value)
