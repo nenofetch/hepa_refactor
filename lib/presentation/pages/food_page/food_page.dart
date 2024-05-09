@@ -29,11 +29,11 @@ class FoodPage extends ConsumerWidget {
                 ),
                 verticalSpace(10),
                 ...foodCard(
-                    foodName: 'Sarapan',
+                    foodName: 'Makan Pagi',
                     foodImage: 'assets/icon_breakfast.png',
                     onTap: (category) {
                       ref.read(routerProvider).pushNamed('detail-food',
-                          pathParameters: {'category': 'Sarapan'});
+                          pathParameters: {'category': 'Makan Pagi'});
                     }),
                 verticalSpace(10),
                 ...foodCard(
