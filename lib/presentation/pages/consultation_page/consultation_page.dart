@@ -6,7 +6,6 @@ import 'package:hepa/presentation/providers/hepa/consultations_provider.dart';
 
 import 'package:hepa/presentation/providers/user_data/user_data_provider.dart';
 import 'package:hepa/presentation/widgets/chat.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class ConsultationPage extends ConsumerStatefulWidget {
   const ConsultationPage({super.key});
