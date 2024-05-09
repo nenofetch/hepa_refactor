@@ -59,6 +59,7 @@ dependencies:
   sentry_logging: ^8.1.0
   shared_preferences: ^2.2.2
   skeletonizer: ^1.1.2+1
+  tab_container: ^3.5.3
   youtube_player_flutter: ^9.0.0
 
 dev_dependencies:
