@@ -8,6 +8,7 @@ class HepaTextField extends StatelessWidget {
   final VoidCallback? onTap;
   final Iterable<String>? autofillHints;
   final TextInputType? textInputType;
+  final bool readOnly;
 
   const HepaTextField({
     super.key,
@@ -18,11 +19,13 @@ class HepaTextField extends StatelessWidget {
     this.suffixIcon,
     this.onTap,
     this.autofillHints,
+    this.readOnly = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      readOnly: readOnly,
       keyboardType: textInputType,
       autofillHints: autofillHints,
       onTap: onTap,

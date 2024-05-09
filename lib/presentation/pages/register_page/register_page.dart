@@ -102,6 +102,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                 ),
                 verticalSpace(20),
                 HepaTextField(
+                  readOnly: true,
                   controller: dateOfBirthController,
                   hintText: 'Tanggal Lahir',
                   suffixIcon: Icon(Icons.calendar_month),
