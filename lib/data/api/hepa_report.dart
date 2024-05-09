@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:hepa/data/utils/api_url.dart';
 import 'package:hepa/data/repositories/report_repository.dart';
+import 'package:hepa/domain/entities/detail_report_data.dart';
 import 'package:hepa/domain/entities/report.dart';
 
 import 'package:hepa/domain/entities/result.dart';
@@ -20,18 +21,18 @@ class HepaReport implements ReportRepository {
             maxWidth: 90,
           ));
   @override
-  Future<Result<Report>> detailReport() async{
+  Future<Result<DetailReportData>> detailReport() async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
       final responses = await _dio!.get(
-        ApiUrl.report,
+        ApiUrl.detailReport,
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
         ),
       );
 
-      return Result.success(Report.fromJson(responses.data['data']));
+      return Result.success(DetailReportData.fromJson(responses.data['data']));
     } on DioException catch (e) {
       return Result.failed('${e.message}');
     }
