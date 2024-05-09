@@ -35,11 +35,15 @@ class AnthropometriPage extends ConsumerWidget {
                   height: 60,
                   child: ElevatedButton(
                     onPressed: () {
+                      double heightInCm = double.parse(heightController.text);
+                      double heightInM = heightInCm / 100;
+
                       ref
                           .read(anthropometriesProvider.notifier)
                           .checkAnthropometry(
-                              weight: double.parse(weightController.text),
-                              height: double.parse(heightController.text));
+                            weight: double.parse(weightController.text),
+                            height: heightInM,
+                          );
                       debugPrint('kok');
                     },
                     style: ElevatedButton.styleFrom(
