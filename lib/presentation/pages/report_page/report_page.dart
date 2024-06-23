@@ -254,6 +254,7 @@ class ReportPageState extends ConsumerState<ReportPage> {
     );
   }
 
+// bar chart data for calories
   BarChartData caloriesData(Report? report) {
     double maxTotal = 0.0;
 
@@ -311,6 +312,7 @@ class ReportPageState extends ConsumerState<ReportPage> {
     );
   }
 
+// bar chart data for proteins
   BarChartData proteinData(Report? report) {
     double maxTotal = 0.0;
 
@@ -361,13 +363,14 @@ class ReportPageState extends ConsumerState<ReportPage> {
         report?.protein.length ?? 0,
         (i) => makeGroupData(
           i,
-          report?.calories[i].total.toDouble() ?? 0,
+          report?.protein[i].total.toDouble() ?? 0,
         ),
       ),
       gridData: const FlGridData(show: true),
     );
   }
 
+// bar chart for carbohydrates
   BarChartData carboHydatesData(Report? report) {
     double maxTotal = 0.0;
 
@@ -415,7 +418,7 @@ class ReportPageState extends ConsumerState<ReportPage> {
         show: false,
       ),
       barGroups: List.generate(
-        report?.calories.length ?? 0,
+        report?.carbohydrates.length ?? 0,
         (i) => makeGroupData(
           i,
           report?.carbohydrates[i].total.toDouble() ?? 0,
@@ -425,6 +428,7 @@ class ReportPageState extends ConsumerState<ReportPage> {
     );
   }
 
+// bar chart data for fat
   BarChartData fatData(Report? report) {
     double maxTotal = 0.0;
 
@@ -472,7 +476,7 @@ class ReportPageState extends ConsumerState<ReportPage> {
         show: false,
       ),
       barGroups: List.generate(
-        report?.calories.length ?? 0,
+        report?.fat.length ?? 0,
         (i) => makeGroupData(
           i,
           report?.fat[i].total.toDouble() ?? 0,
