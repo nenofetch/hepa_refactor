@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hepa/presentation/misc/constants.dart';
 
 class HepaTextField extends StatelessWidget {
   final TextEditingController controller;
@@ -32,6 +33,12 @@ class HepaTextField extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: blackColor,
+          ),
+        ),
         hintText: hintText,
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
