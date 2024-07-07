@@ -35,6 +35,7 @@ class DetailReportPage extends ConsumerWidget {
             Text('Air Minum'),
           ],
           children: [
+            // Makan Pagi
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: data.whenOrNull(
@@ -84,6 +85,7 @@ class DetailReportPage extends ConsumerWidget {
                       ),
               ),
             ),
+            // Makan Siang
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: data.whenOrNull(
@@ -133,6 +135,7 @@ class DetailReportPage extends ConsumerWidget {
                       ),
               ),
             ),
+            // Makan Malam
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: data.whenOrNull(
@@ -182,6 +185,7 @@ class DetailReportPage extends ConsumerWidget {
                       ),
               ),
             ),
+            // Cemilan
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: data.whenOrNull(
@@ -231,6 +235,7 @@ class DetailReportPage extends ConsumerWidget {
                       ),
               ),
             ),
+            // Air Minum
             SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: data.whenOrNull(
