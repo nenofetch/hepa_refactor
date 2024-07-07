@@ -32,6 +32,7 @@ dependencies:
   chat_bubbles: ^1.6.0
   cupertino_icons: ^1.0.6
   dio: ^5.4.1
+  dropdown_button2: ^3.0.0-beta.16
   firebase_core: ^3.0.0
   firebase_messaging: ^15.0.0
   fl_chart: ^0.68.0
@@ -60,6 +61,7 @@ dependencies:
   shared_preferences: ^2.2.2
   skeletonizer: ^1.1.2+1
   tab_container: ^3.5.3
+  wolt_modal_sheet: ^0.7.0
   youtube_player_flutter: ^9.0.0
 
 dev_dependencies:
