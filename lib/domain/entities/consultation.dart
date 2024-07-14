@@ -12,7 +12,7 @@ class Consultation with _$Consultation {
     @JsonKey(name: "sender_id") required int senderId,
     @JsonKey(name: "recipient_id") required int recipientId,
     @JsonKey(name: "message") required String message,
-    @JsonKey(name: "attachment") required dynamic attachment,
+    @JsonKey(name: "attachment") String? attachment,
     @JsonKey(name: "status") required String status,
     @JsonKey(name: "created_at") required DateTime createdAt,
     @JsonKey(name: "updated_at") required DateTime updatedAt,
