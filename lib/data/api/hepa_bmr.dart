@@ -21,13 +21,19 @@ class HepaBmr implements BmrRepository {
 
   @override
   Future<Result<BMR>> checkBMR(
-      {required double weight, required double height}) async {
+      {required double weight,
+      required double height,
+      required String activities}) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
 
       final responses = await _dio!.get(ApiUrl.bmr,
-          queryParameters: {'weight': weight, 'height': height},
+          queryParameters: {
+            'weight': weight,
+            'height': height,
+            'activity': activities
+          },
           options: Options(
             headers: {'Authorization': 'Bearer $token'},
           ));
@@ -37,6 +43,34 @@ class HepaBmr implements BmrRepository {
         return Result.success(BMR.fromJson(data));
       } else {
         return Result.failed('Failed to check BMR');
+      }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
+  }
+  
+  @override
+  Future<Result<BMR>> getBMR() async {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Result<List<BMR>>> showDetailBMR() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+      final responses = await _dio!.get(
+        ApiUrl.bmrShow,
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+      );
+
+      if (responses.statusCode == 200) {
+        final data = responses.data['data'];
+        return Result.success(data.map<BMR>((e) => BMR.fromJson(e)).toList());
+      } else {
+        return Result.failed('Failed to show detail BMR');
       }
     } on DioException catch (e) {
       return Result.failed('${e.message}');

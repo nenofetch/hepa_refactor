@@ -7,4 +7,7 @@ abstract interface class AnthropometryRepository {
     required double height,
   });
   Future<Result<Anthropometry>> getAnthropometry();
+
+
+  Future<Result<List<Anthropometry>>> showDetailAnthropometry();
 }

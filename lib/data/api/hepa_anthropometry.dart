@@ -47,20 +47,33 @@ class HepaAnthropometry implements AnthropometryRepository {
 
   @override
   Future<Result<Anthropometry>> getAnthropometry() async {
-    // try {
-    //   SharedPreferences prefs = await SharedPreferences.getInstance();
-    //   final token = prefs.getString('token');
-    //   final responses = await _dio!.get('$baseUrl/educations',
-    //       options: Options(headers: {
-    //         'Authorization': 'Bearer $token',
-    //       }));
-
-    //   final results = responses.data['data'];
-
-    //   return Result.success(results);
-    // } on DioException catch (e) {
-    //   return Result.failed('${e.message}');
-    // }
     throw UnimplementedError();
+  }
+
+  @override
+  Future<Result<List<Anthropometry>>> showDetailAnthropometry() async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+      final responses = await _dio!.get(
+        ApiUrl.imtShow,
+        options: Options(
+          headers: {'Authorization': 'Bearer $token'},
+        ),
+      );
+
+      if (responses.statusCode == 200) {
+        final data = responses.data['data'] as List;
+        final anthropometry =
+            data.map((e) => Anthropometry.fromJson(e)).toList();
+        return Result.success(anthropometry);
+      } else {
+        return Result.failed('Failed to show detail anthropometry');
+      }
+
+
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 }
