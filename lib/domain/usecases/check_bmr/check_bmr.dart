@@ -12,7 +12,10 @@ class CheckBmr implements UseCase<Result<BMR>, CheckBmrParams> {
   @override
   Future<Result<BMR>> call(CheckBmrParams params) async {
     var bmr = await bmrRepository.checkBMR(
-        weight: params.weight, height: params.height);
+      weight: params.weight,
+      height: params.height,
+      activities: params.activities,
+    );
     return bmr;
   }
 }
