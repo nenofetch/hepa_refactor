@@ -13,7 +13,9 @@ class DetailReportData with _$DetailReportData {
     @JsonKey(name: "dinner") required List<Data> dinner,
     @JsonKey(name: "snack") required List<Data> snack,
     @JsonKey(name: "drink") required List<Data> drink,
-      @JsonKey(name: "sports") required List<Data> sports
+    @JsonKey(name: "sports") required List<Data> sports,
+    @JsonKey(name: "bmr") required List<Data> bmr,
+    @JsonKey(name: "bmi") required List<Data> bmi,
   }) = _DetailReport;
 
   factory DetailReportData.fromJson(Map<String, dynamic> json) =>
@@ -32,6 +34,11 @@ class Data with _$Data {
     @JsonKey(name: "protein") required String protein,
     @JsonKey(name: "fat") required String fat,
     @JsonKey(name: "duration") String? duration,
+    @JsonKey(name: "result_bmi") String? resultBmi,
+    @JsonKey(name: "result_bmr") String? resultBmr,
+    @JsonKey(name: "weight") double? weight,
+    @JsonKey(name: "height") double? height,
+    @JsonKey(name: "imt") double? imt,
 
     @JsonKey(name: "created_at") required DateTime createdAt,
     @JsonKey(name: "updated_at") required DateTime updatedAt,
