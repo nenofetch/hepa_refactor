@@ -33,6 +33,7 @@ class DetailReportPage extends ConsumerWidget {
             Text('Makan Malam'),
             Text('Cemilan'),
             Text('Air Minum'),
+            Text('Olahraga'),
           ],
           children: [
             // Makan Pagi
@@ -271,6 +272,47 @@ class DetailReportPage extends ConsumerWidget {
                                           Text('Protein : ${e.protein}'),
                                           horizontalSpace(10),
                                           Text('Lemak : ${e.fat}')
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
+                            .toList(),
+                      )
+                    : const Center(
+                        child: Text('No Data'),
+                      ),
+              ),
+            ),
+            // Olahraga
+            SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: data.whenOrNull(
+                data: (data) => data!.sports.isNotEmpty
+                    ? Column(
+                        children: data.sports
+                            .map(
+                              (e) => Card(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    ListTile(
+                                      title: Text(
+                                        'Olahraga : ${e.name}',
+                                        style: primaryFont.copyWith(
+                                          fontSize: 16,
+                                          fontWeight: bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 18),
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                              'Durasi Olahraga : ${e.duration}')
                                         ],
                                       ),
                                     )

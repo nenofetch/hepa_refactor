@@ -13,6 +13,7 @@ class DetailReportData with _$DetailReportData {
     @JsonKey(name: "dinner") required List<Data> dinner,
     @JsonKey(name: "snack") required List<Data> snack,
     @JsonKey(name: "drink") required List<Data> drink,
+      @JsonKey(name: "sports") required List<Data> sports
   }) = _DetailReport;
 
   factory DetailReportData.fromJson(Map<String, dynamic> json) =>
@@ -30,6 +31,8 @@ class Data with _$Data {
     @JsonKey(name: "carbohydrates") required String carbohydrates,
     @JsonKey(name: "protein") required String protein,
     @JsonKey(name: "fat") required String fat,
+    @JsonKey(name: "duration") String? duration,
+
     @JsonKey(name: "created_at") required DateTime createdAt,
     @JsonKey(name: "updated_at") required DateTime updatedAt,
   }) = _Data;

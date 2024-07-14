@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hepa/presentation/extensions/build_context_extension.dart';
 import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/misc/methods.dart';
 import 'package:hepa/presentation/providers/hepa/sport_provider.dart';
+import 'package:hepa/presentation/router/router_provider.dart';
 
 class SportPage extends ConsumerStatefulWidget {
   const SportPage({super.key});
@@ -24,7 +26,7 @@ class _SportPageState extends ConsumerState<SportPage> {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            ...ref.watch(getSportListProvider).whenOrNull(
+            ...ref.watch(sportsProvider).whenOrNull(
                       data: (sport) => sport
                           .map(
                             (e) => Padding(
@@ -81,7 +83,22 @@ class _SportPageState extends ConsumerState<SportPage> {
                                                 SizedBox(
                                                   height: 60,
                                                   child: ElevatedButton(
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      ref
+                                                          .watch(sportsProvider
+                                                              .notifier)
+                                                          .addActivitiesSport(
+                                                              name: e.name,
+                                                              duration: _duration
+                                                                  .toString());
+
+                                                      ref
+                                                          .read(routerProvider)
+                                                          .pop();
+                                                      context.showSnackBar(
+                                                        'Kegiatan olahraga berhasil ditambahkan!',
+                                                      );
+                                                    },
                                                     style: ElevatedButton
                                                         .styleFrom(
                                                       backgroundColor:

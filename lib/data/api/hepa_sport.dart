@@ -31,7 +31,33 @@ class HepaSport implements SportRepository {
 
       return Result.success(results.map((e) => Sport.fromJson(e)).toList());
     } on DioException catch (e) {
-      return Result.failed(' ${e.message}');
+      return Result.failed('${e.message}');
+    }
+  }
+
+  @override
+  Future<Result<String>> postSportActivity(
+      {required String duration, required String name}) async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      final token = prefs.getString('token');
+      final responses = await _dio!.post(ApiUrl.sports,
+          options: Options(
+            headers: {'Authorization': 'Bearer $token'},
+          ),
+          data: {
+            'duration': duration,
+            'name': name,
+            'category': 'Olahraga',
+          });
+
+      if (responses.statusCode == 200) {
+        return Result.success(responses.data['data']);
+      } else {
+        return Result.failed(responses.data['data']);
+      }
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
     }
   }
 }
