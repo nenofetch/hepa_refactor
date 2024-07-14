@@ -1,5 +1,8 @@
-import 'package:hepa/presentation/pages/anthropometri_page/anthropometri_page.dart';
+import 'package:hepa/presentation/pages/calculation_page/bmr_tdee_page.dart';
+import 'package:hepa/presentation/pages/calculation_page/calculation_page.dart';
+import 'package:hepa/presentation/pages/calculation_page/imt_page.dart';
 import 'package:hepa/presentation/pages/consultation_page/consultation_page.dart';
+import 'package:hepa/presentation/pages/detail_calculation_page/detail_calculation_page.dart';
 import 'package:hepa/presentation/pages/detail_drink_page/detail_drink_page.dart';
 import 'package:hepa/presentation/pages/detail_food_page/detail_food_page.dart';
 import 'package:hepa/presentation/pages/detail_report/detail_report_page.dart';
@@ -55,7 +58,7 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
         GoRoute(
           path: '/anthropometri',
           name: 'anthropometri',
-          builder: (context, state) => AnthropometriPage(),
+          builder: (context, state) => CalculationPage(),
         ),
         GoRoute(
           path: '/history',
@@ -102,6 +105,20 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
           path: '/detail-report',
           name: 'detail-report',
           builder: (context, state) => DetailReportPage(),
+        ),
+        GoRoute(
+          path: '/imt',
+          name: 'imt',
+          builder: (context, state) => IMTPage(),
+        ),
+        GoRoute(
+          path: '/bmr',
+          name: 'bmr',
+          builder: (context, state) => BmrTdeePage(),
+        ),
+        GoRoute(path: '/detail-calculator',
+        name: 'detail-calculator',
+        builder: (context, state) => DetailCalculationPage(),
         ),
       ],
     );

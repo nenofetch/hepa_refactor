@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:hepa/domain/entities/anthropometry.dart';
 import 'package:hepa/domain/entities/result.dart';
 import 'package:hepa/domain/usecases/check_anthropometry/check_anthropometry.dart';
+import 'package:hepa/domain/usecases/detail_imt/detail_imt.dart';
 import 'package:hepa/domain/usecases/get_anthropometry/get_anthropometry.dart';
 import 'package:hepa/presentation/providers/usecases/check_anthropometry.dart';
+import 'package:hepa/presentation/providers/usecases/detail_imt.dart';
 import 'package:hepa/presentation/providers/usecases/get_anthropometry.dart';
+
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -60,4 +63,20 @@ class Anthropometries extends _$Anthropometries {
   //       state = const AsyncData(null);
   //   }
   // }
+
+
+  Future<List<Anthropometry>> detailAnthropometry() async {
+    DetailImt detailImt = ref.read(detailImtProvider);
+
+    var result = await detailImt(null);
+
+    switch (result) {
+      case Success(value: final data):
+        return data;
+
+      case Failed(message: _):
+        return [];
+    }
+  }
+
 }
