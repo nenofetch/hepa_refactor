@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/misc/methods.dart';
 import 'package:hepa/presentation/providers/hepa/detail_report_provider.dart';
+import 'package:hepa/presentation/router/router_provider.dart';
 
 import 'package:tab_container/tab_container.dart';
 
@@ -15,6 +16,20 @@ class DetailReportPage extends ConsumerWidget {
     final data = ref.watch(detailReportsProvider);
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Detail Report'),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(
+              title: Text('Detail Kalkulasi Masa Tubuh'),
+              onTap: () =>
+                  ref.read(routerProvider).pushNamed('detail-calculator'),
+            )
+          ],
+        ),
+      ),
       body: SafeArea(
         child: TabContainer(
           borderRadius: BorderRadius.circular(10),
