@@ -34,7 +34,7 @@ class IMTPage extends ConsumerWidget {
                   HepaTextField(
                       textInputType: TextInputType.number,
                       controller: heightController,
-                      hintText: 'Tinggi Badan/m'),
+                      hintText: 'Tinggi Badan/cm'),
                   verticalSpace(20),
                   SizedBox(
                     width: double.infinity,

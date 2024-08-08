@@ -46,7 +46,7 @@ class BmrTdeePage extends ConsumerWidget {
                   HepaTextField(
                       textInputType: TextInputType.number,
                       controller: heightBMRController,
-                      hintText: 'Tinggi Badan/m'),
+                      hintText: 'Tinggi Badan/cm'),
                   verticalSpace(20),
                   Center(
                     child: DropdownButtonHideUnderline(
