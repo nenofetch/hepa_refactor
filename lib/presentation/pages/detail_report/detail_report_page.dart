@@ -76,17 +76,33 @@ class DetailReportPage extends ConsumerWidget {
                                       padding: EdgeInsets.only(left: 18),
                                       child: Row(
                                         children: [
-                                          Text(
-                                            'Kalori : ${e.calories}',
+                                          Expanded(
+                                            child: Text(
+                                              'Kalori : ${e.calories}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           ),
                                           horizontalSpace(10),
-                                          Text(
-                                            'Karbohidrat : ${e.carbohydrates}',
+                                          Expanded(
+                                            child: Text(
+                                              'Karbohidrat : ${e.carbohydrates}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           ),
                                           horizontalSpace(10),
-                                          Text('Protein : ${e.protein}'),
+                                          Expanded(
+                                            child: Text(
+                                              'Protein : ${e.protein}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
                                           horizontalSpace(10),
-                                          Text('Lemak : ${e.fat}')
+                                          Expanded(
+                                            child: Text(
+                                              'Lemak : ${e.fat}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     )
@@ -126,17 +142,33 @@ class DetailReportPage extends ConsumerWidget {
                                       padding: EdgeInsets.only(left: 18),
                                       child: Row(
                                         children: [
-                                          Text(
-                                            'Kalori : ${e.calories}',
+                                          Expanded(
+                                            child: Text(
+                                              'Kalori : ${e.calories}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           ),
                                           horizontalSpace(10),
-                                          Text(
-                                            'Karbohidrat : ${e.carbohydrates}',
+                                          Expanded(
+                                            child: Text(
+                                              'Karbohidrat : ${e.carbohydrates}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           ),
                                           horizontalSpace(10),
-                                          Text('Protein : ${e.protein}'),
+                                          Expanded(
+                                            child: Text(
+                                              'Protein : ${e.protein}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
                                           horizontalSpace(10),
-                                          Text('Lemak : ${e.fat}')
+                                          Expanded(
+                                            child: Text(
+                                              'Lemak : ${e.fat}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          )
                                         ],
                                       ),
                                     )
@@ -176,17 +208,33 @@ class DetailReportPage extends ConsumerWidget {
                                       padding: EdgeInsets.only(left: 18),
                                       child: Row(
                                         children: [
-                                          Text(
-                                            'Kalori : ${e.calories}',
+                                          Expanded(
+                                            child: Text(
+                                              'Kalori : ${e.calories}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           ),
                                           horizontalSpace(10),
-                                          Text(
-                                            'Karbohidrat : ${e.carbohydrates}',
+                                          Expanded(
+                                            child: Text(
+                                              'Karbohidrat : ${e.carbohydrates}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
                                           ),
                                           horizontalSpace(10),
-                                          Text('Protein : ${e.protein}'),
+                                          Expanded(
+                                            child: Text(
+                                              'Protein : ${e.protein}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
                                           horizontalSpace(10),
-                                          Text('Lemak : ${e.fat}')
+                                          Expanded(
+                                            child: Text(
+                                              'Lemak : ${e.fat}',
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          )
                                         ],
                                       ),
                                     )
