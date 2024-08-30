@@ -3,7 +3,7 @@ name: Shorebird Android
 on:
   push:
     branches:
-      - releases/*
+      - releases
 
 env:
   SHOREBIRD_TOKEN: ${{ secrets.SHOREBIRD_TOKEN }}
