@@ -73,7 +73,8 @@ List<Widget> video({
                     ))
                 .toList(),
           ),
-          error: (error, stackTrace) => Text('Error'), // Handle error case
+          error: (error, stackTrace) =>
+              Text('Gagal Mendapatkan Data'), // Handle error case
           loading: () =>
               Center(child: CircularProgressIndicator()), // Handle loading case
         ),
