@@ -210,19 +210,22 @@ class ReportPageState extends ConsumerState<ReportPage> {
   BarChartGroupData makeGroupData(
     int x,
     double y,
+      {List<int> showToolTips = const []}
   ) {
     return BarChartGroupData(
       x: x,
       barRods: [
         BarChartRodData(
           toY: y,
-          color: x >= 4 ? Colors.transparent : Colors.red,
+            color: x >= 4 ? Colors.green : Colors.red,
           borderRadius: BorderRadius.zero,
           borderDashArray: x >= 4 ? [4, 4] : null,
           width: 30,
           borderSide: BorderSide(color: Colors.blue, width: 2.0),
         ),
+        
       ],
+        showingTooltipIndicators: showToolTips
     );
   }
 
@@ -270,7 +273,9 @@ class ReportPageState extends ConsumerState<ReportPage> {
       maxY: maxTotal *
           1.1, // Add some padding to the maxY value for better visualization
       barTouchData: BarTouchData(
-        enabled: false,
+        touchTooltipData: BarTouchTooltipData(
+          getTooltipColor: (_) => Colors.white,
+        ),
       ),
       titlesData: FlTitlesData(
         show: true,
@@ -328,7 +333,9 @@ class ReportPageState extends ConsumerState<ReportPage> {
       maxY: maxTotal *
           1.1, // Add some padding to the maxY value for better visualization
       barTouchData: BarTouchData(
-        enabled: false,
+        touchTooltipData: BarTouchTooltipData(
+          getTooltipColor: (_) => Colors.white,
+        ),
       ),
       titlesData: FlTitlesData(
         show: true,
@@ -386,7 +393,9 @@ class ReportPageState extends ConsumerState<ReportPage> {
       maxY: maxTotal *
           1.1, // Add some padding to the maxY value for better visualization
       barTouchData: BarTouchData(
-        enabled: false,
+        touchTooltipData: BarTouchTooltipData(
+          getTooltipColor: (_) => Colors.white,
+        ),
       ),
       titlesData: FlTitlesData(
         show: true,
@@ -444,7 +453,9 @@ class ReportPageState extends ConsumerState<ReportPage> {
       maxY: maxTotal *
           1.1, // Add some padding to the maxY value for better visualization
       barTouchData: BarTouchData(
-        enabled: false,
+        touchTooltipData: BarTouchTooltipData(
+          getTooltipColor: (_) => Colors.white,
+        ),
       ),
       titlesData: FlTitlesData(
         show: true,
