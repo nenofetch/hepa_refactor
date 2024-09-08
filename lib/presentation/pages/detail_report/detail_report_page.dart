@@ -5,8 +5,8 @@ import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/misc/methods.dart';
 import 'package:hepa/presentation/providers/hepa/detail_report_provider.dart';
 import 'package:hepa/presentation/router/router_provider.dart';
-
 import 'package:tab_container/tab_container.dart';
+import 'package:expansion_tile_group/expansion_tile_group.dart';
 
 class DetailReportPage extends ConsumerWidget {
   const DetailReportPage({super.key});
@@ -63,7 +63,7 @@ class DetailReportPage extends ConsumerWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    ListTile(
+                                    ExpansionTileCard(
                                       title: Text(
                                         'Makanan : ${e.name}',
                                         style: primaryFont.copyWith(
@@ -71,41 +71,16 @@ class DetailReportPage extends ConsumerWidget {
                                           fontWeight: bold,
                                         ),
                                       ),
+                                      children: [
+                                        _foodDetailData(
+                                          callorie: 'Kalori ${e.calories}',
+                                          carbohydrate:
+                                              'Karbohidrat ${e.carbohydrates}',
+                                          protein: 'Protein ${e.protein}',
+                                          fat: 'Lemak ${e.fat}',
+                                        )
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 18),
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              'Kalori : ${e.calories}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Karbohidrat : ${e.carbohydrates}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Protein : ${e.protein}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Lemak : ${e.fat}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
@@ -113,7 +88,7 @@ class DetailReportPage extends ConsumerWidget {
                             .toList(),
                       )
                     : const Center(
-                        child: Text('No Data'),
+                        child: Text('Belum ada data'),
                       ),
               ),
             ),
@@ -129,7 +104,7 @@ class DetailReportPage extends ConsumerWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    ListTile(
+                                    ExpansionTileCard(
                                       title: Text(
                                         'Makanan : ${e.name}',
                                         style: primaryFont.copyWith(
@@ -137,41 +112,16 @@ class DetailReportPage extends ConsumerWidget {
                                           fontWeight: bold,
                                         ),
                                       ),
+                                      children: [
+                                        _foodDetailData(
+                                          callorie: 'Kalori ${e.calories}',
+                                          carbohydrate:
+                                              'Karbohidrat ${e.carbohydrates}',
+                                          protein: 'Protein ${e.protein}',
+                                          fat: 'Lemak ${e.fat}',
+                                        )
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 18),
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              'Kalori : ${e.calories}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Karbohidrat : ${e.carbohydrates}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Protein : ${e.protein}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Lemak : ${e.fat}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
@@ -179,7 +129,7 @@ class DetailReportPage extends ConsumerWidget {
                             .toList(),
                       )
                     : const Center(
-                        child: Text('No Data'),
+                        child: Text('Belum ada data'),
                       ),
               ),
             ),
@@ -195,7 +145,7 @@ class DetailReportPage extends ConsumerWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    ListTile(
+                                    ExpansionTileCard(
                                       title: Text(
                                         'Makanan : ${e.name}',
                                         style: primaryFont.copyWith(
@@ -203,41 +153,16 @@ class DetailReportPage extends ConsumerWidget {
                                           fontWeight: bold,
                                         ),
                                       ),
+                                      children: [
+                                        _foodDetailData(
+                                          callorie: 'Kalori ${e.calories}',
+                                          carbohydrate:
+                                              'Karbohidrat ${e.carbohydrates}',
+                                          protein: 'Protein ${e.protein}',
+                                          fat: 'Lemak ${e.fat}',
+                                        )
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 18),
-                                      child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              'Kalori : ${e.calories}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Karbohidrat : ${e.carbohydrates}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Protein : ${e.protein}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ),
-                                          horizontalSpace(10),
-                                          Expanded(
-                                            child: Text(
-                                              'Lemak : ${e.fat}',
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
@@ -245,7 +170,7 @@ class DetailReportPage extends ConsumerWidget {
                             .toList(),
                       )
                     : const Center(
-                        child: Text('No Data'),
+                        child: Text('Belum ada data'),
                       ),
               ),
             ),
@@ -261,33 +186,24 @@ class DetailReportPage extends ConsumerWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    ListTile(
+                                    ExpansionTileCard(
                                       title: Text(
-                                        'Makanan : ${e.name}',
+                                        'Cemilan : ${e.name}',
                                         style: primaryFont.copyWith(
                                           fontSize: 16,
                                           fontWeight: bold,
                                         ),
                                       ),
+                                      children: [
+                                        _foodDetailData(
+                                          callorie: 'Kalori ${e.calories}',
+                                          carbohydrate:
+                                              'Karbohidrat ${e.carbohydrates}',
+                                          protein: 'Protein ${e.protein}',
+                                          fat: 'Lemak ${e.fat}',
+                                        )
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 18),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            'Kalori : ${e.calories}',
-                                          ),
-                                          horizontalSpace(10),
-                                          Text(
-                                            'Karbohidrat : ${e.carbohydrates}',
-                                          ),
-                                          horizontalSpace(10),
-                                          Text('Protein : ${e.protein}'),
-                                          horizontalSpace(10),
-                                          Text('Lemak : ${e.fat}')
-                                        ],
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
@@ -295,7 +211,7 @@ class DetailReportPage extends ConsumerWidget {
                             .toList(),
                       )
                     : const Center(
-                        child: Text('No Data'),
+                        child: Text('Belum ada data'),
                       ),
               ),
             ),
@@ -311,33 +227,24 @@ class DetailReportPage extends ConsumerWidget {
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    ListTile(
+                                    ExpansionTileCard(
                                       title: Text(
-                                        'Makanan : ${e.name}',
+                                        'Air Minum : ${e.name}',
                                         style: primaryFont.copyWith(
                                           fontSize: 16,
                                           fontWeight: bold,
                                         ),
                                       ),
+                                      children: [
+                                        _foodDetailData(
+                                          callorie: 'Kalori ${e.calories}',
+                                          carbohydrate:
+                                              'Karbohidrat ${e.carbohydrates}',
+                                          protein: 'Protein ${e.protein}',
+                                          fat: 'Lemak ${e.fat}',
+                                        )
+                                      ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.only(left: 18),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            'Kalori : ${e.calories}',
-                                          ),
-                                          horizontalSpace(10),
-                                          Text(
-                                            'Karbohidrat : ${e.carbohydrates}',
-                                          ),
-                                          horizontalSpace(10),
-                                          Text('Protein : ${e.protein}'),
-                                          horizontalSpace(10),
-                                          Text('Lemak : ${e.fat}')
-                                        ],
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
@@ -345,7 +252,7 @@ class DetailReportPage extends ConsumerWidget {
                             .toList(),
                       )
                     : const Center(
-                        child: Text('No Data'),
+                        child: Text('Belum ada data'),
                       ),
               ),
             ),
@@ -386,13 +293,45 @@ class DetailReportPage extends ConsumerWidget {
                             .toList(),
                       )
                     : const Center(
-                        child: Text('No Data'),
+                        child: Text('Belum ada data'),
                       ),
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+
+  Widget _foodDetailData(
+      {required String callorie,
+      required String carbohydrate,
+      required String protein,
+      required String fat}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          callorie,
+          overflow: TextOverflow.ellipsis,
+        ),
+        horizontalSpace(10),
+        Text(
+          carbohydrate,
+          overflow: TextOverflow.ellipsis,
+        ),
+        horizontalSpace(10),
+        Text(
+          protein,
+          overflow: TextOverflow.ellipsis,
+        ),
+        horizontalSpace(10),
+        Text(
+          fat,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ],
     );
   }
 }
