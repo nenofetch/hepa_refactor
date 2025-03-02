@@ -251,7 +251,7 @@ class ReportPageState extends ConsumerState<ReportPage> {
     );
 
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
       space: 16,
       child: text,
     );
