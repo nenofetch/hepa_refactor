@@ -9,6 +9,7 @@ import 'package:hepa/presentation/pages/detail_report/detail_report_page.dart';
 import 'package:hepa/presentation/pages/detail_snack_page/detail_snack_page.dart';
 
 import 'package:hepa/presentation/pages/education_page/education_page.dart';
+import 'package:hepa/presentation/pages/education_page/screen_video_page.dart';
 import 'package:hepa/presentation/pages/food_page/food_page.dart';
 import 'package:hepa/presentation/pages/report_page/report_page.dart';
 import 'package:hepa/presentation/pages/login_page/login_page.dart';
@@ -119,6 +120,10 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(
         GoRoute(path: '/detail-calculator',
         name: 'detail-calculator',
         builder: (context, state) => DetailCalculationPage(),
+        ),
+        GoRoute(path: '/video-play/:videoId',
+        name: 'video-play',
+        builder: (context, state) => ScreenVideoPage(videoId: state.pathParameters['videoId'] ,),
         ),
       ],
     );

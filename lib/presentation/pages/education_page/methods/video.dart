@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hepa/domain/entities/education.dart';
 import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/misc/methods.dart';
+import 'package:hepa/presentation/router/router_provider.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:webviewtube/webviewtube.dart';
 
 List<Widget> video({
   required AsyncValue<List<Education>> educations,
@@ -20,53 +20,51 @@ List<Widget> video({
             children: data
                 .map((e) => Column(
                       children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 10,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.blueGrey,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              YoutubePlayerBuilder(
-                                  player: YoutubePlayer(
-                                    showVideoProgressIndicator: true,
-                                    controller: YoutubePlayerController(
-                                      flags: YoutubePlayerFlags(
-                                          autoPlay: false,
-                                          controlsVisibleAtStart: true),
-                                      initialVideoId:
-                                          YoutubePlayer.convertUrlToId(e.link)
-                                              .toString(),
-                                    ),
+                        InkWell(
+                          onTap: () {
+                            final videoId = YoutubePlayer.convertUrlToId(e.link);
+                            ref.read(routerProvider).pushNamed(
+                              'video-play',
+                              pathParameters: {'videoId': videoId!},
+                            );
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.blueGrey,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // Video thumbnail display
+                                Image.network(
+                                  YoutubePlayer.getThumbnail(videoId: YoutubePlayer.convertUrlToId(e.link)!),
+                                  height: 200,
+                                  fit: BoxFit.contain,
+                                ),
+                                verticalSpace(10),
+                                // Title
+                                Text(
+                                  e.title,
+                                  style: GoogleFonts.poppins().copyWith(
+                                    color: ghostWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
                                   ),
-                                  builder: (context, player) {
-                                    return Column(
-                                      children: [player],
-                                    );
-                                  }),
-                              Text(
-                                e.title,
-                                style: GoogleFonts.poppins().copyWith(
-                                  color: ghostWhite,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
                                 ),
-                              ),
-                              verticalSpace(20),
-                              HtmlWidget(
-                                e.description,
-                                textStyle: TextStyle(
-                                  color: ghostWhite,
-                                  overflow: TextOverflow.ellipsis,
+                                verticalSpace(20),
+                                // Description
+                                HtmlWidget(
+                                  e.description,
+                                  textStyle: const TextStyle(
+                                    color: ghostWhite,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                         verticalSpace(40),
@@ -74,10 +72,8 @@ List<Widget> video({
                     ))
                 .toList(),
           ),
-          error: (error, stackTrace) =>
-              Text('Gagal Mendapatkan Data'), // Handle error case
-          loading: () =>
-              Center(child: CircularProgressIndicator()), // Handle loading case
+          error: (error, stackTrace) => const Text('Gagal Mendapatkan Data'),
+          loading: () => const Center(child: CircularProgressIndicator()),
         ),
       ),
     ];
