@@ -36,7 +36,7 @@ dependencies:
   expansion_tile_group: ^2.0.0
   firebase_core: ^3.0.0
   firebase_messaging: ^15.0.0
-  fl_chart: ^0.68.0
+  fl_chart: ^0.69.2
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.5.1
@@ -58,12 +58,13 @@ dependencies:
   shared_preferences: ^2.2.2
   skeletonizer: ^1.1.2+1
   tab_container: ^3.5.3
+  webviewtube: ^2.1.2
   youtube_player_flutter: ^9.0.3
 
 dev_dependencies:
   build_runner: ^2.4.9
-  custom_lint: ^0.6.4
-  flutter_lints: ^4.0.0
+  custom_lint: ^0.7.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
   freezed: ^2.4.7

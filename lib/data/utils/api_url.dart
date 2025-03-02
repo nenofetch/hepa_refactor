@@ -1,5 +1,6 @@
 class ApiUrl {
   static const baseurl = 'https://flutter.justnear.my.id/api';
+  // static const baseurl = 'http://192.168.31.109:8000/api';
   static const login = '$baseurl/login';
   static const register = '$baseurl/register';
   static const logout = '$baseurl/logout';

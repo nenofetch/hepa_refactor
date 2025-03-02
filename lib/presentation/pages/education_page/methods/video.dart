@@ -6,6 +6,7 @@ import 'package:hepa/domain/entities/education.dart';
 import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/misc/methods.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:webviewtube/webviewtube.dart';
 
 List<Widget> video({
   required AsyncValue<List<Education>> educations,
