@@ -3,7 +3,7 @@ part 'tdee.freezed.dart';
 part 'tdee.g.dart';
 
 @freezed
-class Tdee with _$Tdee {
+abstract class Tdee with _$Tdee {
   const factory Tdee({
     required String result,
   }) = _Tdee;

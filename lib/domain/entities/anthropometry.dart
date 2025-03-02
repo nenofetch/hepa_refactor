@@ -4,7 +4,7 @@ part 'anthropometry.freezed.dart';
 part 'anthropometry.g.dart';
 
 @freezed
-class Anthropometry with _$Anthropometry {
+abstract class Anthropometry with _$Anthropometry {
   const factory Anthropometry({
     required double imt,
     required String result,

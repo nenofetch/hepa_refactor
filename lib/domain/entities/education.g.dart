@@ -6,8 +6,7 @@ part of 'education.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EducationImpl _$$EducationImplFromJson(Map<String, dynamic> json) =>
-    _$EducationImpl(
+_Education _$EducationFromJson(Map<String, dynamic> json) => _Education(
       id: (json['id'] as num).toInt(),
       thumbnail: json['thumbnail'] as String?,
       title: json['title'] as String,
@@ -15,7 +14,7 @@ _$EducationImpl _$$EducationImplFromJson(Map<String, dynamic> json) =>
       link: json['link'] as String,
     );
 
-Map<String, dynamic> _$$EducationImplToJson(_$EducationImpl instance) =>
+Map<String, dynamic> _$EducationToJson(_Education instance) =>
     <String, dynamic>{
       'id': instance.id,
       'thumbnail': instance.thumbnail,

@@ -7,7 +7,7 @@ part 'user.freezed.dart';
 part 'user.g.dart';
 
 @freezed
-class User with _$User {
+abstract class User with _$User {
   const factory User({
     @JsonKey(name: 'id') int? id,
     @JsonKey(name: 'name') String? name,

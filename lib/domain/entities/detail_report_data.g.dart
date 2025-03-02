@@ -6,8 +6,8 @@ part of 'detail_report_data.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DetailReportImpl _$$DetailReportImplFromJson(Map<String, dynamic> json) =>
-    _$DetailReportImpl(
+_DetailReport _$DetailReportFromJson(Map<String, dynamic> json) =>
+    _DetailReport(
       breakfast: (json['breakfast'] as List<dynamic>)
           .map((e) => Data.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -34,7 +34,7 @@ _$DetailReportImpl _$$DetailReportImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$DetailReportImplToJson(_$DetailReportImpl instance) =>
+Map<String, dynamic> _$DetailReportToJson(_DetailReport instance) =>
     <String, dynamic>{
       'breakfast': instance.breakfast,
       'lunch': instance.lunch,
@@ -46,7 +46,7 @@ Map<String, dynamic> _$$DetailReportImplToJson(_$DetailReportImpl instance) =>
       'bmi': instance.bmi,
     };
 
-_$DataImpl _$$DataImplFromJson(Map<String, dynamic> json) => _$DataImpl(
+_Data _$DataFromJson(Map<String, dynamic> json) => _Data(
       id: (json['id'] as num).toInt(),
       userId: (json['user_id'] as num).toInt(),
       category: json['category'] as String,
@@ -65,8 +65,7 @@ _$DataImpl _$$DataImplFromJson(Map<String, dynamic> json) => _$DataImpl(
       updatedAt: DateTime.parse(json['updated_at'] as String),
     );
 
-Map<String, dynamic> _$$DataImplToJson(_$DataImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$DataToJson(_Data instance) => <String, dynamic>{
       'id': instance.id,
       'user_id': instance.userId,
       'category': instance.category,

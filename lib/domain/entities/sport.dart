@@ -6,7 +6,7 @@ part 'sport.freezed.dart';
 part 'sport.g.dart';
 
 @freezed
-class Sport with _$Sport {
+abstract class Sport with _$Sport {
   const factory Sport({
     required int id,
     required String name,

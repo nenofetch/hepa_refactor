@@ -6,7 +6,7 @@ part 'consultation.freezed.dart';
 part 'consultation.g.dart';
 
 @freezed
-class Consultation with _$Consultation {
+abstract class Consultation with _$Consultation {
   const factory Consultation({
     @JsonKey(name: "id") required int id,
     @JsonKey(name: "sender_id") required int senderId,

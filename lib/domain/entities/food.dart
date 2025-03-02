@@ -4,7 +4,7 @@ part 'food.freezed.dart';
 part 'food.g.dart';
 
 @freezed
-class Food with _$Food {
+abstract class Food with _$Food {
   const factory Food({
      int? id,
     String? name,

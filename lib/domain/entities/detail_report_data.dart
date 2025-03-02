@@ -6,7 +6,7 @@ part 'detail_report_data.freezed.dart';
 part 'detail_report_data.g.dart';
 
 @freezed
-class DetailReportData with _$DetailReportData {
+abstract class DetailReportData with _$DetailReportData {
   const factory DetailReportData({
     @JsonKey(name: "breakfast") required List<Data> breakfast,
     @JsonKey(name: "lunch") required List<Data> lunch,
@@ -23,7 +23,7 @@ class DetailReportData with _$DetailReportData {
 }
 
 @freezed
-class Data with _$Data {
+abstract class Data with _$Data {
   const factory Data({
     @JsonKey(name: "id") required int id,
     @JsonKey(name: "user_id") required int userId,

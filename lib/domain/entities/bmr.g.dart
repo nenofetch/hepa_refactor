@@ -6,10 +6,10 @@ part of 'bmr.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BMRImpl _$$BMRImplFromJson(Map<String, dynamic> json) => _$BMRImpl(
+_BMR _$BMRFromJson(Map<String, dynamic> json) => _BMR(
       result: json['result'] as String,
     );
 
-Map<String, dynamic> _$$BMRImplToJson(_$BMRImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$BMRToJson(_BMR instance) => <String, dynamic>{
       'result': instance.result,
     };

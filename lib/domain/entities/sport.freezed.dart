@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,108 +10,64 @@ part of 'sport.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Sport _$SportFromJson(Map<String, dynamic> json) {
-  return _Sport.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Sport {
-  int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  int get id;
+  String get name;
   @JsonKey(name: 'five_minute_calories')
-  String get fiveMinutesCalories => throw _privateConstructorUsedError;
+  String get fiveMinutesCalories;
   @JsonKey(name: 'fifteen_minute_calories')
-  String get fifteenMinuteCalories => throw _privateConstructorUsedError;
+  String get fifteenMinuteCalories;
   @JsonKey(name: 'thirty_minute_calories')
-  String get thirtyMinutesCalories => throw _privateConstructorUsedError;
+  String get thirtyMinutesCalories;
   @JsonKey(name: 'one_hour_calories')
-  String get oneHourCalories => throw _privateConstructorUsedError;
-
-  /// Serializes this Sport to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get oneHourCalories;
 
   /// Create a copy of Sport
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SportCopyWith<Sport> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SportCopyWith<$Res> {
-  factory $SportCopyWith(Sport value, $Res Function(Sport) then) =
-      _$SportCopyWithImpl<$Res, Sport>;
-  @useResult
-  $Res call(
-      {int id,
-      String name,
-      @JsonKey(name: 'five_minute_calories') String fiveMinutesCalories,
-      @JsonKey(name: 'fifteen_minute_calories') String fifteenMinuteCalories,
-      @JsonKey(name: 'thirty_minute_calories') String thirtyMinutesCalories,
-      @JsonKey(name: 'one_hour_calories') String oneHourCalories});
-}
-
-/// @nodoc
-class _$SportCopyWithImpl<$Res, $Val extends Sport>
-    implements $SportCopyWith<$Res> {
-  _$SportCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Sport
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $SportCopyWith<Sport> get copyWith =>
+      _$SportCopyWithImpl<Sport>(this as Sport, _$identity);
+
+  /// Serializes this Sport to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? fiveMinutesCalories = null,
-    Object? fifteenMinuteCalories = null,
-    Object? thirtyMinutesCalories = null,
-    Object? oneHourCalories = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      fiveMinutesCalories: null == fiveMinutesCalories
-          ? _value.fiveMinutesCalories
-          : fiveMinutesCalories // ignore: cast_nullable_to_non_nullable
-              as String,
-      fifteenMinuteCalories: null == fifteenMinuteCalories
-          ? _value.fifteenMinuteCalories
-          : fifteenMinuteCalories // ignore: cast_nullable_to_non_nullable
-              as String,
-      thirtyMinutesCalories: null == thirtyMinutesCalories
-          ? _value.thirtyMinutesCalories
-          : thirtyMinutesCalories // ignore: cast_nullable_to_non_nullable
-              as String,
-      oneHourCalories: null == oneHourCalories
-          ? _value.oneHourCalories
-          : oneHourCalories // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Sport &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.fiveMinutesCalories, fiveMinutesCalories) ||
+                other.fiveMinutesCalories == fiveMinutesCalories) &&
+            (identical(other.fifteenMinuteCalories, fifteenMinuteCalories) ||
+                other.fifteenMinuteCalories == fifteenMinuteCalories) &&
+            (identical(other.thirtyMinutesCalories, thirtyMinutesCalories) ||
+                other.thirtyMinutesCalories == thirtyMinutesCalories) &&
+            (identical(other.oneHourCalories, oneHourCalories) ||
+                other.oneHourCalories == oneHourCalories));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, fiveMinutesCalories,
+      fifteenMinuteCalories, thirtyMinutesCalories, oneHourCalories);
+
+  @override
+  String toString() {
+    return 'Sport(id: $id, name: $name, fiveMinutesCalories: $fiveMinutesCalories, fifteenMinuteCalories: $fifteenMinuteCalories, thirtyMinutesCalories: $thirtyMinutesCalories, oneHourCalories: $oneHourCalories)';
   }
 }
 
 /// @nodoc
-abstract class _$$SportImplCopyWith<$Res> implements $SportCopyWith<$Res> {
-  factory _$$SportImplCopyWith(
-          _$SportImpl value, $Res Function(_$SportImpl) then) =
-      __$$SportImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SportCopyWith<$Res> {
+  factory $SportCopyWith(Sport value, $Res Function(Sport) _then) =
+      _$SportCopyWithImpl;
   @useResult
   $Res call(
       {int id,
@@ -122,12 +79,11 @@ abstract class _$$SportImplCopyWith<$Res> implements $SportCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SportImplCopyWithImpl<$Res>
-    extends _$SportCopyWithImpl<$Res, _$SportImpl>
-    implements _$$SportImplCopyWith<$Res> {
-  __$$SportImplCopyWithImpl(
-      _$SportImpl _value, $Res Function(_$SportImpl) _then)
-      : super(_value, _then);
+class _$SportCopyWithImpl<$Res> implements $SportCopyWith<$Res> {
+  _$SportCopyWithImpl(this._self, this._then);
+
+  final Sport _self;
+  final $Res Function(Sport) _then;
 
   /// Create a copy of Sport
   /// with the given fields replaced by the non-null parameter values.
@@ -141,29 +97,29 @@ class __$$SportImplCopyWithImpl<$Res>
     Object? thirtyMinutesCalories = null,
     Object? oneHourCalories = null,
   }) {
-    return _then(_$SportImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       fiveMinutesCalories: null == fiveMinutesCalories
-          ? _value.fiveMinutesCalories
+          ? _self.fiveMinutesCalories
           : fiveMinutesCalories // ignore: cast_nullable_to_non_nullable
               as String,
       fifteenMinuteCalories: null == fifteenMinuteCalories
-          ? _value.fifteenMinuteCalories
+          ? _self.fifteenMinuteCalories
           : fifteenMinuteCalories // ignore: cast_nullable_to_non_nullable
               as String,
       thirtyMinutesCalories: null == thirtyMinutesCalories
-          ? _value.thirtyMinutesCalories
+          ? _self.thirtyMinutesCalories
           : thirtyMinutesCalories // ignore: cast_nullable_to_non_nullable
               as String,
       oneHourCalories: null == oneHourCalories
-          ? _value.oneHourCalories
+          ? _self.oneHourCalories
           : oneHourCalories // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -172,8 +128,8 @@ class __$$SportImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SportImpl implements _Sport {
-  const _$SportImpl(
+class _Sport implements Sport {
+  const _Sport(
       {required this.id,
       required this.name,
       @JsonKey(name: 'five_minute_calories') required this.fiveMinutesCalories,
@@ -182,9 +138,7 @@ class _$SportImpl implements _Sport {
       @JsonKey(name: 'thirty_minute_calories')
       required this.thirtyMinutesCalories,
       @JsonKey(name: 'one_hour_calories') required this.oneHourCalories});
-
-  factory _$SportImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SportImplFromJson(json);
+  factory _Sport.fromJson(Map<String, dynamic> json) => _$SportFromJson(json);
 
   @override
   final int id;
@@ -203,16 +157,26 @@ class _$SportImpl implements _Sport {
   @JsonKey(name: 'one_hour_calories')
   final String oneHourCalories;
 
+  /// Create a copy of Sport
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Sport(id: $id, name: $name, fiveMinutesCalories: $fiveMinutesCalories, fifteenMinuteCalories: $fifteenMinuteCalories, thirtyMinutesCalories: $thirtyMinutesCalories, oneHourCalories: $oneHourCalories)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SportCopyWith<_Sport> get copyWith =>
+      __$SportCopyWithImpl<_Sport>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SportToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SportImpl &&
+            other is _Sport &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.fiveMinutesCalories, fiveMinutesCalories) ||
@@ -230,58 +194,73 @@ class _$SportImpl implements _Sport {
   int get hashCode => Object.hash(runtimeType, id, name, fiveMinutesCalories,
       fifteenMinuteCalories, thirtyMinutesCalories, oneHourCalories);
 
-  /// Create a copy of Sport
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SportImplCopyWith<_$SportImpl> get copyWith =>
-      __$$SportImplCopyWithImpl<_$SportImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SportImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Sport(id: $id, name: $name, fiveMinutesCalories: $fiveMinutesCalories, fifteenMinuteCalories: $fifteenMinuteCalories, thirtyMinutesCalories: $thirtyMinutesCalories, oneHourCalories: $oneHourCalories)';
   }
 }
 
-abstract class _Sport implements Sport {
-  const factory _Sport(
-      {required final int id,
-      required final String name,
-      @JsonKey(name: 'five_minute_calories')
-      required final String fiveMinutesCalories,
-      @JsonKey(name: 'fifteen_minute_calories')
-      required final String fifteenMinuteCalories,
-      @JsonKey(name: 'thirty_minute_calories')
-      required final String thirtyMinutesCalories,
-      @JsonKey(name: 'one_hour_calories')
-      required final String oneHourCalories}) = _$SportImpl;
+/// @nodoc
+abstract mixin class _$SportCopyWith<$Res> implements $SportCopyWith<$Res> {
+  factory _$SportCopyWith(_Sport value, $Res Function(_Sport) _then) =
+      __$SportCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int id,
+      String name,
+      @JsonKey(name: 'five_minute_calories') String fiveMinutesCalories,
+      @JsonKey(name: 'fifteen_minute_calories') String fifteenMinuteCalories,
+      @JsonKey(name: 'thirty_minute_calories') String thirtyMinutesCalories,
+      @JsonKey(name: 'one_hour_calories') String oneHourCalories});
+}
 
-  factory _Sport.fromJson(Map<String, dynamic> json) = _$SportImpl.fromJson;
+/// @nodoc
+class __$SportCopyWithImpl<$Res> implements _$SportCopyWith<$Res> {
+  __$SportCopyWithImpl(this._self, this._then);
 
-  @override
-  int get id;
-  @override
-  String get name;
-  @override
-  @JsonKey(name: 'five_minute_calories')
-  String get fiveMinutesCalories;
-  @override
-  @JsonKey(name: 'fifteen_minute_calories')
-  String get fifteenMinuteCalories;
-  @override
-  @JsonKey(name: 'thirty_minute_calories')
-  String get thirtyMinutesCalories;
-  @override
-  @JsonKey(name: 'one_hour_calories')
-  String get oneHourCalories;
+  final _Sport _self;
+  final $Res Function(_Sport) _then;
 
   /// Create a copy of Sport
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SportImplCopyWith<_$SportImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? fiveMinutesCalories = null,
+    Object? fifteenMinuteCalories = null,
+    Object? thirtyMinutesCalories = null,
+    Object? oneHourCalories = null,
+  }) {
+    return _then(_Sport(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      fiveMinutesCalories: null == fiveMinutesCalories
+          ? _self.fiveMinutesCalories
+          : fiveMinutesCalories // ignore: cast_nullable_to_non_nullable
+              as String,
+      fifteenMinuteCalories: null == fifteenMinuteCalories
+          ? _self.fifteenMinuteCalories
+          : fifteenMinuteCalories // ignore: cast_nullable_to_non_nullable
+              as String,
+      thirtyMinutesCalories: null == thirtyMinutesCalories
+          ? _self.thirtyMinutesCalories
+          : thirtyMinutesCalories // ignore: cast_nullable_to_non_nullable
+              as String,
+      oneHourCalories: null == oneHourCalories
+          ? _self.oneHourCalories
+          : oneHourCalories // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

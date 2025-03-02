@@ -6,13 +6,13 @@ part of 'anthropometry.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AnthropometryImpl _$$AnthropometryImplFromJson(Map<String, dynamic> json) =>
-    _$AnthropometryImpl(
+_Anthropometry _$AnthropometryFromJson(Map<String, dynamic> json) =>
+    _Anthropometry(
       imt: (json['imt'] as num).toDouble(),
       result: json['result'] as String,
     );
 
-Map<String, dynamic> _$$AnthropometryImplToJson(_$AnthropometryImpl instance) =>
+Map<String, dynamic> _$AnthropometryToJson(_Anthropometry instance) =>
     <String, dynamic>{
       'imt': instance.imt,
       'result': instance.result,

@@ -6,7 +6,7 @@ part of 'snack.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SnackImpl _$$SnackImplFromJson(Map<String, dynamic> json) => _$SnackImpl(
+_Snack _$SnackFromJson(Map<String, dynamic> json) => _Snack(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       category: json['category'] as String?,
@@ -21,8 +21,7 @@ _$SnackImpl _$$SnackImplFromJson(Map<String, dynamic> json) => _$SnackImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$SnackImplToJson(_$SnackImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$SnackToJson(_Snack instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'category': instance.category,

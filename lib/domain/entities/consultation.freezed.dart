@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,129 +10,75 @@ part of 'consultation.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Consultation _$ConsultationFromJson(Map<String, dynamic> json) {
-  return _Consultation.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Consultation {
   @JsonKey(name: "id")
-  int get id => throw _privateConstructorUsedError;
+  int get id;
   @JsonKey(name: "sender_id")
-  int get senderId => throw _privateConstructorUsedError;
+  int get senderId;
   @JsonKey(name: "recipient_id")
-  int get recipientId => throw _privateConstructorUsedError;
+  int get recipientId;
   @JsonKey(name: "message")
-  String get message => throw _privateConstructorUsedError;
+  String get message;
   @JsonKey(name: "attachment")
-  String? get attachment => throw _privateConstructorUsedError;
+  String? get attachment;
   @JsonKey(name: "status")
-  String get status => throw _privateConstructorUsedError;
+  String get status;
   @JsonKey(name: "created_at")
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
   @JsonKey(name: "updated_at")
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-
-  /// Serializes this Consultation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime get updatedAt;
 
   /// Create a copy of Consultation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ConsultationCopyWith<Consultation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ConsultationCopyWith<$Res> {
-  factory $ConsultationCopyWith(
-          Consultation value, $Res Function(Consultation) then) =
-      _$ConsultationCopyWithImpl<$Res, Consultation>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: "id") int id,
-      @JsonKey(name: "sender_id") int senderId,
-      @JsonKey(name: "recipient_id") int recipientId,
-      @JsonKey(name: "message") String message,
-      @JsonKey(name: "attachment") String? attachment,
-      @JsonKey(name: "status") String status,
-      @JsonKey(name: "created_at") DateTime createdAt,
-      @JsonKey(name: "updated_at") DateTime updatedAt});
-}
-
-/// @nodoc
-class _$ConsultationCopyWithImpl<$Res, $Val extends Consultation>
-    implements $ConsultationCopyWith<$Res> {
-  _$ConsultationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Consultation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ConsultationCopyWith<Consultation> get copyWith =>
+      _$ConsultationCopyWithImpl<Consultation>(
+          this as Consultation, _$identity);
+
+  /// Serializes this Consultation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? senderId = null,
-    Object? recipientId = null,
-    Object? message = null,
-    Object? attachment = freezed,
-    Object? status = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      senderId: null == senderId
-          ? _value.senderId
-          : senderId // ignore: cast_nullable_to_non_nullable
-              as int,
-      recipientId: null == recipientId
-          ? _value.recipientId
-          : recipientId // ignore: cast_nullable_to_non_nullable
-              as int,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      attachment: freezed == attachment
-          ? _value.attachment
-          : attachment // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Consultation &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.senderId, senderId) ||
+                other.senderId == senderId) &&
+            (identical(other.recipientId, recipientId) ||
+                other.recipientId == recipientId) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.attachment, attachment) ||
+                other.attachment == attachment) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, senderId, recipientId,
+      message, attachment, status, createdAt, updatedAt);
+
+  @override
+  String toString() {
+    return 'Consultation(id: $id, senderId: $senderId, recipientId: $recipientId, message: $message, attachment: $attachment, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 }
 
 /// @nodoc
-abstract class _$$ConsultationImplCopyWith<$Res>
-    implements $ConsultationCopyWith<$Res> {
-  factory _$$ConsultationImplCopyWith(
-          _$ConsultationImpl value, $Res Function(_$ConsultationImpl) then) =
-      __$$ConsultationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ConsultationCopyWith<$Res> {
+  factory $ConsultationCopyWith(
+          Consultation value, $Res Function(Consultation) _then) =
+      _$ConsultationCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(name: "id") int id,
@@ -145,12 +92,11 @@ abstract class _$$ConsultationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ConsultationImplCopyWithImpl<$Res>
-    extends _$ConsultationCopyWithImpl<$Res, _$ConsultationImpl>
-    implements _$$ConsultationImplCopyWith<$Res> {
-  __$$ConsultationImplCopyWithImpl(
-      _$ConsultationImpl _value, $Res Function(_$ConsultationImpl) _then)
-      : super(_value, _then);
+class _$ConsultationCopyWithImpl<$Res> implements $ConsultationCopyWith<$Res> {
+  _$ConsultationCopyWithImpl(this._self, this._then);
+
+  final Consultation _self;
+  final $Res Function(Consultation) _then;
 
   /// Create a copy of Consultation
   /// with the given fields replaced by the non-null parameter values.
@@ -166,37 +112,37 @@ class __$$ConsultationImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
-    return _then(_$ConsultationImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
       senderId: null == senderId
-          ? _value.senderId
+          ? _self.senderId
           : senderId // ignore: cast_nullable_to_non_nullable
               as int,
       recipientId: null == recipientId
-          ? _value.recipientId
+          ? _self.recipientId
           : recipientId // ignore: cast_nullable_to_non_nullable
               as int,
       message: null == message
-          ? _value.message
+          ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
       attachment: freezed == attachment
-          ? _value.attachment
+          ? _self.attachment
           : attachment // ignore: cast_nullable_to_non_nullable
               as String?,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       updatedAt: null == updatedAt
-          ? _value.updatedAt
+          ? _self.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
@@ -205,8 +151,8 @@ class __$$ConsultationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConsultationImpl implements _Consultation {
-  const _$ConsultationImpl(
+class _Consultation implements Consultation {
+  const _Consultation(
       {@JsonKey(name: "id") required this.id,
       @JsonKey(name: "sender_id") required this.senderId,
       @JsonKey(name: "recipient_id") required this.recipientId,
@@ -215,9 +161,8 @@ class _$ConsultationImpl implements _Consultation {
       @JsonKey(name: "status") required this.status,
       @JsonKey(name: "created_at") required this.createdAt,
       @JsonKey(name: "updated_at") required this.updatedAt});
-
-  factory _$ConsultationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConsultationImplFromJson(json);
+  factory _Consultation.fromJson(Map<String, dynamic> json) =>
+      _$ConsultationFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -244,16 +189,26 @@ class _$ConsultationImpl implements _Consultation {
   @JsonKey(name: "updated_at")
   final DateTime updatedAt;
 
+  /// Create a copy of Consultation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Consultation(id: $id, senderId: $senderId, recipientId: $recipientId, message: $message, attachment: $attachment, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConsultationCopyWith<_Consultation> get copyWith =>
+      __$ConsultationCopyWithImpl<_Consultation>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConsultationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConsultationImpl &&
+            other is _Consultation &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.senderId, senderId) ||
                 other.senderId == senderId) &&
@@ -274,66 +229,88 @@ class _$ConsultationImpl implements _Consultation {
   int get hashCode => Object.hash(runtimeType, id, senderId, recipientId,
       message, attachment, status, createdAt, updatedAt);
 
-  /// Create a copy of Consultation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ConsultationImplCopyWith<_$ConsultationImpl> get copyWith =>
-      __$$ConsultationImplCopyWithImpl<_$ConsultationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ConsultationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Consultation(id: $id, senderId: $senderId, recipientId: $recipientId, message: $message, attachment: $attachment, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 }
 
-abstract class _Consultation implements Consultation {
-  const factory _Consultation(
-          {@JsonKey(name: "id") required final int id,
-          @JsonKey(name: "sender_id") required final int senderId,
-          @JsonKey(name: "recipient_id") required final int recipientId,
-          @JsonKey(name: "message") required final String message,
-          @JsonKey(name: "attachment") final String? attachment,
-          @JsonKey(name: "status") required final String status,
-          @JsonKey(name: "created_at") required final DateTime createdAt,
-          @JsonKey(name: "updated_at") required final DateTime updatedAt}) =
-      _$ConsultationImpl;
+/// @nodoc
+abstract mixin class _$ConsultationCopyWith<$Res>
+    implements $ConsultationCopyWith<$Res> {
+  factory _$ConsultationCopyWith(
+          _Consultation value, $Res Function(_Consultation) _then) =
+      __$ConsultationCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: "id") int id,
+      @JsonKey(name: "sender_id") int senderId,
+      @JsonKey(name: "recipient_id") int recipientId,
+      @JsonKey(name: "message") String message,
+      @JsonKey(name: "attachment") String? attachment,
+      @JsonKey(name: "status") String status,
+      @JsonKey(name: "created_at") DateTime createdAt,
+      @JsonKey(name: "updated_at") DateTime updatedAt});
+}
 
-  factory _Consultation.fromJson(Map<String, dynamic> json) =
-      _$ConsultationImpl.fromJson;
+/// @nodoc
+class __$ConsultationCopyWithImpl<$Res>
+    implements _$ConsultationCopyWith<$Res> {
+  __$ConsultationCopyWithImpl(this._self, this._then);
 
-  @override
-  @JsonKey(name: "id")
-  int get id;
-  @override
-  @JsonKey(name: "sender_id")
-  int get senderId;
-  @override
-  @JsonKey(name: "recipient_id")
-  int get recipientId;
-  @override
-  @JsonKey(name: "message")
-  String get message;
-  @override
-  @JsonKey(name: "attachment")
-  String? get attachment;
-  @override
-  @JsonKey(name: "status")
-  String get status;
-  @override
-  @JsonKey(name: "created_at")
-  DateTime get createdAt;
-  @override
-  @JsonKey(name: "updated_at")
-  DateTime get updatedAt;
+  final _Consultation _self;
+  final $Res Function(_Consultation) _then;
 
   /// Create a copy of Consultation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConsultationImplCopyWith<_$ConsultationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? senderId = null,
+    Object? recipientId = null,
+    Object? message = null,
+    Object? attachment = freezed,
+    Object? status = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+  }) {
+    return _then(_Consultation(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      senderId: null == senderId
+          ? _self.senderId
+          : senderId // ignore: cast_nullable_to_non_nullable
+              as int,
+      recipientId: null == recipientId
+          ? _self.recipientId
+          : recipientId // ignore: cast_nullable_to_non_nullable
+              as int,
+      message: null == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      attachment: freezed == attachment
+          ? _self.attachment
+          : attachment // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _self.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 }
+
+// dart format on

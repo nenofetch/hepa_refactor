@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,78 +10,55 @@ part of 'tdee.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Tdee _$TdeeFromJson(Map<String, dynamic> json) {
-  return _Tdee.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Tdee {
-  String get result => throw _privateConstructorUsedError;
-
-  /// Serializes this Tdee to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get result;
 
   /// Create a copy of Tdee
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TdeeCopyWith<Tdee> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TdeeCopyWith<$Res> {
-  factory $TdeeCopyWith(Tdee value, $Res Function(Tdee) then) =
-      _$TdeeCopyWithImpl<$Res, Tdee>;
-  @useResult
-  $Res call({String result});
-}
-
-/// @nodoc
-class _$TdeeCopyWithImpl<$Res, $Val extends Tdee>
-    implements $TdeeCopyWith<$Res> {
-  _$TdeeCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Tdee
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $TdeeCopyWith<Tdee> get copyWith =>
+      _$TdeeCopyWithImpl<Tdee>(this as Tdee, _$identity);
+
+  /// Serializes this Tdee to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? result = null,
-  }) {
-    return _then(_value.copyWith(
-      result: null == result
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Tdee &&
+            (identical(other.result, result) || other.result == result));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, result);
+
+  @override
+  String toString() {
+    return 'Tdee(result: $result)';
   }
 }
 
 /// @nodoc
-abstract class _$$TdeeImplCopyWith<$Res> implements $TdeeCopyWith<$Res> {
-  factory _$$TdeeImplCopyWith(
-          _$TdeeImpl value, $Res Function(_$TdeeImpl) then) =
-      __$$TdeeImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TdeeCopyWith<$Res> {
+  factory $TdeeCopyWith(Tdee value, $Res Function(Tdee) _then) =
+      _$TdeeCopyWithImpl;
   @useResult
   $Res call({String result});
 }
 
 /// @nodoc
-class __$$TdeeImplCopyWithImpl<$Res>
-    extends _$TdeeCopyWithImpl<$Res, _$TdeeImpl>
-    implements _$$TdeeImplCopyWith<$Res> {
-  __$$TdeeImplCopyWithImpl(_$TdeeImpl _value, $Res Function(_$TdeeImpl) _then)
-      : super(_value, _then);
+class _$TdeeCopyWithImpl<$Res> implements $TdeeCopyWith<$Res> {
+  _$TdeeCopyWithImpl(this._self, this._then);
+
+  final Tdee _self;
+  final $Res Function(Tdee) _then;
 
   /// Create a copy of Tdee
   /// with the given fields replaced by the non-null parameter values.
@@ -89,9 +67,9 @@ class __$$TdeeImplCopyWithImpl<$Res>
   $Res call({
     Object? result = null,
   }) {
-    return _then(_$TdeeImpl(
+    return _then(_self.copyWith(
       result: null == result
-          ? _value.result
+          ? _self.result
           : result // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -100,25 +78,33 @@ class __$$TdeeImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TdeeImpl implements _Tdee {
-  const _$TdeeImpl({required this.result});
-
-  factory _$TdeeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TdeeImplFromJson(json);
+class _Tdee implements Tdee {
+  const _Tdee({required this.result});
+  factory _Tdee.fromJson(Map<String, dynamic> json) => _$TdeeFromJson(json);
 
   @override
   final String result;
 
+  /// Create a copy of Tdee
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Tdee(result: $result)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TdeeCopyWith<_Tdee> get copyWith =>
+      __$TdeeCopyWithImpl<_Tdee>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TdeeToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TdeeImpl &&
+            other is _Tdee &&
             (identical(other.result, result) || other.result == result));
   }
 
@@ -126,34 +112,42 @@ class _$TdeeImpl implements _Tdee {
   @override
   int get hashCode => Object.hash(runtimeType, result);
 
-  /// Create a copy of Tdee
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TdeeImplCopyWith<_$TdeeImpl> get copyWith =>
-      __$$TdeeImplCopyWithImpl<_$TdeeImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TdeeImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Tdee(result: $result)';
   }
 }
 
-abstract class _Tdee implements Tdee {
-  const factory _Tdee({required final String result}) = _$TdeeImpl;
-
-  factory _Tdee.fromJson(Map<String, dynamic> json) = _$TdeeImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$TdeeCopyWith<$Res> implements $TdeeCopyWith<$Res> {
+  factory _$TdeeCopyWith(_Tdee value, $Res Function(_Tdee) _then) =
+      __$TdeeCopyWithImpl;
   @override
-  String get result;
+  @useResult
+  $Res call({String result});
+}
+
+/// @nodoc
+class __$TdeeCopyWithImpl<$Res> implements _$TdeeCopyWith<$Res> {
+  __$TdeeCopyWithImpl(this._self, this._then);
+
+  final _Tdee _self;
+  final $Res Function(_Tdee) _then;
 
   /// Create a copy of Tdee
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TdeeImplCopyWith<_$TdeeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? result = null,
+  }) {
+    return _then(_Tdee(
+      result: null == result
+          ? _self.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
+
+// dart format on

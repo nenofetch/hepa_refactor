@@ -6,7 +6,7 @@ part of 'drink.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DrinkImpl _$$DrinkImplFromJson(Map<String, dynamic> json) => _$DrinkImpl(
+_Drink _$DrinkFromJson(Map<String, dynamic> json) => _Drink(
       id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
       category: json['category'] as String?,
@@ -20,8 +20,7 @@ _$DrinkImpl _$$DrinkImplFromJson(Map<String, dynamic> json) => _$DrinkImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$DrinkImplToJson(_$DrinkImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$DrinkToJson(_Drink instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'category': instance.category,

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,132 +10,78 @@ part of 'snack.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Snack _$SnackFromJson(Map<String, dynamic> json) {
-  return _Snack.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Snack {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get category => throw _privateConstructorUsedError;
-  String? get portion => throw _privateConstructorUsedError;
-  String? get calories => throw _privateConstructorUsedError;
-  String? get proteins => throw _privateConstructorUsedError;
-  String? get carbohydrate => throw _privateConstructorUsedError;
-  String? get fat => throw _privateConstructorUsedError;
-  String? get sugar => throw _privateConstructorUsedError;
-  List<int>? get snacks => throw _privateConstructorUsedError;
-
-  /// Serializes this Snack to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get id;
+  String? get name;
+  String? get category;
+  String? get portion;
+  String? get calories;
+  String? get proteins;
+  String? get carbohydrate;
+  String? get fat;
+  String? get sugar;
+  List<int>? get snacks;
 
   /// Create a copy of Snack
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SnackCopyWith<Snack> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SnackCopyWith<$Res> {
-  factory $SnackCopyWith(Snack value, $Res Function(Snack) then) =
-      _$SnackCopyWithImpl<$Res, Snack>;
-  @useResult
-  $Res call(
-      {int? id,
-      String? name,
-      String? category,
-      String? portion,
-      String? calories,
-      String? proteins,
-      String? carbohydrate,
-      String? fat,
-      String? sugar,
-      List<int>? snacks});
-}
-
-/// @nodoc
-class _$SnackCopyWithImpl<$Res, $Val extends Snack>
-    implements $SnackCopyWith<$Res> {
-  _$SnackCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Snack
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $SnackCopyWith<Snack> get copyWith =>
+      _$SnackCopyWithImpl<Snack>(this as Snack, _$identity);
+
+  /// Serializes this Snack to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? category = freezed,
-    Object? portion = freezed,
-    Object? calories = freezed,
-    Object? proteins = freezed,
-    Object? carbohydrate = freezed,
-    Object? fat = freezed,
-    Object? sugar = freezed,
-    Object? snacks = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-      portion: freezed == portion
-          ? _value.portion
-          : portion // ignore: cast_nullable_to_non_nullable
-              as String?,
-      calories: freezed == calories
-          ? _value.calories
-          : calories // ignore: cast_nullable_to_non_nullable
-              as String?,
-      proteins: freezed == proteins
-          ? _value.proteins
-          : proteins // ignore: cast_nullable_to_non_nullable
-              as String?,
-      carbohydrate: freezed == carbohydrate
-          ? _value.carbohydrate
-          : carbohydrate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fat: freezed == fat
-          ? _value.fat
-          : fat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sugar: freezed == sugar
-          ? _value.sugar
-          : sugar // ignore: cast_nullable_to_non_nullable
-              as String?,
-      snacks: freezed == snacks
-          ? _value.snacks
-          : snacks // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Snack &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.portion, portion) || other.portion == portion) &&
+            (identical(other.calories, calories) ||
+                other.calories == calories) &&
+            (identical(other.proteins, proteins) ||
+                other.proteins == proteins) &&
+            (identical(other.carbohydrate, carbohydrate) ||
+                other.carbohydrate == carbohydrate) &&
+            (identical(other.fat, fat) || other.fat == fat) &&
+            (identical(other.sugar, sugar) || other.sugar == sugar) &&
+            const DeepCollectionEquality().equals(other.snacks, snacks));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      category,
+      portion,
+      calories,
+      proteins,
+      carbohydrate,
+      fat,
+      sugar,
+      const DeepCollectionEquality().hash(snacks));
+
+  @override
+  String toString() {
+    return 'Snack(id: $id, name: $name, category: $category, portion: $portion, calories: $calories, proteins: $proteins, carbohydrate: $carbohydrate, fat: $fat, sugar: $sugar, snacks: $snacks)';
   }
 }
 
 /// @nodoc
-abstract class _$$SnackImplCopyWith<$Res> implements $SnackCopyWith<$Res> {
-  factory _$$SnackImplCopyWith(
-          _$SnackImpl value, $Res Function(_$SnackImpl) then) =
-      __$$SnackImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SnackCopyWith<$Res> {
+  factory $SnackCopyWith(Snack value, $Res Function(Snack) _then) =
+      _$SnackCopyWithImpl;
   @useResult
   $Res call(
       {int? id,
@@ -150,12 +97,11 @@ abstract class _$$SnackImplCopyWith<$Res> implements $SnackCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SnackImplCopyWithImpl<$Res>
-    extends _$SnackCopyWithImpl<$Res, _$SnackImpl>
-    implements _$$SnackImplCopyWith<$Res> {
-  __$$SnackImplCopyWithImpl(
-      _$SnackImpl _value, $Res Function(_$SnackImpl) _then)
-      : super(_value, _then);
+class _$SnackCopyWithImpl<$Res> implements $SnackCopyWith<$Res> {
+  _$SnackCopyWithImpl(this._self, this._then);
+
+  final Snack _self;
+  final $Res Function(Snack) _then;
 
   /// Create a copy of Snack
   /// with the given fields replaced by the non-null parameter values.
@@ -173,45 +119,45 @@ class __$$SnackImplCopyWithImpl<$Res>
     Object? sugar = freezed,
     Object? snacks = freezed,
   }) {
-    return _then(_$SnackImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as int?,
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       category: freezed == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as String?,
       portion: freezed == portion
-          ? _value.portion
+          ? _self.portion
           : portion // ignore: cast_nullable_to_non_nullable
               as String?,
       calories: freezed == calories
-          ? _value.calories
+          ? _self.calories
           : calories // ignore: cast_nullable_to_non_nullable
               as String?,
       proteins: freezed == proteins
-          ? _value.proteins
+          ? _self.proteins
           : proteins // ignore: cast_nullable_to_non_nullable
               as String?,
       carbohydrate: freezed == carbohydrate
-          ? _value.carbohydrate
+          ? _self.carbohydrate
           : carbohydrate // ignore: cast_nullable_to_non_nullable
               as String?,
       fat: freezed == fat
-          ? _value.fat
+          ? _self.fat
           : fat // ignore: cast_nullable_to_non_nullable
               as String?,
       sugar: freezed == sugar
-          ? _value.sugar
+          ? _self.sugar
           : sugar // ignore: cast_nullable_to_non_nullable
               as String?,
       snacks: freezed == snacks
-          ? _value._snacks
+          ? _self.snacks
           : snacks // ignore: cast_nullable_to_non_nullable
               as List<int>?,
     ));
@@ -220,8 +166,8 @@ class __$$SnackImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SnackImpl implements _Snack {
-  const _$SnackImpl(
+class _Snack implements Snack {
+  const _Snack(
       {this.id,
       this.name,
       this.category,
@@ -233,9 +179,7 @@ class _$SnackImpl implements _Snack {
       this.sugar,
       final List<int>? snacks})
       : _snacks = snacks;
-
-  factory _$SnackImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SnackImplFromJson(json);
+  factory _Snack.fromJson(Map<String, dynamic> json) => _$SnackFromJson(json);
 
   @override
   final int? id;
@@ -265,16 +209,26 @@ class _$SnackImpl implements _Snack {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of Snack
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Snack(id: $id, name: $name, category: $category, portion: $portion, calories: $calories, proteins: $proteins, carbohydrate: $carbohydrate, fat: $fat, sugar: $sugar, snacks: $snacks)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SnackCopyWith<_Snack> get copyWith =>
+      __$SnackCopyWithImpl<_Snack>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SnackToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SnackImpl &&
+            other is _Snack &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.category, category) ||
@@ -306,62 +260,97 @@ class _$SnackImpl implements _Snack {
       sugar,
       const DeepCollectionEquality().hash(_snacks));
 
-  /// Create a copy of Snack
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SnackImplCopyWith<_$SnackImpl> get copyWith =>
-      __$$SnackImplCopyWithImpl<_$SnackImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SnackImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Snack(id: $id, name: $name, category: $category, portion: $portion, calories: $calories, proteins: $proteins, carbohydrate: $carbohydrate, fat: $fat, sugar: $sugar, snacks: $snacks)';
   }
 }
 
-abstract class _Snack implements Snack {
-  const factory _Snack(
-      {final int? id,
-      final String? name,
-      final String? category,
-      final String? portion,
-      final String? calories,
-      final String? proteins,
-      final String? carbohydrate,
-      final String? fat,
-      final String? sugar,
-      final List<int>? snacks}) = _$SnackImpl;
+/// @nodoc
+abstract mixin class _$SnackCopyWith<$Res> implements $SnackCopyWith<$Res> {
+  factory _$SnackCopyWith(_Snack value, $Res Function(_Snack) _then) =
+      __$SnackCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int? id,
+      String? name,
+      String? category,
+      String? portion,
+      String? calories,
+      String? proteins,
+      String? carbohydrate,
+      String? fat,
+      String? sugar,
+      List<int>? snacks});
+}
 
-  factory _Snack.fromJson(Map<String, dynamic> json) = _$SnackImpl.fromJson;
+/// @nodoc
+class __$SnackCopyWithImpl<$Res> implements _$SnackCopyWith<$Res> {
+  __$SnackCopyWithImpl(this._self, this._then);
 
-  @override
-  int? get id;
-  @override
-  String? get name;
-  @override
-  String? get category;
-  @override
-  String? get portion;
-  @override
-  String? get calories;
-  @override
-  String? get proteins;
-  @override
-  String? get carbohydrate;
-  @override
-  String? get fat;
-  @override
-  String? get sugar;
-  @override
-  List<int>? get snacks;
+  final _Snack _self;
+  final $Res Function(_Snack) _then;
 
   /// Create a copy of Snack
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SnackImplCopyWith<_$SnackImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? category = freezed,
+    Object? portion = freezed,
+    Object? calories = freezed,
+    Object? proteins = freezed,
+    Object? carbohydrate = freezed,
+    Object? fat = freezed,
+    Object? sugar = freezed,
+    Object? snacks = freezed,
+  }) {
+    return _then(_Snack(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      portion: freezed == portion
+          ? _self.portion
+          : portion // ignore: cast_nullable_to_non_nullable
+              as String?,
+      calories: freezed == calories
+          ? _self.calories
+          : calories // ignore: cast_nullable_to_non_nullable
+              as String?,
+      proteins: freezed == proteins
+          ? _self.proteins
+          : proteins // ignore: cast_nullable_to_non_nullable
+              as String?,
+      carbohydrate: freezed == carbohydrate
+          ? _self.carbohydrate
+          : carbohydrate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fat: freezed == fat
+          ? _self.fat
+          : fat // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sugar: freezed == sugar
+          ? _self.sugar
+          : sugar // ignore: cast_nullable_to_non_nullable
+              as String?,
+      snacks: freezed == snacks
+          ? _self._snacks
+          : snacks // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+    ));
+  }
 }
+
+// dart format on

@@ -6,11 +6,10 @@ part of 'tdee.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TdeeImpl _$$TdeeImplFromJson(Map<String, dynamic> json) => _$TdeeImpl(
+_Tdee _$TdeeFromJson(Map<String, dynamic> json) => _Tdee(
       result: json['result'] as String,
     );
 
-Map<String, dynamic> _$$TdeeImplToJson(_$TdeeImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$TdeeToJson(_Tdee instance) => <String, dynamic>{
       'result': instance.result,
     };
