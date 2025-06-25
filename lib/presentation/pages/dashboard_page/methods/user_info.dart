@@ -21,7 +21,7 @@ Widget userInfo(WidgetRef ref) => Padding(
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image:
-                        ref.watch(userDataProvider).valueOrNull?.image != null
+                        ref.watch(userDataProvider).value?.image != null
                             ? NetworkImage('https://picsum.photos/200/300')
                             : NetworkImage('https://picsum.photos/200/300'),
                     fit: BoxFit.cover,

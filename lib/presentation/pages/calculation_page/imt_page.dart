@@ -77,7 +77,7 @@ class IMTPage extends ConsumerWidget {
                   ),
                   verticalSpace(10),
                   Text(
-                    ' ${ref.watch(anthropometriesProvider).valueOrNull?.imt.toStringAsFixed(2) ?? ''}',
+                    ' ${ref.watch(anthropometriesProvider).value?.imt.toStringAsFixed(2) ?? ''}',
                     style: TextStyle(
                         fontSize: 24, fontWeight: bold, color: blackColor),
                   ),
@@ -89,7 +89,7 @@ class IMTPage extends ConsumerWidget {
                   ),
                   verticalSpace(10),
                   Text(
-                    ' ${ref.watch(anthropometriesProvider).valueOrNull?.result ?? ''}',
+                    ' ${ref.watch(anthropometriesProvider).value?.result ?? ''}',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: bold,

@@ -86,7 +86,7 @@ class LoginPage extends ConsumerWidget {
                         child: Text(
                           'Klik disini',
                           style: TextStyle(
-                            color: Colors.blue.withOpacity(0.5),
+                            color: Colors.blue.withValues(alpha: 0.5),
                             fontSize: 16,
                             fontWeight: bold,
                           ),

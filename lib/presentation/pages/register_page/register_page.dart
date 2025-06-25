@@ -4,9 +4,9 @@ import 'package:hepa/presentation/misc/methods.dart';
 import 'package:hepa/presentation/providers/user_data/user_data_provider.dart';
 import 'package:hepa/presentation/router/router_provider.dart';
 import 'package:hepa/presentation/widgets/hepa_text_field.dart';
+import 'package:radio_group_v2/radio_group_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:radio_group_v2/radio_group_v2.dart';
 import 'package:intl/intl.dart';
 
 class RegisterPage extends ConsumerStatefulWidget {
@@ -157,7 +157,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                         child: Text(
                           'Klik disini',
                           style: TextStyle(
-                            color: Colors.blue.withOpacity(0.5),
+                            color: Colors.blue.withValues(alpha: 0.5),
                             fontSize: 16,
                             fontWeight: bold,
                           ),
