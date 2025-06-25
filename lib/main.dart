@@ -24,7 +24,10 @@ Future<void> main() async {
       options.sampleRate = 1.0;
       options.profilesSampleRate = 1.0;
     },
-    appRunner: () => runApp(const ProviderScope(child: MyApp())),
+    appRunner: () => runApp(ProviderScope(
+      retry: (retryCount, error) => null,
+      child: MyApp(),
+    )),
   );
 
   requestNotification();
