@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'check_bmr.g.dart';
 
 @riverpod
-CheckBmr checkBmr(CheckBmrRef ref) =>
+CheckBmr checkBmr(Ref ref) =>
     CheckBmr(bmrRepository: ref.watch(bmrRepositoryProvider));

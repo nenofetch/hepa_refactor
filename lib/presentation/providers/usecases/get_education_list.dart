@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_education_list.g.dart';
 
 @riverpod
-GetEducation getEducation(GetEducationRef ref) =>
+GetEducation getEducation(Ref ref) =>
     GetEducation(educationRepository: ref.watch(educationRepositoryProvider));

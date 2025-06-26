@@ -6,24 +6,49 @@ part of 'post_activities_sport.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$postActivitiesSportHash() =>
-    r'e70b674e477babff38625abd90abf18d3a1977f7';
-
-/// See also [postActivitiesSport].
 @ProviderFor(postActivitiesSport)
-final postActivitiesSportProvider =
-    AutoDisposeProvider<PostActivitiesSport>.internal(
-  postActivitiesSport,
-  name: r'postActivitiesSportProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$postActivitiesSportHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const postActivitiesSportProvider = PostActivitiesSportProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef PostActivitiesSportRef = AutoDisposeProviderRef<PostActivitiesSport>;
+final class PostActivitiesSportProvider extends $FunctionalProvider<
+    PostActivitiesSport,
+    PostActivitiesSport,
+    PostActivitiesSport> with $Provider<PostActivitiesSport> {
+  const PostActivitiesSportProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'postActivitiesSportProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$postActivitiesSportHash();
+
+  @$internal
+  @override
+  $ProviderElement<PostActivitiesSport> $createElement(
+          $ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  PostActivitiesSport create(Ref ref) {
+    return postActivitiesSport(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(PostActivitiesSport value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<PostActivitiesSport>(value),
+    );
+  }
+}
+
+String _$postActivitiesSportHash() =>
+    r'5723c32070c7b168d7c2084db7fc712d3a4f77e2';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

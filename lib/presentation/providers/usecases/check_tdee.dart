@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'check_tdee.g.dart';
 
 @riverpod
-CheckTdee checkTdee(CheckTdeeRef ref) =>
+CheckTdee checkTdee(Ref ref) =>
     CheckTdee(tdeeRepository: ref.watch(tdeeRepositoryProvider));

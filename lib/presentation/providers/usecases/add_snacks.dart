@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'add_snacks.g.dart';
 
 @riverpod
-AddSnacks addSnacks(AddSnacksRef ref) =>
+AddSnacks addSnacks(Ref ref) =>
     AddSnacks(snackRepository: ref.watch(snackRepositoryProvider));

@@ -6,5 +6,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'post_activities_sport.g.dart';
 
 @riverpod
-PostActivitiesSport postActivitiesSport(PostActivitiesSportRef ref) =>
+PostActivitiesSport postActivitiesSport(Ref ref) =>
     PostActivitiesSport(sportRepository: ref.watch(sportRepositoryProvider));

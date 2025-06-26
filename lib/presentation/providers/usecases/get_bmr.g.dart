@@ -6,21 +6,45 @@ part of 'get_bmr.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getBmrHash() => r'34f069d27cfc32065a69fc3234d3cbc791ff432a';
-
-/// See also [getBmr].
 @ProviderFor(getBmr)
-final getBmrProvider = AutoDisposeProvider<GetBmr>.internal(
-  getBmr,
-  name: r'getBmrProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$getBmrHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const getBmrProvider = GetBmrProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GetBmrRef = AutoDisposeProviderRef<GetBmr>;
+final class GetBmrProvider extends $FunctionalProvider<GetBmr, GetBmr, GetBmr>
+    with $Provider<GetBmr> {
+  const GetBmrProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'getBmrProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$getBmrHash();
+
+  @$internal
+  @override
+  $ProviderElement<GetBmr> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  GetBmr create(Ref ref) {
+    return getBmr(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GetBmr value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GetBmr>(value),
+    );
+  }
+}
+
+String _$getBmrHash() => r'7fc6aa9d0784cb7bbe60dc8e6ab940f8e73d143b';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

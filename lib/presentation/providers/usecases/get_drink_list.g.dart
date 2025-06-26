@@ -6,21 +6,46 @@ part of 'get_drink_list.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getDrinkListHash() => r'31f5ac1705409a9ada850aa1d30159b309c217c8';
-
-/// See also [getDrinkList].
 @ProviderFor(getDrinkList)
-final getDrinkListProvider = AutoDisposeProvider<GetDrinkList>.internal(
-  getDrinkList,
-  name: r'getDrinkListProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$getDrinkListHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const getDrinkListProvider = GetDrinkListProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GetDrinkListRef = AutoDisposeProviderRef<GetDrinkList>;
+final class GetDrinkListProvider
+    extends $FunctionalProvider<GetDrinkList, GetDrinkList, GetDrinkList>
+    with $Provider<GetDrinkList> {
+  const GetDrinkListProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'getDrinkListProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$getDrinkListHash();
+
+  @$internal
+  @override
+  $ProviderElement<GetDrinkList> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  GetDrinkList create(Ref ref) {
+    return getDrinkList(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GetDrinkList value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GetDrinkList>(value),
+    );
+  }
+}
+
+String _$getDrinkListHash() => r'6dfb0083cbf1455966dfa18608d2c9603a0ec3dd';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

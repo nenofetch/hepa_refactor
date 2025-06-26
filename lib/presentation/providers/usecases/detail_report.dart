@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'detail_report.g.dart';
 
 @riverpod
-DetailReport detailReport(DetailReportRef ref) =>
+DetailReport detailReport(Ref ref) =>
     DetailReport(reportRepository: ref.watch(reportRepositoryProvider));

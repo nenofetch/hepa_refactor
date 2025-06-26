@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'detail_bmr.g.dart';
 
 @riverpod
-DetailBmr detailBmr(DetailBmrRef ref) =>
+DetailBmr detailBmr(Ref ref) =>
     DetailBmr(bmrRepository: ref.watch(bmrRepositoryProvider));

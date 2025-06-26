@@ -6,22 +6,47 @@ part of 'get_anthropometry.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getAnthropometryHash() => r'0867ee6d09bb9f555ba1a34f710e3d71d8a22728';
-
-/// See also [getAnthropometry].
 @ProviderFor(getAnthropometry)
-final getAnthropometryProvider = AutoDisposeProvider<GetAnthropometry>.internal(
-  getAnthropometry,
-  name: r'getAnthropometryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$getAnthropometryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const getAnthropometryProvider = GetAnthropometryProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GetAnthropometryRef = AutoDisposeProviderRef<GetAnthropometry>;
+final class GetAnthropometryProvider extends $FunctionalProvider<
+    GetAnthropometry,
+    GetAnthropometry,
+    GetAnthropometry> with $Provider<GetAnthropometry> {
+  const GetAnthropometryProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'getAnthropometryProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$getAnthropometryHash();
+
+  @$internal
+  @override
+  $ProviderElement<GetAnthropometry> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  GetAnthropometry create(Ref ref) {
+    return getAnthropometry(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GetAnthropometry value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GetAnthropometry>(value),
+    );
+  }
+}
+
+String _$getAnthropometryHash() => r'c29bead576ac7d35abe275604b632ce142aa8ce9';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

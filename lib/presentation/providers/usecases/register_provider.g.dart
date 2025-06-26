@@ -6,21 +6,46 @@ part of 'register_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$registerHash() => r'2f3c4ecd14b98ddf242b03838a09709ad4029120';
-
-/// See also [register].
 @ProviderFor(register)
-final registerProvider = AutoDisposeProvider<Register>.internal(
-  register,
-  name: r'registerProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$registerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const registerProvider = RegisterProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef RegisterRef = AutoDisposeProviderRef<Register>;
+final class RegisterProvider
+    extends $FunctionalProvider<Register, Register, Register>
+    with $Provider<Register> {
+  const RegisterProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'registerProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$registerHash();
+
+  @$internal
+  @override
+  $ProviderElement<Register> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  Register create(Ref ref) {
+    return register(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(Register value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<Register>(value),
+    );
+  }
+}
+
+String _$registerHash() => r'd055f0e8555d63be4de8869df0fa38c1f512587a';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

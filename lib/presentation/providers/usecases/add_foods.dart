@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'add_foods.g.dart';
 
 @riverpod
-AddFoods addFoods(AddFoodsRef ref) =>
+AddFoods addFoods(Ref ref) =>
     AddFoods(foodRepository: ref.watch(foodRepositoryProvider));

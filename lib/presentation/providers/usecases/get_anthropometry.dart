@@ -7,4 +7,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_anthropometry.g.dart';
 
 @riverpod
-GetAnthropometry getAnthropometry(GetAnthropometryRef ref) => GetAnthropometry(anthropometryRepository: ref.watch(anthropometryRepositoryProvider));
+GetAnthropometry getAnthropometry(Ref ref) => GetAnthropometry(
+    anthropometryRepository: ref.watch(anthropometryRepositoryProvider));

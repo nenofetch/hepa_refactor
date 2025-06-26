@@ -6,24 +6,49 @@ part of 'check_anthropometry.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$checkAnthropometryHash() =>
-    r'cbcf44c1144f127e879c933916a4dbbb3ba941d5';
-
-/// See also [checkAnthropometry].
 @ProviderFor(checkAnthropometry)
-final checkAnthropometryProvider =
-    AutoDisposeProvider<CheckAnthropometry>.internal(
-  checkAnthropometry,
-  name: r'checkAnthropometryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$checkAnthropometryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const checkAnthropometryProvider = CheckAnthropometryProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef CheckAnthropometryRef = AutoDisposeProviderRef<CheckAnthropometry>;
+final class CheckAnthropometryProvider extends $FunctionalProvider<
+    CheckAnthropometry,
+    CheckAnthropometry,
+    CheckAnthropometry> with $Provider<CheckAnthropometry> {
+  const CheckAnthropometryProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'checkAnthropometryProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$checkAnthropometryHash();
+
+  @$internal
+  @override
+  $ProviderElement<CheckAnthropometry> $createElement(
+          $ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  CheckAnthropometry create(Ref ref) {
+    return checkAnthropometry(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(CheckAnthropometry value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<CheckAnthropometry>(value),
+    );
+  }
+}
+
+String _$checkAnthropometryHash() =>
+    r'14f2d99895970c401a54f87a3839ed56d315e306';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

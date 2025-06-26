@@ -5,6 +5,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'check_anthropometry.g.dart';
 
 @riverpod
-CheckAnthropometry checkAnthropometry(CheckAnthropometryRef ref) =>
+CheckAnthropometry checkAnthropometry(Ref ref) =>
     CheckAnthropometry(
         anthropometryRepository: ref.watch(anthropometryRepositoryProvider));

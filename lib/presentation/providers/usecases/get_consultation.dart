@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_consultation.g.dart';
 
 @riverpod
-GetConsultations getConsultations(GetConsultationsRef ref) => GetConsultations(
+GetConsultations getConsultations(Ref ref) => GetConsultations(
     consultationRepository: ref.watch(consultationRepositoryProvider));

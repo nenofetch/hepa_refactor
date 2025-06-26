@@ -5,4 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'add_consultation.g.dart';
 
 @riverpod
-AddConsultation addConsultation(AddConsultationRef ref) => AddConsultation(consultationRepository: ref.watch(consultationRepositoryProvider));
+AddConsultation addConsultation(Ref ref) => AddConsultation(
+    consultationRepository: ref.watch(consultationRepositoryProvider));

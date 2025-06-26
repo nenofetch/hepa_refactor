@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_sport.g.dart';
 
 @riverpod
-GetSports getSports(GetSportsRef ref) =>
+GetSports getSports(Ref ref) =>
     GetSports(sportRepository: ref.watch(sportRepositoryProvider));

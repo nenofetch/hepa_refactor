@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'get_food_list.g.dart';
 
 @riverpod
-GetFoodList getFoodList(GetFoodListRef ref) =>
+GetFoodList getFoodList(Ref ref) =>
     GetFoodList(foodRepository: ref.watch(foodRepositoryProvider));

@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'detail_imt.g.dart';
 
 @riverpod
-DetailImt detailImt(DetailImtRef ref) => DetailImt(
+DetailImt detailImt(Ref ref) => DetailImt(
     anthropometryRepository: ref.watch(anthropometryRepositoryProvider));
