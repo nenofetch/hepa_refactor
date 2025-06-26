@@ -6,7 +6,7 @@ part 'food.g.dart';
 @freezed
 abstract class Food with _$Food {
   const factory Food({
-     int? id,
+    int? id,
     String? name,
     String? categories,
     String? portion,
