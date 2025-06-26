@@ -36,8 +36,11 @@ class HepaSport implements SportRepository {
   }
 
   @override
-  Future<Result<String>> postSportActivity(
-      {required String duration, required String name}) async {
+  Future<Result<String>> postSportActivity({
+    required String duration,
+    required String name,
+    required String tglInput,
+  }) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
@@ -49,12 +52,31 @@ class HepaSport implements SportRepository {
             'duration': duration,
             'name': name,
             'category': 'Olahraga',
+            'tgl_input': tglInput,
           });
 
       if (responses.statusCode == 200) {
-        return Result.success(responses.data['data']);
+        final responseData = responses.data['data'];
+        String message;
+        if (responseData is Map<String, dynamic>) {
+          message = responseData['message'] ?? responseData.toString();
+        } else if (responseData is String) {
+          message = responseData;
+        } else {
+          message = responseData.toString();
+        }
+        return Result.success(message);
       } else {
-        return Result.failed(responses.data['data']);
+        final errorData = responses.data['data'];
+        String errorMessage;
+        if (errorData is Map<String, dynamic>) {
+          errorMessage = errorData['message'] ?? errorData.toString();
+        } else if (errorData is String) {
+          errorMessage = errorData;
+        } else {
+          errorMessage = errorData.toString();
+        }
+        return Result.failed(errorMessage);
       }
     } on DioException catch (e) {
       return Result.failed('${e.message}');
