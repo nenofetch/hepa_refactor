@@ -16,19 +16,20 @@ class Sports extends _$Sports {
   FutureOr<List<Sport>> build() async {
     GetSports getSports = ref.read(getSportsProvider);
     var result = await getSports(null);
-  return switch (result) {
-    Success(value: final sports) => sports,
-    Failed(message: _) => const []
+    return switch (result) {
+      Success(value: final sports) => sports,
+      Failed(message: _) => const []
     };
   }
 
-
   Future<void> addActivitiesSport(
-      {required String name, required String duration}) async {
+      {required String name,
+      required String duration,
+      required String tglInput}) async {
     PostActivitiesSport postActivitiesSport =
         await ref.read(postActivitiesSportProvider);
-    var result = postActivitiesSport(
-        PostActivitiesSportParams(name: name, duration: duration));
+    var result = postActivitiesSport(PostActivitiesSportParams(
+        name: name, duration: duration, tglInput: tglInput));
     switch (result) {
       case Success(value: final data):
         state = AsyncData(data);
