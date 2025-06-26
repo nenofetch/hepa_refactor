@@ -39,7 +39,6 @@ abstract class Data with _$Data {
     @JsonKey(name: "weight") double? weight,
     @JsonKey(name: "height") double? height,
     @JsonKey(name: "imt") double? imt,
-
     @JsonKey(name: "created_at") required DateTime createdAt,
     @JsonKey(name: "updated_at") required DateTime updatedAt,
   }) = _Data;
