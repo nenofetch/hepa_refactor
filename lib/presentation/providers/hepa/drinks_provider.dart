@@ -24,9 +24,11 @@ class Drinks extends _$Drinks {
     }
   }
 
-  Future<void> addFood({required List<int> drinks}) async {
+  Future<void> addFood(
+      {required List<int> drinks, required String tglInput}) async {
     AddDrinks addDrinks = await ref.read(addDrinksProvider);
-    var result = addDrinks(AddDrinksParams(drinks: drinks));
+    var result = addDrinks(AddDrinksParams(
+        drinks: drinks, tglInput: tglInput, category: "Minuman"));
     switch (result) {
       case Success(value: final user):
         state = AsyncData(user);

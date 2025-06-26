@@ -6,20 +6,46 @@ part of 'snacks_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$snacksHash() => r'9cc240d8265a9285b3d22d99b3b5bf67e402ce97';
-
-/// See also [Snacks].
 @ProviderFor(Snacks)
-final snacksProvider =
-    AutoDisposeAsyncNotifierProvider<Snacks, List<Snack>>.internal(
-  Snacks.new,
-  name: r'snacksProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$snacksHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const snacksProvider = SnacksProvider._();
 
-typedef _$Snacks = AutoDisposeAsyncNotifier<List<Snack>>;
+final class SnacksProvider extends $AsyncNotifierProvider<Snacks, List<Snack>> {
+  const SnacksProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'snacksProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$snacksHash();
+
+  @$internal
+  @override
+  Snacks create() => Snacks();
+}
+
+String _$snacksHash() => r'a81864fd12d09200b91d93fb2adeba603c5fc8c1';
+
+abstract class _$Snacks extends $AsyncNotifier<List<Snack>> {
+  FutureOr<List<Snack>> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<AsyncValue<List<Snack>>, List<Snack>>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<AsyncValue<List<Snack>>, List<Snack>>,
+        AsyncValue<List<Snack>>,
+        Object?,
+        Object?>;
+    element.handleValue(ref, created);
+  }
+}
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

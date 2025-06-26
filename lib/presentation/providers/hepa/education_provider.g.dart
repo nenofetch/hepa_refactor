@@ -6,23 +6,39 @@ part of 'education_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getEducationsHash() => r'dab2f2b69ab0d7b157f3033029dc34097186db50';
-
-/// See also [getEducations].
 @ProviderFor(getEducations)
-final getEducationsProvider =
-    AutoDisposeFutureProvider<List<Education>>.internal(
-  getEducations,
-  name: r'getEducationsProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$getEducationsHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const getEducationsProvider = GetEducationsProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GetEducationsRef = AutoDisposeFutureProviderRef<List<Education>>;
+final class GetEducationsProvider extends $FunctionalProvider<
+        AsyncValue<List<Education>>, List<Education>, FutureOr<List<Education>>>
+    with $FutureModifier<List<Education>>, $FutureProvider<List<Education>> {
+  const GetEducationsProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'getEducationsProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$getEducationsHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<Education>> $createElement(
+          $ProviderPointer pointer) =>
+      $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<Education>> create(Ref ref) {
+    return getEducations(ref);
+  }
+}
+
+String _$getEducationsHash() => r'95ba74859849aa4efc793b7c1089a20c099185a0';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

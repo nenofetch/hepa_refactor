@@ -6,20 +6,46 @@ part of 'drinks_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$drinksHash() => r'47873e208f1ce5c75847250a70867eb7be95d95b';
-
-/// See also [Drinks].
 @ProviderFor(Drinks)
-final drinksProvider =
-    AutoDisposeAsyncNotifierProvider<Drinks, List<Drink>>.internal(
-  Drinks.new,
-  name: r'drinksProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$drinksHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const drinksProvider = DrinksProvider._();
 
-typedef _$Drinks = AutoDisposeAsyncNotifier<List<Drink>>;
+final class DrinksProvider extends $AsyncNotifierProvider<Drinks, List<Drink>> {
+  const DrinksProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'drinksProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$drinksHash();
+
+  @$internal
+  @override
+  Drinks create() => Drinks();
+}
+
+String _$drinksHash() => r'f0cd182d1c7fd497f2f7fa13dd3ea46232579616';
+
+abstract class _$Drinks extends $AsyncNotifier<List<Drink>> {
+  FutureOr<List<Drink>> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<AsyncValue<List<Drink>>, List<Drink>>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<AsyncValue<List<Drink>>, List<Drink>>,
+        AsyncValue<List<Drink>>,
+        Object?,
+        Object?>;
+    element.handleValue(ref, created);
+  }
+}
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

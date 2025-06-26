@@ -7,7 +7,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'education_provider.g.dart';
 
 @riverpod
-Future<List<Education>> getEducations(GetEducationsRef ref) async {
+Future<List<Education>> getEducations(Ref ref) async {
   GetEducation getEducation = ref.read(getEducationProvider);
 
   var result = await getEducation(null);
