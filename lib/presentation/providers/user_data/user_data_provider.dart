@@ -12,7 +12,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'user_data_provider.g.dart';
 
-@Riverpod(keepAlive: true)
+@Riverpod()
 class UserData extends _$UserData {
   @override
   Future<User?> build() async {
@@ -85,7 +85,7 @@ class UserData extends _$UserData {
         state = const AsyncData(null);
       case Failed(:final message):
         state = AsyncError(FlutterError(message), StackTrace.current);
-        state = AsyncData(state.valueOrNull);
+        state = AsyncData(state.value);
     }
   }
 }
