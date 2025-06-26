@@ -5,4 +5,4 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'authentication_provider.g.dart';
 
 @riverpod
-Authentication authentication(AuthenticationRef ref) => HepaAuthentication();
+Authentication authentication(Ref ref) => HepaAuthentication();

@@ -6,5 +6,5 @@ part 'anthropometry_repository_provider.g.dart';
 
 @riverpod
 AnthropometryRepository anthropometryRepository(
-        AnthropometryRepositoryRef ref) =>
+        Ref ref) =>
     HepaAnthropometry();

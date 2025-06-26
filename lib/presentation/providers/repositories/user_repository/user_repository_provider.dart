@@ -5,4 +5,4 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'user_repository_provider.g.dart';
 
 @riverpod
-UserRepository userRepository(UserRepositoryRef ref) => HepaUserRepository();
+UserRepository userRepository(Ref ref) => HepaUserRepository();

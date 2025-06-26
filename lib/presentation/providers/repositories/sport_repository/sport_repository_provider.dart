@@ -5,4 +5,4 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'sport_repository_provider.g.dart';
 
 @riverpod
-SportRepository sportRepository(SportRepositoryRef ref) => HepaSport();
+SportRepository sportRepository(Ref ref) => HepaSport();

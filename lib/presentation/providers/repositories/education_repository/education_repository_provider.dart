@@ -5,5 +5,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'education_repository_provider.g.dart';
 
 @riverpod
-EducationRepository educationRepository(EducationRepositoryRef ref) =>
+EducationRepository educationRepository(Ref ref) =>
     HepaEducation();

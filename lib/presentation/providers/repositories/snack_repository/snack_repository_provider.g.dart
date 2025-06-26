@@ -6,22 +6,45 @@ part of 'snack_repository_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$snackRepositoryHash() => r'74a7afe078e6807f800fb7c7e0866c73c2e2c61f';
-
-/// See also [snackRepository].
 @ProviderFor(snackRepository)
-final snackRepositoryProvider = AutoDisposeProvider<SnackRepository>.internal(
-  snackRepository,
-  name: r'snackRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$snackRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const snackRepositoryProvider = SnackRepositoryProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef SnackRepositoryRef = AutoDisposeProviderRef<SnackRepository>;
+final class SnackRepositoryProvider extends $FunctionalProvider<SnackRepository,
+    SnackRepository, SnackRepository> with $Provider<SnackRepository> {
+  const SnackRepositoryProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'snackRepositoryProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$snackRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<SnackRepository> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  SnackRepository create(Ref ref) {
+    return snackRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(SnackRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<SnackRepository>(value),
+    );
+  }
+}
+
+String _$snackRepositoryHash() => r'faa57a0abd4d297935c6c7a9f77899c1ebd4c263';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -5,4 +5,4 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'tdee_repository_provider.g.dart';
 
 @riverpod
-TdeeRepository tdeeRepository(TdeeRepositoryRef ref) => HepaTdee();
+TdeeRepository tdeeRepository(Ref ref) => HepaTdee();

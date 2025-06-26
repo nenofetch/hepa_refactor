@@ -6,22 +6,46 @@ part of 'bmr_repository_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$bmrRepositoryHash() => r'2500f9fd2f96bd661cf19752d51b54793da4775b';
-
-/// See also [bmrRepository].
 @ProviderFor(bmrRepository)
-final bmrRepositoryProvider = AutoDisposeProvider<BmrRepository>.internal(
-  bmrRepository,
-  name: r'bmrRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$bmrRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const bmrRepositoryProvider = BmrRepositoryProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef BmrRepositoryRef = AutoDisposeProviderRef<BmrRepository>;
+final class BmrRepositoryProvider
+    extends $FunctionalProvider<BmrRepository, BmrRepository, BmrRepository>
+    with $Provider<BmrRepository> {
+  const BmrRepositoryProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'bmrRepositoryProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$bmrRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<BmrRepository> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  BmrRepository create(Ref ref) {
+    return bmrRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(BmrRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<BmrRepository>(value),
+    );
+  }
+}
+
+String _$bmrRepositoryHash() => r'f29c8b601addf95a45090121080e2fbda708e7fe';
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

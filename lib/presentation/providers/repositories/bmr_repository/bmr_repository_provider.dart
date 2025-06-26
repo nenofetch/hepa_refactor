@@ -5,4 +5,4 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'bmr_repository_provider.g.dart';
 
 @riverpod
-BmrRepository bmrRepository(BmrRepositoryRef ref) => HepaBmr();
+BmrRepository bmrRepository(Ref ref) => HepaBmr();

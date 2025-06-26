@@ -5,4 +5,4 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'snack_repository_provider.g.dart';
 
 @riverpod
-SnackRepository snackRepository(SnackRepositoryRef ref) => HepaSnack();
+SnackRepository snackRepository(Ref ref) => HepaSnack();

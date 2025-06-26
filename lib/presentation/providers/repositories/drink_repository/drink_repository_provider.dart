@@ -5,4 +5,4 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'drink_repository_provider.g.dart';
 
 @riverpod
-DrinkRepository drinkRepository(DrinkRepositoryRef ref) => HepaDrink();
+DrinkRepository drinkRepository(Ref ref) => HepaDrink();
