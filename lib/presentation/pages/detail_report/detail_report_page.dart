@@ -303,12 +303,12 @@ class DetailReportPage extends ConsumerWidget {
     );
   }
 
-
-  Widget _foodDetailData(
-      {required String callorie,
-      required String carbohydrate,
-      required String protein,
-      required String fat}) {
+  Widget _foodDetailData({
+    required String callorie,
+    required String carbohydrate,
+    required String protein,
+    required String fat,
+  }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
