@@ -5,6 +5,8 @@ import 'package:hepa/presentation/misc/constants.dart';
 import 'package:hepa/presentation/misc/methods.dart';
 import 'package:hepa/presentation/providers/hepa/sport_provider.dart';
 import 'package:hepa/presentation/router/router_provider.dart';
+import 'package:hepa/presentation/widgets/hepa_text_field.dart';
+import 'package:intl/intl.dart';
 
 class SportPage extends ConsumerStatefulWidget {
   const SportPage({super.key});
@@ -15,6 +17,13 @@ class SportPage extends ConsumerStatefulWidget {
 
 class _SportPageState extends ConsumerState<SportPage> {
   int _duration = 0;
+  final TextEditingController _tglInputController = TextEditingController();
+
+  @override
+  void initState() {
+    _tglInputController.text = "";
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +89,36 @@ class _SportPageState extends ConsumerState<SportPage> {
                                                   ],
                                                 ),
                                                 verticalSpace(30),
+                                                HepaTextField(
+                                                  readOnly: true,
+                                                  controller:
+                                                      _tglInputController,
+                                                  hintText: 'Tanggal Input',
+                                                  suffixIcon: Icon(
+                                                      Icons.calendar_month),
+                                                  onTap: () async {
+                                                    DateTime? pickedDate =
+                                                        await showDatePicker(
+                                                      context: context,
+                                                      initialDate:
+                                                          DateTime.now(),
+                                                      firstDate: DateTime(2020),
+                                                      lastDate: DateTime.now(),
+                                                    );
+                                                    if (pickedDate != null) {
+                                                      String formattedDate =
+                                                          DateFormat(
+                                                                  'yyyy-MM-dd')
+                                                              .format(
+                                                                  pickedDate);
+                                                      setState(() {
+                                                        _tglInputController
+                                                                .text =
+                                                            formattedDate;
+                                                      });
+                                                    }
+                                                  },
+                                                ),
                                                 SizedBox(
                                                   height: 60,
                                                   child: ElevatedButton(
@@ -90,7 +129,10 @@ class _SportPageState extends ConsumerState<SportPage> {
                                                           .addActivitiesSport(
                                                               name: e.name,
                                                               duration: _duration
-                                                                  .toString());
+                                                                  .toString(),
+                                                              tglInput:
+                                                                  _tglInputController
+                                                                      .text);
 
                                                       ref
                                                           .read(routerProvider)

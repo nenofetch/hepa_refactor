@@ -12,7 +12,9 @@ class PostActivitiesSport
   @override
   Future<Result<String>> call(PostActivitiesSportParams params) async {
     var sports = await sportRepository.postSportActivity(
-        duration: params.duration, name: params.name);
+        duration: params.duration,
+        name: params.name,
+        tglInput: params.tglInput);
 
     return sports;
   }
