@@ -17,4 +17,3 @@ abstract class Report with _$Report {
 
   factory Report.fromJson(Map<String, dynamic> json) => _$ReportFromJson(json);
 }
-
