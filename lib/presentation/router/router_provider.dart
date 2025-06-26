@@ -7,7 +7,6 @@ import 'package:hepa/presentation/pages/detail_drink_page/detail_drink_page.dart
 import 'package:hepa/presentation/pages/detail_food_page/detail_food_page.dart';
 import 'package:hepa/presentation/pages/detail_report/detail_report_page.dart';
 import 'package:hepa/presentation/pages/detail_snack_page/detail_snack_page.dart';
-
 import 'package:hepa/presentation/pages/education_page/education_page.dart';
 import 'package:hepa/presentation/pages/education_page/screen_video_page.dart';
 import 'package:hepa/presentation/pages/food_page/food_page.dart';
@@ -24,7 +23,7 @@ import 'package:go_router/go_router.dart';
 part 'router_provider.g.dart';
 
 @Riverpod(keepAlive: true)
-Raw<GoRouter> router(RouterRef ref) => GoRouter(
+Raw<GoRouter> router(Ref ref) => GoRouter(
       routes: [
         GoRoute(
           path: '/',
