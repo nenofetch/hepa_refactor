@@ -13,7 +13,8 @@ class AddSnacks implements UseCase<Result<Snack>, AddSnacksParams> {
 
   @override
   Future<Result<Snack>> call(AddSnacksParams params) async {
-    var snacksList = await snackRepository.addSnack(snacks: params.snacks);
+    var snacksList = await snackRepository.addSnack(
+        snacks: params.snacks, tglInput: params.tglInput);
 
     return snacksList;
   }

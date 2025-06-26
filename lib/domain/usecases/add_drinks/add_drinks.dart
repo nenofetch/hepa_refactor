@@ -15,6 +15,7 @@ class AddDrinks implements UseCase<Result<Drink>, AddDrinksParams> {
     var drinksList = await drinkRepository.addDrink(
       drinks: params.drinks,
       category: params.category,
+      tglInput: params.tglInput,
     );
 
     return drinksList;

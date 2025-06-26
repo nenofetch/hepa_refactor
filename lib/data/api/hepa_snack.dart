@@ -23,6 +23,7 @@ class HepaSnack implements SnackRepository {
   Future<Result<Snack>> addSnack({
     required List<int> snacks,
     String category = "Cemilan",
+    required String tglInput,
   }) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -36,6 +37,7 @@ class HepaSnack implements SnackRepository {
         data: {
           'category': category,
           'snacks': snacks,
+          'tgl_input': tglInput,
         },
       );
       if (responses.statusCode == 200) {

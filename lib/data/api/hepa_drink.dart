@@ -23,6 +23,7 @@ class HepaDrink implements DrinkRepository {
   Future<Result<Drink>> addDrink({
     required List<int> drinks,
     String category = "Minuman",
+    required String tglInput,
   }) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -36,6 +37,7 @@ class HepaDrink implements DrinkRepository {
         data: {
           'category': category,
           'drinks': drinks,
+          'tgl_input': tglInput,
         },
       );
       if (responses.statusCode == 200) {

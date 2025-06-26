@@ -13,7 +13,9 @@ class AddFoods implements UseCase<Result<Food>, AddFoodsParams> {
   @override
   Future<Result<Food>> call(AddFoodsParams params) async {
     var snacksList = await foodRepository.addFood(
-        foods: params.foods, category: params.category);
+        foods: params.foods,
+        category: params.category,
+        tglInput: params.tglInput);
 
     return snacksList;
   }

@@ -21,7 +21,9 @@ class HepaFood implements FoodRepository {
 
   @override
   Future<Result<Food>> addFood(
-      {required List<int> foods, required String category}) async {
+      {required List<int> foods,
+      required String category,
+      required String tglInput}) async {
     try {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final token = prefs.getString('token');
@@ -34,6 +36,7 @@ class HepaFood implements FoodRepository {
         data: {
           'category': category,
           'foods': foods,
+          'tgl_input': tglInput,
         },
       );
       if (responses.statusCode == 200) {

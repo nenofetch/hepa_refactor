@@ -9,5 +9,6 @@ abstract interface class FoodRepository {
   Future<Result<Food>> addFood({
     required List<int> foods,
     required String category,
+    required String tglInput,
   });
 }
