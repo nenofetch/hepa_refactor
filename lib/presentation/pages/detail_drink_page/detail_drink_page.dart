@@ -25,8 +25,9 @@ class _DetailDrinkPageState extends ConsumerState<DetailDrinkPage> {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDateTime,
-      firstDate: DateTime.now().subtract(Duration(days: 30)),
-      lastDate: DateTime(2101),
+      firstDate: DateTime(
+          2023), //Pick date from 2023 because this app was launched in 2023
+      lastDate: DateTime.now(),
     );
 
     if (pickedDate != null && mounted) {
