@@ -30,11 +30,11 @@ jobs:
           java-version: '17'
 
       - name: 🚀 Shorebird Release
-        uses: shorebirdtech/shorebird-release@v1
+        uses: shorebirdtech/shorebird-release@v0
         with:
           platform: android
 
       - name: 🚀 Shorebird Patch
-        uses: shorebirdtech/shorebird-patch@v1
+        uses: shorebirdtech/shorebird-patch@v0
         with:
           platform: android
