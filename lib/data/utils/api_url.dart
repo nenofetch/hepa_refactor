@@ -18,6 +18,7 @@ class ApiUrl {
   static const bmr = '$baseurl/bmr';
   static const bmrShow = '$baseurl/bmr/show';
   static const tdee = '$baseurl/tdee';
+  static const educationActivity = '$baseurl/education-history-activity';
 
   static const storage = 'https://flutter.justnear.my.id';
 }
