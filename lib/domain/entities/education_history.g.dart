@@ -8,8 +8,8 @@ part of 'education_history.dart';
 
 _EducationHistory _$EducationHistoryFromJson(Map<String, dynamic> json) =>
     _EducationHistory(
-      educationName: json['education_name'] as String,
-      tglInput: json['tgl_input'] as String,
+      educationName: json['education_name'] as String?,
+      tglInput: json['tgl_input'] as String?,
     );
 
 Map<String, dynamic> _$EducationHistoryToJson(_EducationHistory instance) =>

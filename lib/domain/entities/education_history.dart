@@ -7,8 +7,8 @@ part 'education_history.g.dart';
 @freezed
 abstract class EducationHistory with _$EducationHistory {
   const factory EducationHistory({
-    @JsonKey(name: "education_name") required String educationName,
-    @JsonKey(name: "tgl_input") required String tglInput,
+    @JsonKey(name: "education_name") String? educationName,
+    @JsonKey(name: "tgl_input") String? tglInput,
   }) = _EducationHistory;
 
   factory EducationHistory.fromJson(Map<String, dynamic> json) =>

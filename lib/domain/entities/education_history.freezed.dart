@@ -16,9 +16,9 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$EducationHistory {
   @JsonKey(name: "education_name")
-  String get educationName;
+  String? get educationName;
   @JsonKey(name: "tgl_input")
-  String get tglInput;
+  String? get tglInput;
 
   /// Create a copy of EducationHistory
   /// with the given fields replaced by the non-null parameter values.
@@ -59,8 +59,8 @@ abstract mixin class $EducationHistoryCopyWith<$Res> {
       _$EducationHistoryCopyWithImpl;
   @useResult
   $Res call(
-      {@JsonKey(name: "education_name") String educationName,
-      @JsonKey(name: "tgl_input") String tglInput});
+      {@JsonKey(name: "education_name") String? educationName,
+      @JsonKey(name: "tgl_input") String? tglInput});
 }
 
 /// @nodoc
@@ -76,18 +76,18 @@ class _$EducationHistoryCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? educationName = null,
-    Object? tglInput = null,
+    Object? educationName = freezed,
+    Object? tglInput = freezed,
   }) {
     return _then(_self.copyWith(
-      educationName: null == educationName
+      educationName: freezed == educationName
           ? _self.educationName
           : educationName // ignore: cast_nullable_to_non_nullable
-              as String,
-      tglInput: null == tglInput
+              as String?,
+      tglInput: freezed == tglInput
           ? _self.tglInput
           : tglInput // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -96,17 +96,17 @@ class _$EducationHistoryCopyWithImpl<$Res>
 @JsonSerializable()
 class _EducationHistory implements EducationHistory {
   const _EducationHistory(
-      {@JsonKey(name: "education_name") required this.educationName,
-      @JsonKey(name: "tgl_input") required this.tglInput});
+      {@JsonKey(name: "education_name") this.educationName,
+      @JsonKey(name: "tgl_input") this.tglInput});
   factory _EducationHistory.fromJson(Map<String, dynamic> json) =>
       _$EducationHistoryFromJson(json);
 
   @override
   @JsonKey(name: "education_name")
-  final String educationName;
+  final String? educationName;
   @override
   @JsonKey(name: "tgl_input")
-  final String tglInput;
+  final String? tglInput;
 
   /// Create a copy of EducationHistory
   /// with the given fields replaced by the non-null parameter values.
@@ -153,8 +153,8 @@ abstract mixin class _$EducationHistoryCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "education_name") String educationName,
-      @JsonKey(name: "tgl_input") String tglInput});
+      {@JsonKey(name: "education_name") String? educationName,
+      @JsonKey(name: "tgl_input") String? tglInput});
 }
 
 /// @nodoc
@@ -170,18 +170,18 @@ class __$EducationHistoryCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? educationName = null,
-    Object? tglInput = null,
+    Object? educationName = freezed,
+    Object? tglInput = freezed,
   }) {
     return _then(_EducationHistory(
-      educationName: null == educationName
+      educationName: freezed == educationName
           ? _self.educationName
           : educationName // ignore: cast_nullable_to_non_nullable
-              as String,
-      tglInput: null == tglInput
+              as String?,
+      tglInput: freezed == tglInput
           ? _self.tglInput
           : tglInput // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
