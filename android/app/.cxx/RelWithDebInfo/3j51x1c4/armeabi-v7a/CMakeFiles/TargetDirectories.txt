@@ -1,2 +1,0 @@
-D:/Projects/hepa_refactor/android/app/.cxx/RelWithDebInfo/3j51x1c4/armeabi-v7a/CMakeFiles/edit_cache.dir
-D:/Projects/hepa_refactor/android/app/.cxx/RelWithDebInfo/3j51x1c4/armeabi-v7a/CMakeFiles/rebuild_cache.dir
