@@ -4,10 +4,17 @@ import 'package:hepa/presentation/misc/methods.dart';
 import 'package:hepa/presentation/providers/user_data/user_data_provider.dart';
 import 'package:hepa/presentation/router/router_provider.dart';
 import 'package:hepa/presentation/widgets/hepa_text_field.dart';
-import 'package:radio_group_v2/radio_group_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+
+enum Gender {
+  lakiLaki('Laki-laki'),
+  perempuan('Perempuan');
+
+  const Gender(this.gender);
+  final String gender;
+}
 
 class RegisterPage extends ConsumerStatefulWidget {
   const RegisterPage({super.key});
@@ -24,8 +31,8 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
       TextEditingController();
   final TextEditingController dateOfBirthController = TextEditingController();
   final TextEditingController workController = TextEditingController();
+  Gender? _selectedGender = Gender.lakiLaki;
 
-  final RadioGroupController genderController = RadioGroupController();
 
   @override
   void initState() {
@@ -92,13 +99,30 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                 ),
                 verticalSpace(8),
                 RadioGroup(
-                  controller: genderController,
-                  values: ['Laki-laki', 'Perempuan'],
-                  orientation: RadioGroupOrientation.horizontal,
-                  decoration: RadioGroupDecoration(
-                    spacing: 10,
-                    activeColor: primaryColor,
-                  ),
+                  groupValue: _selectedGender,
+                  onChanged: (Gender? value) {
+                    setState(() {
+                       _selectedGender = value;
+                    });
+                  },
+                  child:
+                  Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    RadioListTile<Gender>(
+                      title: const Text('Laki-laki'),
+                      value: Gender.lakiLaki,
+                      dense: true,
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                    RadioListTile<Gender>(
+                      title: const Text('Perempuan'),
+                      value: Gender.perempuan,
+                      dense: true,
+                      contentPadding: EdgeInsets.zero,
+                    ),
+                  ],
+                ),
                 ),
                 verticalSpace(20),
                 HepaTextField(
@@ -182,7 +206,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                                         retypePasswordController.text,
                                     work: workController.text,
                                     dateOfBirth: dateOfBirthController.text,
-                                    gender: genderController.value.toString(),
+                                    gender: _selectedGender!.gender,
                                   );
                             },
                             style: ElevatedButton.styleFrom(
@@ -214,7 +238,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                                         retypePasswordController.text,
                                     work: workController.text,
                                     dateOfBirth: dateOfBirthController.text,
-                                    gender: genderController.value.toString(),
+                                  gender: _selectedGender!.gender,
                                   );
                             },
                             style: ElevatedButton.styleFrom(
@@ -245,7 +269,7 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
                                 retypedPassword: retypePasswordController.text,
                                 work: workController.text,
                                 dateOfBirth: dateOfBirthController.text,
-                                gender: genderController.value.toString(),
+                                gender: _selectedGender!.gender,
                               );
                         },
                         style: ElevatedButton.styleFrom(
