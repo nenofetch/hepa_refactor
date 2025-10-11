@@ -6,6 +6,9 @@ part of 'check_tdee.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(checkTdee)
 const checkTdeeProvider = CheckTdeeProvider._();
 
@@ -46,6 +49,3 @@ final class CheckTdeeProvider
 }
 
 String _$checkTdeeHash() => r'b56324b1cc23a621f579ecd3581d2c479762d1f7';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

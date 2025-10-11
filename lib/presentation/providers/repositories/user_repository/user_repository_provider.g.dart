@@ -6,6 +6,9 @@ part of 'user_repository_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(userRepository)
 const userRepositoryProvider = UserRepositoryProvider._();
 
@@ -46,6 +49,3 @@ final class UserRepositoryProvider
 }
 
 String _$userRepositoryHash() => r'71f74f45b77e6f0148a1dd7d441c6052b59cc462';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -6,6 +6,9 @@ part of 'get_report.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(getReport)
 const getReportProvider = GetReportProvider._();
 
@@ -46,6 +49,3 @@ final class GetReportProvider
 }
 
 String _$getReportHash() => r'51347b91d2dec24f3c5a72f20f0a392d2b12686d';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

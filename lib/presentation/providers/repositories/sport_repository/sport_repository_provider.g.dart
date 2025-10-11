@@ -6,6 +6,9 @@ part of 'sport_repository_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(sportRepository)
 const sportRepositoryProvider = SportRepositoryProvider._();
 
@@ -45,6 +48,3 @@ final class SportRepositoryProvider extends $FunctionalProvider<SportRepository,
 }
 
 String _$sportRepositoryHash() => r'c7a5f2f303e58f5eb73297d3c4681f9bc24eb9df';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

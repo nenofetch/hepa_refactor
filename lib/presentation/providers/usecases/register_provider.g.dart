@@ -6,6 +6,9 @@ part of 'register_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(register)
 const registerProvider = RegisterProvider._();
 
@@ -46,6 +49,3 @@ final class RegisterProvider
 }
 
 String _$registerHash() => r'd055f0e8555d63be4de8869df0fa38c1f512587a';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

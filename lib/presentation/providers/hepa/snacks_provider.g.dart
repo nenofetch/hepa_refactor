@@ -6,6 +6,9 @@ part of 'snacks_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(Snacks)
 const snacksProvider = SnacksProvider._();
 
@@ -46,6 +49,3 @@ abstract class _$Snacks extends $AsyncNotifier<List<Snack>> {
     element.handleValue(ref, created);
   }
 }
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -6,6 +6,9 @@ part of 'add_education_history.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(addEducationHistory)
 const addEducationHistoryProvider = AddEducationHistoryProvider._();
 
@@ -49,6 +52,3 @@ final class AddEducationHistoryProvider extends $FunctionalProvider<
 
 String _$addEducationHistoryHash() =>
     r'c0b7aca1066f501fe812848d48063232b2e0d95e';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

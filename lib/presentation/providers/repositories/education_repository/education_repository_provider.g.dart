@@ -6,6 +6,9 @@ part of 'education_repository_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(educationRepository)
 const educationRepositoryProvider = EducationRepositoryProvider._();
 
@@ -49,6 +52,3 @@ final class EducationRepositoryProvider extends $FunctionalProvider<
 
 String _$educationRepositoryHash() =>
     r'6e38bace055d0ad0848c5960c2d65aa5af1952ad';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

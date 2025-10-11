@@ -6,6 +6,9 @@ part of 'add_snacks.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(addSnacks)
 const addSnacksProvider = AddSnacksProvider._();
 
@@ -46,6 +49,3 @@ final class AddSnacksProvider
 }
 
 String _$addSnacksHash() => r'c781a7b0ca1304e59ca5762934e4c606e4d48cf7';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

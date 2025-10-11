@@ -6,6 +6,9 @@ part of 'detail_imt.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(detailImt)
 const detailImtProvider = DetailImtProvider._();
 
@@ -46,6 +49,3 @@ final class DetailImtProvider
 }
 
 String _$detailImtHash() => r'dba80e0781fa53ed3bb86a66fd728ee65705c5c7';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

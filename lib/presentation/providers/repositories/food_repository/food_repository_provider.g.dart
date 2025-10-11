@@ -6,6 +6,9 @@ part of 'food_repository_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(foodRepository)
 const foodRepositoryProvider = FoodRepositoryProvider._();
 
@@ -46,6 +49,3 @@ final class FoodRepositoryProvider
 }
 
 String _$foodRepositoryHash() => r'4aa5e87958e601f62f365222deca5b351619a72a';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

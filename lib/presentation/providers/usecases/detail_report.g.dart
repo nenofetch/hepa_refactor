@@ -6,6 +6,9 @@ part of 'detail_report.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(detailReport)
 const detailReportProvider = DetailReportProvider._();
 
@@ -46,6 +49,3 @@ final class DetailReportProvider
 }
 
 String _$detailReportHash() => r'd6e7a9e7f84ae038570adb89a03efe586b26262b';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

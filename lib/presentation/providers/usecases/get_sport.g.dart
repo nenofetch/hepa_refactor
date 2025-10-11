@@ -6,6 +6,9 @@ part of 'get_sport.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(getSports)
 const getSportsProvider = GetSportsProvider._();
 
@@ -46,6 +49,3 @@ final class GetSportsProvider
 }
 
 String _$getSportsHash() => r'd89d09f43ad0ef1c0853c302ec5ac131aaf0c0ce';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -6,6 +6,9 @@ part of 'add_consultation.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(addConsultation)
 const addConsultationProvider = AddConsultationProvider._();
 
@@ -45,6 +48,3 @@ final class AddConsultationProvider extends $FunctionalProvider<AddConsultation,
 }
 
 String _$addConsultationHash() => r'8d1a72abfb3d4b0fb0ac3cc5329bc8a374fd5d64';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

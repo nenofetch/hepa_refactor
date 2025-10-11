@@ -6,6 +6,9 @@ part of 'add_drinks.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(addDrinks)
 const addDrinksProvider = AddDrinksProvider._();
 
@@ -46,6 +49,3 @@ final class AddDrinksProvider
 }
 
 String _$addDrinksHash() => r'b9ed603d1da96ee7bd126f4a2b919d75a5d6b99d';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

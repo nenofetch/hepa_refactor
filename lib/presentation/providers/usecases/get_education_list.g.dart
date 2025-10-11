@@ -6,6 +6,9 @@ part of 'get_education_list.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
 @ProviderFor(getEducation)
 const getEducationProvider = GetEducationProvider._();
 
@@ -46,6 +49,3 @@ final class GetEducationProvider
 }
 
 String _$getEducationHash() => r'03967b27a9a98873dac0ef0c986f847fae17db89';
-
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
